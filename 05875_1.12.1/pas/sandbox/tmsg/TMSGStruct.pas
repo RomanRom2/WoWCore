@@ -208,7 +208,7 @@ type
     Bonus: array[0..9] of TItemBonus;
     DamageStat: array[0..4] of TItemDamageStat;
     Resistance: array[0..6] of longint;
-    WeaponSpeed: longint;
+    Delay: longint;
     AmmoType: longint;
     ModRanged: single; // 1.10.0
     SpellStat: array[0..4] of TSpellStat;

@@ -372,6 +372,7 @@ procedure cmd_CMSG_MESSAGECHAT(var sender: TWorldUser);
 var
   imsg: T_CMSG_MESSAGECHAT;
   i: longint;
+  U: TWorldUser;
 begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
@@ -390,7 +391,13 @@ begin
     CHAT_MSG_YELL:
       ListWorldUsers.Send_Message(sender.CharData.Enum.GUID, imsg.TypeID, imsg.LangID, '', imsg.Text);
     CHAT_MSG_WHISPER:
-      ListWorldUsers.UserByName[imsg.ChannelName].Send_Message(sender.CharData.Enum.GUID, imsg.TypeID, imsg.LangID, imsg.ChannelName, imsg.Text);
+    begin
+      U:= ListWorldUsers.UserByName[imsg.ChannelName];
+      if U <> nil then
+        U.Send_Message(sender.CharData.Enum.GUID, imsg.TypeID, imsg.LangID, imsg.ChannelName, imsg.Text)
+      else
+        sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Player ['+imsg.ChannelName+'] is not found in the World');
+    end;
     CHAT_MSG_CHANNEL:
       ListWorldUsers.Send_Message(sender.CharData.Enum.GUID, imsg.TypeID, imsg.LangID, imsg.ChannelName, imsg.Text);
     else

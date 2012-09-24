@@ -84,7 +84,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -204,7 +204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -324,7 +324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -444,7 +444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2700;
+  ItemTPL[id].Delay:=2700;
   ItemTPL[id].AmmoType:=3;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=29632;
@@ -564,7 +564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19784;
@@ -684,7 +684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -804,7 +804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=3000;
+  ItemTPL[id].Delay:=3000;
   ItemTPL[id].AmmoType:=3;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7581;
@@ -924,7 +924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -1044,7 +1044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19786;
@@ -1164,7 +1164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23074;
@@ -1284,7 +1284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19805;
@@ -1404,7 +1404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=3300;
+  ItemTPL[id].Delay:=3300;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -1524,7 +1524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19821;
@@ -1644,7 +1644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19845;
@@ -1764,7 +1764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19846;
@@ -1884,7 +1884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19847;
@@ -2004,7 +2004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19848;
@@ -2124,7 +2124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19849;
@@ -2244,7 +2244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19851;
@@ -2364,7 +2364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19859;
@@ -2484,7 +2484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19860;
@@ -2604,7 +2604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19861;
@@ -2724,7 +2724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19863;
@@ -2844,7 +2844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19862;
@@ -2964,7 +2964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19864;
@@ -3084,7 +3084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19865;
@@ -3204,7 +3204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19866;
@@ -3324,7 +3324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19867;
@@ -3444,7 +3444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19868;
@@ -3564,7 +3564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18030;
@@ -3684,7 +3684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -3804,7 +3804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -3924,7 +3924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19886;
@@ -4044,7 +4044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19889;
@@ -4164,7 +4164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19903;
@@ -4284,7 +4284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19950;
@@ -4404,7 +4404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19949;
@@ -4524,7 +4524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7931;
@@ -4644,7 +4644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=10842;
@@ -4764,7 +4764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19938;
@@ -4884,7 +4884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -5004,7 +5004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=433;
@@ -5124,7 +5124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=434;
@@ -5244,7 +5244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=1129;
@@ -5364,7 +5364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=1127;
@@ -5484,7 +5484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=435;
@@ -5604,7 +5604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -5724,7 +5724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20039;
@@ -5844,7 +5844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20040;
@@ -5964,7 +5964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -6084,7 +6084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2000;
+  ItemTPL[id].Delay:=2000;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -6204,7 +6204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2000;
+  ItemTPL[id].Delay:=2000;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -6324,7 +6324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20065;
@@ -6444,7 +6444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20067;
@@ -6564,7 +6564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20068;
@@ -6684,7 +6684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20069;
@@ -6804,7 +6804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20070;
@@ -6924,7 +6924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20071;
@@ -7044,7 +7044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20072;
@@ -7164,7 +7164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20073;
@@ -7284,7 +7284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20074;
@@ -7404,7 +7404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20075;
@@ -7524,7 +7524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20076;
@@ -7644,7 +7644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20077;
@@ -7764,7 +7764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20078;
@@ -7884,7 +7884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20079;
@@ -8004,7 +8004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20080;
@@ -8124,7 +8124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20081;
@@ -8244,7 +8244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20082;
@@ -8364,7 +8364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20083;
@@ -8484,7 +8484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20084;
@@ -8604,7 +8604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20085;
@@ -8724,7 +8724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20086;
@@ -8844,7 +8844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20087;
@@ -8964,7 +8964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20089;
@@ -9084,7 +9084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20090;
@@ -9204,7 +9204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20270;
@@ -9324,7 +9324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -9444,7 +9444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -9564,7 +9564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -9684,7 +9684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -9804,7 +9804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -9924,7 +9924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -10044,7 +10044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -10164,7 +10164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20312;
@@ -10284,7 +10284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20313;
@@ -10404,7 +10404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20314;
@@ -10524,7 +10524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20315;
@@ -10644,7 +10644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20316;
@@ -10764,7 +10764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20397;
@@ -10884,7 +10884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20318;
@@ -11004,7 +11004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20319;
@@ -11124,7 +11124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20320;
@@ -11244,7 +11244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20321;
@@ -11364,7 +11364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20322;
@@ -11484,7 +11484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20323;
@@ -11604,7 +11604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20324;
@@ -11724,7 +11724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20326;
@@ -11844,7 +11844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20327;
@@ -11964,7 +11964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20329;
@@ -12084,7 +12084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -12204,7 +12204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20364;
@@ -12324,7 +12324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -12444,7 +12444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -12564,7 +12564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -12684,7 +12684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2900;
+  ItemTPL[id].Delay:=2900;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -12804,7 +12804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20317;
@@ -12924,7 +12924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20377;
@@ -13044,7 +13044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20378;
@@ -13164,7 +13164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20379;
@@ -13284,7 +13284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20380;
@@ -13404,7 +13404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20381;
@@ -13524,7 +13524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20382;
@@ -13644,7 +13644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20383;
@@ -13764,7 +13764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20384;
@@ -13884,7 +13884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20385;
@@ -14004,7 +14004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20386;
@@ -14124,7 +14124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20387;
@@ -14244,7 +14244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20388;
@@ -14364,7 +14364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20389;
@@ -14484,7 +14484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20390;
@@ -14604,7 +14604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20391;
@@ -14724,7 +14724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20392;
@@ -14844,7 +14844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20393;
@@ -14964,7 +14964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20394;
@@ -15084,7 +15084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20395;
@@ -15204,7 +15204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20396;
@@ -15324,7 +15324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20398;
@@ -15444,7 +15444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -15564,7 +15564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20399;
@@ -15684,7 +15684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20400;
@@ -15804,7 +15804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20401;
@@ -15924,7 +15924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20402;
@@ -16044,7 +16044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20403;
@@ -16164,7 +16164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20404;
@@ -16284,7 +16284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20405;
@@ -16404,7 +16404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20406;
@@ -16524,7 +16524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20407;
@@ -16644,7 +16644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20408;
@@ -16764,7 +16764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20426;
@@ -16884,7 +16884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20427;
@@ -17004,7 +17004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20428;
@@ -17124,7 +17124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20429;
@@ -17244,7 +17244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20430;
@@ -17364,7 +17364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20431;
@@ -17484,7 +17484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20432;
@@ -17604,7 +17604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20433;
@@ -17724,7 +17724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20434;
@@ -17844,7 +17844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20435;
@@ -17964,7 +17964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23037;
@@ -18084,7 +18084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23049;
@@ -18204,7 +18204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9343;
@@ -18324,7 +18324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15807;
@@ -18444,7 +18444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23217;
@@ -18564,7 +18564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -18684,7 +18684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23157;
@@ -18804,7 +18804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -18924,7 +18924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=22778;
@@ -19044,7 +19044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -19164,7 +19164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23300;
@@ -19284,7 +19284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -19404,7 +19404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14254;
@@ -19524,7 +19524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -19644,7 +19644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -19764,7 +19764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -19884,7 +19884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -20004,7 +20004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -20124,7 +20124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -20244,7 +20244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9345;
@@ -20364,7 +20364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -20484,7 +20484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9398;
@@ -20604,7 +20604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9329;
@@ -20724,7 +20724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9334;
@@ -20844,7 +20844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -20964,7 +20964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -21084,7 +21084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -21204,7 +21204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -21324,7 +21324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -21444,7 +21444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -21564,7 +21564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -21684,7 +21684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -21804,7 +21804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -21924,7 +21924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -22044,7 +22044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -22164,7 +22164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14248;
@@ -22284,7 +22284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14054;
@@ -22404,7 +22404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -22524,7 +22524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14798;
@@ -22644,7 +22644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -22764,7 +22764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15715;
@@ -22884,7 +22884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23049;
@@ -23004,7 +23004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23217;
@@ -23124,7 +23124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -23244,7 +23244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -23364,7 +23364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -23484,7 +23484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14248;
@@ -23604,7 +23604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -23724,7 +23724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -23844,7 +23844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -23964,7 +23964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15465;
@@ -24084,7 +24084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -24204,7 +24204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9345;
@@ -24324,7 +24324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -24444,7 +24444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=28539;
@@ -24564,7 +24564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -24684,7 +24684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -24804,7 +24804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -24924,7 +24924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -25044,7 +25044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23300;
@@ -25164,7 +25164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -25284,7 +25284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -25404,7 +25404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -25524,7 +25524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14054;
@@ -25644,7 +25644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14254;
@@ -25764,7 +25764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -25884,7 +25884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -26004,7 +26004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -26124,7 +26124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -26244,7 +26244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -26364,7 +26364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=22778;
@@ -26484,7 +26484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -26604,7 +26604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -26724,7 +26724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23037;
@@ -26844,7 +26844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -26964,7 +26964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14254;
@@ -27084,7 +27084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -27204,7 +27204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -27324,7 +27324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9343;
@@ -27444,7 +27444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23217;
@@ -27564,7 +27564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -27684,7 +27684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23049;
@@ -27804,7 +27804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15807;
@@ -27924,7 +27924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9398;
@@ -28044,7 +28044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -28164,7 +28164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9329;
@@ -28284,7 +28284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -28404,7 +28404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -28524,7 +28524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -28644,7 +28644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -28764,7 +28764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -28884,7 +28884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -29004,7 +29004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=22778;
@@ -29124,7 +29124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -29244,7 +29244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -29364,7 +29364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -29484,7 +29484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -29604,7 +29604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9343;
@@ -29724,7 +29724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14254;
@@ -29844,7 +29844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -29964,7 +29964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -30084,7 +30084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15715;
@@ -30204,7 +30204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9396;
@@ -30324,7 +30324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9334;
@@ -30444,7 +30444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -30564,7 +30564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -30684,7 +30684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -30804,7 +30804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23157;
@@ -30924,7 +30924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -31044,7 +31044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -31164,7 +31164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -31284,7 +31284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14798;
@@ -31404,7 +31404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -31524,7 +31524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15715;
@@ -31644,7 +31644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14248;
@@ -31764,7 +31764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23037;
@@ -31884,7 +31884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -32004,7 +32004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -32124,7 +32124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -32244,7 +32244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -32364,7 +32364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -32484,7 +32484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=22778;
@@ -32604,7 +32604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14248;
@@ -32724,7 +32724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -32844,7 +32844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -32964,7 +32964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -33084,7 +33084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9345;
@@ -33204,7 +33204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23217;
@@ -33324,7 +33324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23049;
@@ -33444,7 +33444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -33564,7 +33564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -33684,7 +33684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -33804,7 +33804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -33924,7 +33924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15465;
@@ -34044,7 +34044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -34164,7 +34164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -34284,7 +34284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -34404,7 +34404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -34524,7 +34524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -34644,7 +34644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=28539;
@@ -34764,7 +34764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=22801;
@@ -34884,7 +34884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -35004,7 +35004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -35124,7 +35124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -35244,7 +35244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14054;
@@ -35364,7 +35364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9345;
@@ -35484,7 +35484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -35604,7 +35604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -35724,7 +35724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -35844,7 +35844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -35964,7 +35964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36084,7 +36084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36204,7 +36204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2800;
+  ItemTPL[id].Delay:=2800;
   ItemTPL[id].AmmoType:=2;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36324,7 +36324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36444,7 +36444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36564,7 +36564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36684,7 +36684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -36804,7 +36804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20529;
@@ -36924,7 +36924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20529;
@@ -37044,7 +37044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20529;
@@ -37164,7 +37164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20529;
@@ -37284,7 +37284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20530;
@@ -37404,7 +37404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20530;
@@ -37524,7 +37524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20530;
@@ -37644,7 +37644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20530;
@@ -37764,7 +37764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20531;
@@ -37884,7 +37884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20531;
@@ -38004,7 +38004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20531;
@@ -38124,7 +38124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20531;
@@ -38244,7 +38244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19691;
@@ -38364,7 +38364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -38484,7 +38484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -38604,7 +38604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -38724,7 +38724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -38844,7 +38844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -38964,7 +38964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19877;
@@ -39084,7 +39084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39204,7 +39204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39324,7 +39324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39444,7 +39444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39564,7 +39564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39684,7 +39684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39804,7 +39804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -39924,7 +39924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40044,7 +40044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40164,7 +40164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40284,7 +40284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40404,7 +40404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40524,7 +40524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40644,7 +40644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40764,7 +40764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -40884,7 +40884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41004,7 +41004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41124,7 +41124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41244,7 +41244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41364,7 +41364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41484,7 +41484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41604,7 +41604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41724,7 +41724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41844,7 +41844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -41964,7 +41964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42084,7 +42084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42204,7 +42204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42324,7 +42324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42444,7 +42444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42564,7 +42564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42684,7 +42684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42804,7 +42804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -42924,7 +42924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43044,7 +43044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43164,7 +43164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43284,7 +43284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43404,7 +43404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43524,7 +43524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43644,7 +43644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43764,7 +43764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -43884,7 +43884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44004,7 +44004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44124,7 +44124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44244,7 +44244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44364,7 +44364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44484,7 +44484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44604,7 +44604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44724,7 +44724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44844,7 +44844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -44964,7 +44964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45084,7 +45084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45204,7 +45204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45324,7 +45324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45444,7 +45444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45564,7 +45564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45684,7 +45684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45804,7 +45804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -45924,7 +45924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46044,7 +46044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46164,7 +46164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46284,7 +46284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46404,7 +46404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46524,7 +46524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46644,7 +46644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46764,7 +46764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -46884,7 +46884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47004,7 +47004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47124,7 +47124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47244,7 +47244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47364,7 +47364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47484,7 +47484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47604,7 +47604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47724,7 +47724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47844,7 +47844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -47964,7 +47964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48084,7 +48084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48204,7 +48204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48324,7 +48324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48444,7 +48444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48564,7 +48564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -48684,7 +48684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=1129;
@@ -48804,7 +48804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20628;
@@ -48924,7 +48924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20631;
@@ -49044,7 +49044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49164,7 +49164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49284,7 +49284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=19937;
@@ -49404,7 +49404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49524,7 +49524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=1500;
+  ItemTPL[id].Delay:=1500;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49644,7 +49644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49764,7 +49764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -49884,7 +49884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -50004,7 +50004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14799;
@@ -50124,7 +50124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -50244,7 +50244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -50364,7 +50364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14047;
@@ -50484,7 +50484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -50604,7 +50604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -50724,7 +50724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -50844,7 +50844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9343;
@@ -50964,7 +50964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -51084,7 +51084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9342;
@@ -51204,7 +51204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -51324,7 +51324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14799;
@@ -51444,7 +51444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9415;
@@ -51564,7 +51564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14799;
@@ -51684,7 +51684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9342;
@@ -51804,7 +51804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14798;
@@ -51924,7 +51924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -52044,7 +52044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -52164,7 +52164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -52284,7 +52284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -52404,7 +52404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9408;
@@ -52524,7 +52524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9415;
@@ -52644,7 +52644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -52764,7 +52764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14047;
@@ -52884,7 +52884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21624;
@@ -53004,7 +53004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -53124,7 +53124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7598;
@@ -53244,7 +53244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -53364,7 +53364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -53484,7 +53484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -53604,7 +53604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -53724,7 +53724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -53844,7 +53844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -53964,7 +53964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -54084,7 +54084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21625;
@@ -54204,7 +54204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9396;
@@ -54324,7 +54324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -54444,7 +54444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -54564,7 +54564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21625;
@@ -54684,7 +54684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9417;
@@ -54804,7 +54804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -54924,7 +54924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -55044,7 +55044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -55164,7 +55164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -55284,7 +55284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -55404,7 +55404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9396;
@@ -55524,7 +55524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -55644,7 +55644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -55764,7 +55764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21627;
@@ -55884,7 +55884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -56004,7 +56004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -56124,7 +56124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -56244,7 +56244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -56364,7 +56364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -56484,7 +56484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -56604,7 +56604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -56724,7 +56724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -56844,7 +56844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15465;
@@ -56964,7 +56964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9408;
@@ -57084,7 +57084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21619;
@@ -57204,7 +57204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21625;
@@ -57324,7 +57324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -57444,7 +57444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21618;
@@ -57564,7 +57564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -57684,7 +57684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21624;
@@ -57804,7 +57804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9406;
@@ -57924,7 +57924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -58044,7 +58044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13383;
@@ -58164,7 +58164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -58284,7 +58284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -58404,7 +58404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13676;
@@ -58524,7 +58524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -58644,7 +58644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13665;
@@ -58764,7 +58764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=7;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13675;
@@ -58884,7 +58884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59004,7 +59004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59124,7 +59124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59244,7 +59244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59364,7 +59364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59484,7 +59484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2700;
+  ItemTPL[id].Delay:=2700;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20732;
@@ -59604,7 +59604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=1600;
+  ItemTPL[id].Delay:=1600;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59724,7 +59724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2600;
+  ItemTPL[id].Delay:=2600;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59844,7 +59844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2200;
+  ItemTPL[id].Delay:=2200;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -59964,7 +59964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2200;
+  ItemTPL[id].Delay:=2200;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -60084,7 +60084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20762;
@@ -60204,7 +60204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20763;
@@ -60324,7 +60324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=3100;
+  ItemTPL[id].Delay:=3100;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -60444,7 +60444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20764;
@@ -60564,7 +60564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20765;
@@ -60684,7 +60684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -60804,7 +60804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -60924,7 +60924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18032;
@@ -61044,7 +61044,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -61164,7 +61164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18034;
@@ -61284,7 +61284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9316;
@@ -61404,7 +61404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9315;
@@ -61524,7 +61524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9318;
@@ -61644,7 +61644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -61764,7 +61764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -61884,7 +61884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7219;
@@ -62004,7 +62004,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -62124,7 +62124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -62244,7 +62244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -62364,7 +62364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -62484,7 +62484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14054;
@@ -62604,7 +62604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -62724,7 +62724,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21619;
@@ -62844,7 +62844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14798;
@@ -62964,7 +62964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -63084,7 +63084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21619;
@@ -63204,7 +63204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14254;
@@ -63324,7 +63324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18029;
@@ -63444,7 +63444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -63564,7 +63564,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18034;
@@ -63684,7 +63684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18033;
@@ -63804,7 +63804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18037;
@@ -63924,7 +63924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9315;
@@ -64044,7 +64044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9315;
@@ -64164,7 +64164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9318;
@@ -64284,7 +64284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14047;
@@ -64404,7 +64404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21347;
@@ -64524,7 +64524,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21347;
@@ -64644,7 +64644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18055;
@@ -64764,7 +64764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -64884,7 +64884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21347;
@@ -65004,7 +65004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -65124,7 +65124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9344;
@@ -65244,7 +65244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -65364,7 +65364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -65484,7 +65484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -65604,7 +65604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=15464;
@@ -65724,7 +65724,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -65844,7 +65844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -65964,7 +65964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -66084,7 +66084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=7597;
@@ -66204,7 +66204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18379;
@@ -66324,7 +66324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -66444,7 +66444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -66564,7 +66564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -66684,7 +66684,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18384;
@@ -66804,7 +66804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -66924,7 +66924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14799;
@@ -67044,7 +67044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14047;
@@ -67164,7 +67164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9397;
@@ -67284,7 +67284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14047;
@@ -67404,7 +67404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21363;
@@ -67524,7 +67524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=14799;
@@ -67644,7 +67644,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=17367;
@@ -67764,7 +67764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21626;
@@ -67884,7 +67884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9346;
@@ -68004,7 +68004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=21363;
@@ -68124,7 +68124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -68244,7 +68244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13676;
@@ -68364,7 +68364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23516;
@@ -68484,7 +68484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=10;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13670;
@@ -68604,7 +68604,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18185;
@@ -68724,7 +68724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=10;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13665;
@@ -68844,7 +68844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=23515;
@@ -68964,7 +68964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=18185;
@@ -69084,7 +69084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -69204,7 +69204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -69324,7 +69324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -69444,7 +69444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -69564,7 +69564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=10256;
@@ -69684,7 +69684,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -69804,7 +69804,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20814;
@@ -69924,7 +69924,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70044,7 +70044,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70164,7 +70164,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70284,7 +70284,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70404,7 +70404,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70524,7 +70524,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70644,7 +70644,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -70764,7 +70764,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=13669;
@@ -70884,7 +70884,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9335;
@@ -71004,7 +71004,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71124,7 +71124,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71244,7 +71244,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=9141;
@@ -71364,7 +71364,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71484,7 +71484,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71604,7 +71604,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71724,7 +71724,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=20804;
@@ -71844,7 +71844,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2700;
+  ItemTPL[id].Delay:=2700;
   ItemTPL[id].AmmoType:=3;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -71964,7 +71964,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=1900;
+  ItemTPL[id].Delay:=1900;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72084,7 +72084,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72204,7 +72204,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72324,7 +72324,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=2500;
+  ItemTPL[id].Delay:=2500;
   ItemTPL[id].AmmoType:=2;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72444,7 +72444,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=1300;
+  ItemTPL[id].Delay:=1300;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=100.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72564,7 +72564,7 @@ begin
   ItemTPL[id].Resistance[4]:=0;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72684,7 +72684,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;
@@ -72804,7 +72804,7 @@ begin
   ItemTPL[id].Resistance[4]:=10;
   ItemTPL[id].Resistance[5]:=0;
   ItemTPL[id].Resistance[6]:=0;
-  ItemTPL[id].WeaponSpeed:=0;
+  ItemTPL[id].Delay:=0;
   ItemTPL[id].AmmoType:=0;
   ItemTPL[id].ModRanged:=0.000000;
   ItemTPL[id].SpellStat[0].SpellID:=0;

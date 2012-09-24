@@ -179,6 +179,9 @@ begin
     end;
   for i:=0 to 6 do
     pkt.AddLong    (Buf, m.Resistance[i]);
+  pkt.AddLong      (Buf, m.Delay);
+  pkt.AddLong      (Buf, m.AmmoType);
+  pkt.AddFloat     (Buf, m.ModRanged);
   for i:=0 to 4 do
     begin
       pkt.AddLong  (Buf, m.SpellStat[i].SpellID);
