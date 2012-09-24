@@ -310,6 +310,7 @@ var
   LP: AnsiString;
   ReconnectServerDigest: TSHA1Digest;
   ABuf: array of Byte;
+  found: boolean;
 begin
   LoginUser := TLoginUser(p);
 
@@ -318,23 +319,25 @@ begin
   move(LoginUser.RBuf[27], LoginUser.ReconnectClientCRC[0], 20);
 
   // search logged account
+  found:= false;
   for i:= 0 to ListWorldUsers.Count-1 do
     if ListWorldUsers.UserByIndex[i].AccountName = LoginUser.AccountName then
     begin
       MainLog('['+LoginUser.AccountName+'] found in the World', 1,0,0);
-
+      found:= true;
       move(ListWorldUsers.UserByIndex[i].KEY[0], LoginUser.Data.Session[0], 40);
-    end
-    else
-    begin
-      // session expired
-      MainLog('['+LoginUser.AccountName+'] is not found in the World', 1,0,0);
-      LoginUser.SBuf[0]:= AUTH_RECONNECT_PROOF;
-      LoginUser.SBuf[1]:= 1;
-      LoginUser.SockSend(2);
-
-      exit;
     end;
+
+  if not found then
+  begin
+    // session expired
+    MainLog('['+LoginUser.AccountName+'] is not found in the World', 1,0,0);
+    LoginUser.SBuf[0]:= AUTH_RECONNECT_PROOF;
+    LoginUser.SBuf[1]:= 1;
+    LoginUser.SockSend(2);
+
+    exit;
+  end;
 
   LP:= AnsiString(LoginUser.AccountName);
 
