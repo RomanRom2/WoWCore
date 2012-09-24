@@ -347,10 +347,7 @@ var
 begin
   result:= true;
 
-  if sender.CharData.VR = nil then
-    sender.CharData.VR:= CValuesRecord.Create
-  else
-    sender.CharData.VR.Init;
+  sender.CharData.VR.Init;
 
   for i:= 0 to Length(ItemTPL)-1 do
     if pos(UpperCase(p1), UpperCase(ItemTPL[i].Name[0])) > 0 then
@@ -455,10 +452,7 @@ begin
 
   sender.SockSend(msgBuild(sender.SBuf, GOSSIP_COMPLETE));
 
-  if sender.CharData.VR = nil then
-    sender.CharData.VR:= CValuesRecord.Create
-  else
-    sender.CharData.VR.Init;
+  sender.CharData.VR.Init;
 
   for i:= 0 to Length(CreatureTPL)-1 do
     if pos(UpperCase(p1), UpperCase(CreatureTPL[i].Name[0])) > 0 then
@@ -578,10 +572,7 @@ begin
 
   sender.SockSend(msgBuild(sender.SBuf, GOSSIP_COMPLETE));
 
-  if sender.CharData.VR = nil then
-    sender.CharData.VR:= CValuesRecord.Create
-  else
-    sender.CharData.VR.Init;
+  sender.CharData.VR.Init;
 
   for i:= 0 to Length(CreatureTPL)-1 do
     if pos(UpperCase(p1), UpperCase(CreatureTPL[i].Name[0])) > 0 then

@@ -315,14 +315,11 @@ begin
   d_first:= true;
   e_first:= true;
 
-  CharData.VR:= nil;
+  CharData:= nil;
 end;
 procedure TWorldUser.Free;
 begin
-  if CharData.VR <> nil then
-    CharData.VR.Free;
-  CharData.VR:= nil;
-
+  CharData:= nil;
   Destroy;
 end;
 procedure TWorldUser.PrintRecvBuf(n: word);

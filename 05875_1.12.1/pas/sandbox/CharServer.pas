@@ -139,6 +139,7 @@ begin
   imsg2.hairColorID:= 0;
   imsg2.facialHairStyleID:= 0;
   imsg2.outfitID:= 0;
+  c:= TCharData.Create;
   DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
@@ -154,6 +155,7 @@ begin
   imsg2.hairColorID:= 0;
   imsg2.facialHairStyleID:= 0;
   imsg2.outfitID:= 0;
+  c:= TCharData.Create;
   DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
@@ -165,9 +167,13 @@ end;
 procedure cmd_CMSG_CHAR_ENUM(var sender: TWorldUser);
 var
   m: T_SMSG_CHAR_ENUM;
+  i: longint;
 begin
   DB_GetEnumCharList(sender.AccountName, m);
   mainlog('SMSG_CHAR_ENUM of ['+sender.AccountName+']: '+strr(m.Count)+' chars');
+
+  for i:= 0 to m.Count-1 do
+    MainLog('  '+strr(i)+': ['+m.Enum[i].name+'], '+RaceStr[m.Enum[i].raceID]+', '+ClassStr[m.Enum[i].classID]+', '+GenderStr[m.Enum[i].sexID]+', '+Int64ToHex(m.Enum[i].GUID));
 
   sender.SockSend(msgBuild(sender.SBuf, m));
 end;
@@ -199,6 +205,7 @@ begin
   omsg.ResponseCode:= CHAR_CREATE_SUCCESS;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 
+  c:= TCharData.Create;
   DB_MakeNewChar(imsg, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('CMSG_CHAR_CREATE ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));

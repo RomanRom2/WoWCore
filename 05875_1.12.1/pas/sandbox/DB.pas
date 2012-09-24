@@ -114,7 +114,7 @@ begin
   for i:= 0 to ListChars.Count-1 do
     if ListChars.List[i].Enum.GUID = c.Enum.GUID then
     begin
-      ListChars.List[i]:=c;
+      ListChars.List[i]:= c;
       exit;
     end;
 end;

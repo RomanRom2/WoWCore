@@ -87,17 +87,17 @@ begin
     end;
   end;
 
-  // mandatory to send !!!
+  { SMSG_ACCOUNT_DATA_TIMES - mandatory to send !!! }
   for i:= 0 to 31 do
     omsg2.tmp[i]:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg2));
 
-  // mandatory to send !!!
+  { SMSG_TUTORIAL_FLAGS - mandatory to send !!! }
   for i:= 0 to PLAYER_TUTORIALS_COUNT-1 do
     omsg3.tmp[i]:= $FF;
   sender.SockSend(msgBuild(sender.SBuf, omsg3));
 
-  // SMSG_INITIAL_SPELLS
+  { SMSG_INITIAL_SPELLS }
   omsg4.sexID:= sender.CharData.Enum.sexID;
   for i:= 0 to Length(sender.CharData.Spells)-1 do
     if sender.CharData.Spells[i].spell_id = 0 then
@@ -113,7 +113,7 @@ begin
   SetLength(omsg4.Cooldown, 0);
   sender.SockSend(msgBuild(sender.SBuf, omsg4));
 
-  // SMSG_ACTION_BUTTONS
+  { SMSG_ACTION_BUTTONS }
   for i:= 0 to PLAYER_ACTION_BUTTONS_COUNT-1 do
   begin
     omsg5.Button[i].SpellID:= sender.CharData.Action_Buttons[i].spell_id;
@@ -121,16 +121,14 @@ begin
   end;
   sender.SockSend(msgBuild(sender.SBuf, omsg5));
 
-  // SMSG_INITIALIZE_FACTIONS
-
-  // SMSG_LOGIN_SETTIMESPEED
+  { SMSG_LOGIN_SETTIMESPEED }
   DecodeDateTime(Now, year, month, day, hour, minute, sec, msec);
   nDayOfWeek:= DayOfWeek(Date);
   omsg6.DateTimeVal:= minute or (hour shl 6) or (nDayOfWeek shl 11) or (longword(day) shl 14) or (longword(month) shl 20) or (longword(year) shl 24);
   omsg6.DateTimeMod:= 1.0 / 60.0;
   sender.SockSend(msgBuild(sender.SBuf, omsg6));
 
-  // welcome message
+  { welcome message }
   if logon then
   begin
     s:= '';
@@ -140,22 +138,22 @@ begin
     sender.Send_Message(0, CHAT_MSG_SYSTEM, 0, '', s);
   end;
 
-  // create items
+  { create items }
   for i:= 0 to Length(sender.CharData.inventory_bag[0])-1 do
     if sender.CharData.inventory_bag[0][i].Entry <> 0 then
       sender.Send_CreateFromItem(sender.CharData.inventory_bag[0][i]);
 
-  // create player self
+  { create player self }
   sender.Send_CreateSelf;
 
-  // add active player to World
+  { add active player to World }
   OBJ.woType:= WO_PLAYER;
   OBJ.woGUID:= sender.CharData.Enum.GUID;
   OBJ.woMap:= sender.CharData.Enum.mapID;
   OBJ.woAddr:= sender;
   World.Add(OBJ);
 
-  // update World objects
+  { update World objects }
   for i:= 0 to World.Count-1 do
     if World.ObjectByIndex[i].woMap = sender.CharData.Enum.mapID then
     begin
@@ -169,9 +167,12 @@ begin
       end;
     end;
 
-  // restore speeds
-  ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
-  ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+  { restore speeds }
+  if not logon then
+  begin
+    ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
+    ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+  end;
 end;
 
 procedure cmd_CMSG_PLAYER_LOGIN(var sender: TWorldUser);

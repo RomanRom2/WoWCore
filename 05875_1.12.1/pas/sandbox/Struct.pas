@@ -98,7 +98,7 @@ type
     value: longint;
     status: byte;
   end;
-  TCharData = object
+  TCharData = class
     Login: string;
     Enum: TCharEnumInfo;
     facing: single;
@@ -182,6 +182,8 @@ type
 //    inventory_bag: array[0..InventoryBagSlotsCount+InventoryBankBagSlotsCount, 0..MaxInventorySlot] of TItemTemplate;
 //    inventory_bag_items: array[0..InventoryBagSlotsCount+InventoryBankBagSlotsCount] of longint;
 
+    constructor Create;
+    procedure Free;
     procedure ItemsInit;
     procedure ItemsAdd(bag,slot, entry,count, item_flags: longword);
     procedure SkillsInit;
@@ -228,11 +230,11 @@ uses
 
 constructor CValuesRecord.Create;
 begin
-  Init;
+  SetLength(Values, 0);
 end;
 procedure CValuesRecord.Free;
 begin
-  Init;
+  SetLength(Values, 0);
   Destroy;
 end;
 procedure CValuesRecord.Add(field: longint);
@@ -252,6 +254,17 @@ begin
   SetLength(Values, 0);
 end;
 
+constructor TCharData.Create;
+begin
+  VR:= CValuesRecord.Create;
+end;
+procedure TCharData.Free;
+begin
+  VR.Free;
+  VR:= nil;
+
+  Destroy;
+end;
 procedure TCharData.ItemsInit;
 var
   f: longint;
