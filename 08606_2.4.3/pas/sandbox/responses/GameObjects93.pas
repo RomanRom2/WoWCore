@@ -14,18 +14,20 @@ var
   id: longint;
 begin
 
-  id:=121264;
-  GameObjectTPL[id].Entry:=121264;
-  GameObjectTPL[id].TypeID:=3;
-  GameObjectTPL[id].DisplayID:=41;
-  GameObjectTPL[id].Name[0]:='Lucius''s Lockbox';
+  id:=120584;
+  GameObjectTPL[id].Entry:=120584;
+  GameObjectTPL[id].TypeID:=8;
+  GameObjectTPL[id].DisplayID:=192;
+  GameObjectTPL[id].Name[0]:='Campfire';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=23;
-  GameObjectTPL[id].Param[1]:=5026;
-  GameObjectTPL[id].Param[2]:=1;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=4;
+  GameObjectTPL[id].Param[1]:=5;
+  GameObjectTPL[id].Param[2]:=0;
   GameObjectTPL[id].Param[3]:=0;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
@@ -47,6 +49,7 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
 end;
 

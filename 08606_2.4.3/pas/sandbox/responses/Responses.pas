@@ -33,10 +33,13 @@ implementation
 uses
   Items1, Items2, Items3, Items4, Items5, Items6, Items7, Items8, Items9, Items10, 
   Items11, Items12, Items13, Items14, Items15, Items16, Items17, Items18, Items19, Items20, 
-  Items21, Items22, Items23, Items24, 
+  Items21, Items22, Items23, Items24, Items25, Items26, Items27, Items28, Items29, Items30, 
+  Items31, Items32, Items33, Items34, Items35, Items36, Items37, Items38, Items39, Items40, 
+  Items41, Items42, Items43, Items44, Items45, 
 
   Creatures1, Creatures2, Creatures3, Creatures4, Creatures5, Creatures6, Creatures7, Creatures8, Creatures9, Creatures10, 
-  Creatures11, Creatures12, Creatures13, Creatures14, Creatures15, Creatures16, Creatures17, Creatures18, Creatures19, 
+  Creatures11, Creatures12, Creatures13, Creatures14, Creatures15, Creatures16, Creatures17, Creatures18, Creatures19, Creatures20, 
+  Creatures21, Creatures22, Creatures23, Creatures24, Creatures25, Creatures26, Creatures27, 
 
   GameObjects1, GameObjects2, GameObjects3, GameObjects4, GameObjects5, GameObjects6, GameObjects7, GameObjects8, GameObjects9, GameObjects10, 
   GameObjects11, GameObjects12, GameObjects13, GameObjects14, GameObjects15, GameObjects16, GameObjects17, GameObjects18, GameObjects19, GameObjects20, 
@@ -52,15 +55,16 @@ uses
   GameObjects111, GameObjects112, GameObjects113, GameObjects114, GameObjects115, GameObjects116, GameObjects117, GameObjects118, GameObjects119, GameObjects120, 
   GameObjects121, GameObjects122, GameObjects123, GameObjects124, GameObjects125, GameObjects126, GameObjects127, GameObjects128, GameObjects129, GameObjects130, 
   GameObjects131, GameObjects132, GameObjects133, GameObjects134, GameObjects135, GameObjects136, GameObjects137, GameObjects138, GameObjects139, GameObjects140, 
-  GameObjects141, GameObjects142, GameObjects143, GameObjects144, GameObjects145, 
+  GameObjects141, GameObjects142, GameObjects143, GameObjects144, GameObjects145, GameObjects146, GameObjects147, GameObjects148, GameObjects149, GameObjects150, 
+  GameObjects151, GameObjects152, GameObjects153, GameObjects154, 
 
-  AreaTriggers1, AreaTriggers2, AreaTriggers3, AreaTriggers4, 
+  AreaTriggers1, AreaTriggers2, AreaTriggers3, AreaTriggers4, AreaTriggers5, 
 
   Logs, Convert;
 
 procedure LoadAllResponses;
 begin
-  SetLength(ItemTPL, 24282);
+  SetLength(ItemTPL, 37930);
   LoadItems1;
   LoadItems2;
   LoadItems3;
@@ -85,9 +89,30 @@ begin
   LoadItems22;
   LoadItems23;
   LoadItems24;
+  LoadItems25;
+  LoadItems26;
+  LoadItems27;
+  LoadItems28;
+  LoadItems29;
+  LoadItems30;
+  LoadItems31;
+  LoadItems32;
+  LoadItems33;
+  LoadItems34;
+  LoadItems35;
+  LoadItems36;
+  LoadItems37;
+  LoadItems38;
+  LoadItems39;
+  LoadItems40;
+  LoadItems41;
+  LoadItems42;
+  LoadItems43;
+  LoadItems44;
+  LoadItems45;
   MainLog('DB: Items loaded');
 
-  SetLength(CreatureTPL, 142488);
+  SetLength(CreatureTPL, 27724);
   LoadCreatures1;
   LoadCreatures2;
   LoadCreatures3;
@@ -107,9 +132,17 @@ begin
   LoadCreatures17;
   LoadCreatures18;
   LoadCreatures19;
+  LoadCreatures20;
+  LoadCreatures21;
+  LoadCreatures22;
+  LoadCreatures23;
+  LoadCreatures24;
+  LoadCreatures25;
+  LoadCreatures26;
+  LoadCreatures27;
   MainLog('DB: Creatures loaded');
 
-  SetLength(GameObjectTPL, 182107);
+  SetLength(GameObjectTPL, 210132);
   LoadGameObjects1;
   LoadGameObjects2;
   LoadGameObjects3;
@@ -255,13 +288,23 @@ begin
   LoadGameObjects143;
   LoadGameObjects144;
   LoadGameObjects145;
+  LoadGameObjects146;
+  LoadGameObjects147;
+  LoadGameObjects148;
+  LoadGameObjects149;
+  LoadGameObjects150;
+  LoadGameObjects151;
+  LoadGameObjects152;
+  LoadGameObjects153;
+  LoadGameObjects154;
   MainLog('DB: GameObjects loaded');
 
-  SetLength(AreaTriggerDBC, 4300);
+  SetLength(AreaTriggerDBC, 5043);
   LoadAreaTriggers1;
   LoadAreaTriggers2;
   LoadAreaTriggers3;
   LoadAreaTriggers4;
+  LoadAreaTriggers5;
   MainLog('DB: AreaTriggers loaded');
 
 end;

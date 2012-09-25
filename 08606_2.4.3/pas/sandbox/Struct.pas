@@ -10,7 +10,9 @@ type
   TSpellRecord = record
     caster_guid: uInt64;
     spell_id: longint;
-    spell_cast_time: longint;
+    spell_cast_count: byte;
+    spell_cast_duration: longint;
+    spell_cast_start_time: longint;
     target_flags: longint;
     target_guid: uInt64;
     target_x, target_y, target_z: single;
@@ -105,7 +107,7 @@ type
 
     // object fields
     // -------------------------------------------------------------------------
-    speed_walk, speed_run, speed_run_back, speed_swim, speed_swim_back: single;
+    speed_walk, speed_run, speed_run_back, speed_swim, speed_swim_back, speed_flight, speed_flight_back: single;
     scale_x: single;
 
     // unit fields
@@ -170,6 +172,7 @@ type
     // other stuff
     // -------------------------------------------------------------------------
     selection: uInt64;
+    flight_mode: boolean;
 
     VR: CValuesRecord;
 
@@ -197,7 +200,7 @@ type
   TWorldUnit = class
     woGUID: uInt64;
     woLoc: TLoc;
-    woSpeedWalk, woSpeedRun, woSpeedRunBack, woSpeedSwim, woSpeedSwimBack: single;
+    woSpeedWalk, woSpeedRun, woSpeedRunBack, woSpeedSwim, woSpeedSwimBack, woSpeedFlight, woSpeedFlightBack: single;
     woScaleX: single;
     woEntry: longint;
 
@@ -257,6 +260,7 @@ end;
 constructor TCharData.Create;
 begin
   VR:= CValuesRecord.Create;
+  flight_mode:= false;
 end;
 procedure TCharData.Free;
 begin
@@ -397,6 +401,8 @@ begin
   woSpeedRunBack:=4.5;
   woSpeedSwim:=4.7;
   woSpeedSwimBack:=2.5;
+  woSpeedFlight:=9.0;
+  woSpeedFlightBack:=4.5;
   woScaleX:=1.0;
   woEntry:=entry;
 

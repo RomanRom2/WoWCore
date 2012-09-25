@@ -45,12 +45,14 @@ begin
         begin
           m.Enum[k].inventory[0][j].displayID:= 0;
           m.Enum[k].inventory[0][j].inventoryType:= 0;
+          m.Enum[k].inventory[0][j].auraID:= 0;
           mainlog('DB_GetEnumCharList: ItemEntry='+strr(e)+', ItemTPL is nil.');
         end
         else
         begin
           m.Enum[k].inventory[0][j].displayID:= ItemTPL[e].DisplayInfoID;
           m.Enum[k].inventory[0][j].inventoryType:= ItemTPL[e].InventoryTypeID;
+          m.Enum[k].inventory[0][j].auraID:= 0;
         end;
       end;
 
@@ -120,3 +122,4 @@ begin
 end;
 
 end.
+

@@ -97,6 +97,8 @@ begin
   s:= s + '[.orc]     - Orc Start'#13;
   s:= s + '[.undead]  - Undead Start'#13;
   s:= s + '[.tauren]  - Tauren Start'#13;
+  s:= s + '[.dra]     - Draenei Start'#0;
+  s:= s + '[.belf]    - Blood Elf Start'#0;
   s:= s + '------------'#13;
   s:= s + '[.gols]    - Goldshire'#13;
   s:= s + '[.storm]   - Stormwind'#13;
@@ -118,7 +120,18 @@ function cmd_SetFlightMode(var sender: TWorldUser; p1,p2,p3,p4: string): boolean
 begin
   result:= true;
 
-  sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is not supported in Classic');
+  if sender.CharData.flight_mode then
+  begin
+    ListWorldUsers.Send_UpdateFromPlayer_UnsetCanFly(sender.CharData.Enum.GUID);
+    sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is OFF');
+    sender.CharData.flight_mode:= false;
+  end
+  else
+  begin
+    ListWorldUsers.Send_UpdateFromPlayer_SetCanFly(sender.CharData.Enum.GUID);
+    sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is ON');
+    sender.CharData.flight_mode:= true;
+  end;
 end;
 function cmd_SetSpeed(var sender: TWorldUser; p1,p2,p3,p4: string): boolean;
 begin
@@ -126,9 +139,11 @@ begin
 
   sender.CharData.speed_run:= str2single(p1);
   sender.CharData.speed_swim:= str2single(p1);
+  sender.CharData.speed_flight:= str2single(p1);
 
   ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
   ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+  ListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_flight);
 
   sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Speed sets to '+single2str(str2single(p1), 2));
 end;
@@ -356,6 +371,7 @@ begin
   n:= Length(sender.CharData.VR.Values);
   GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
   GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+  GOSSIP_MESSAGE.Entry:= WO_ITEM;
   GOSSIP_MESSAGE.NPCTextID:= n;
 
   if n > GOSSIP_MENU_COUNT then
@@ -365,7 +381,9 @@ begin
       m.Option:= $10000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(ItemTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -373,7 +391,9 @@ begin
     m.Option:= $11000000 +2;
     m.IconID:= GOSSIP_ACTION_GOSSIP;
     m.InputBox:= 0;
+    m.PayCost:= 0;
     m.Title:= '<next page>';
+    m.PayText:= '';
 
     GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
   end
@@ -384,7 +404,9 @@ begin
       m.Option:= $10000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(ItemTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -429,7 +451,7 @@ begin
 
           s:= 'Creature ID '+strr(woUnit.woEntry)+' was created with GUID '+int64tohex(OBJ.woGUID);
           sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', s);
-          s:= CreatureTPL[woUnit.woEntry].Name[0]+', model '+strr(CreatureTPL[woUnit.woEntry].DisplayID);
+          s:= CreatureTPL[woUnit.woEntry].Name[0]+', model '+strr(CreatureTPL[woUnit.woEntry].DisplayID[0]);
           sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', s);
         end;
     end
@@ -461,6 +483,7 @@ begin
   n:= Length(sender.CharData.VR.Values);
   GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
   GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+  GOSSIP_MESSAGE.Entry:= WO_UNIT;
   GOSSIP_MESSAGE.NPCTextID:= n;
 
   if n > GOSSIP_MENU_COUNT then
@@ -470,7 +493,9 @@ begin
       m.Option:= $20000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -478,7 +503,9 @@ begin
     m.Option:= $22000000 +2;
     m.IconID:= GOSSIP_ACTION_GOSSIP;
     m.InputBox:= 0;
+    m.PayCost:= 0;
     m.Title:= '<next page>';
+    m.PayText:= '';
 
     GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
   end
@@ -489,7 +516,9 @@ begin
       m.Option:= $20000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -539,7 +568,7 @@ begin
   end
   else
     if CreatureTPL[vall(p1)].Name[0] <> '' then
-      ParseCommand(sender, '.mom '+strr(CreatureTPL[vall(p1)].DisplayID));
+      ParseCommand(sender, '.mom '+strr(CreatureTPL[vall(p1)].DisplayID[0]));
 end;
 function cmd_MountByModel(var sender: TWorldUser; p1,p2,p3,p4: string): boolean;
 var
@@ -581,6 +610,7 @@ begin
   n:= Length(sender.CharData.VR.Values);
   GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
   GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+  GOSSIP_MESSAGE.Entry:= WO_PLAYER;
   GOSSIP_MESSAGE.NPCTextID:= n;
 
   if n > GOSSIP_MENU_COUNT then
@@ -590,7 +620,9 @@ begin
       m.Option:= $40000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -598,7 +630,9 @@ begin
     m.Option:= $44000000 +2;
     m.IconID:= GOSSIP_ACTION_GOSSIP;
     m.InputBox:= 0;
+    m.PayCost:= 0;
     m.Title:= '<next page>';
+    m.PayText:= '';
 
     GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
   end
@@ -609,7 +643,9 @@ begin
       m.Option:= $40000000 + sender.CharData.VR.Values[i];
       m.IconID:= GOSSIP_ACTION_INNKEEPER;
       m.InputBox:= 0;
+      m.PayCost:= 0;
       m.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[i]].Name[0] + ' (' + strr(sender.CharData.VR.Values[i]) + ')');
+      m.PayText:= '';
 
       GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, m);
     end;
@@ -787,8 +823,10 @@ begin
     if command='.orc' then     begin result:=true; sender.Teleport( 1,   14,   -618.518005,  -4251.669922,  38.717999,   0.0); end;
     if command='.undead' then  begin result:=true; sender.Teleport( 0,   85,   1676.349976,  1677.449951,   121.669998,  2.705260); end;
     if command='.tauren' then  begin result:=true; sender.Teleport( 1,   215,  -2917.580078, -257.980011,   52.996799,   0.0); end;
+    if command='.dra' then     begin result:=true; sender.Teleport( 530, 3524, -3961.639893, -13931.200195, 100.614998,  2.083644); end;
+    if command='.belf' then    begin result:=true; sender.Teleport( 530, 3430, 10349.599609, -6357.290039,  33.402599,   5.316046); end;
 
-    if command='.golds' then   begin result:=true; sender.Teleport( 0, 12, -9457.468750, 54.702946, 56.208504, 2.192810); end;  // .go 0 -9457 54 57
+    if command='.golds' then   begin result:=true; sender.Teleport( 0, 12, -9457.468750, 54.702946, 56.208504, 2.192810); end;
     if command='.storm' then   begin result:=true; sender.Teleport( 0, 12, -9125.579102, 396.515106, 91.941780, 0.612589); end;
     if command='.iron' then    begin result:=true; sender.Teleport( 0, 1, -5049.721191, -778.815369, 494.001740, 5.106645); end;
   end;

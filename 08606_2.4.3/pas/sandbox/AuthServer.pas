@@ -138,7 +138,7 @@ var
   Hasher: TLbSHA1;
   LP: AnsiString;
 begin
-  LoginUser := TLoginUser(p);
+  LoginUser:= TLoginUser(p);
 
   s:= '';
   for i:= 1 to LoginUser.RBuf[33] do
@@ -155,8 +155,10 @@ begin
     MainLog('Version mismatch. Upgrade the SandBox.',1,0,0);
 
     LoginUser.SBuf[0]:= AUTH_LOGON_CHALLENGE;
-    LoginUser.SBuf[1]:= AUTH_INVALID_VERSION;
-    LoginUser.SockSend(2);
+    LoginUser.SBuf[1]:= 0;
+    LoginUser.SBuf[2]:= AUTH_INVALID_VERSION;
+    LoginUser.SBuf[3]:= 0;
+    LoginUser.SockSend(4);
 
     exit;
   end;
@@ -170,8 +172,10 @@ begin
       MainLog('['+s+'] Already Logged to Realm', 1,0,0);
 
       LoginUser.SBuf[0]:= AUTH_LOGON_CHALLENGE;
-      LoginUser.SBuf[1]:= AUTH_ALREADY_LOGGED;
-      LoginUser.SockSend(2);
+      LoginUser.SBuf[1]:= 0;
+      LoginUser.SBuf[2]:= AUTH_ALREADY_LOGGED;
+      LoginUser.SBuf[3]:= 0;
+      LoginUser.SockSend(4);
 
       exit;
     end;
@@ -184,8 +188,10 @@ begin
       MainLog('['+s+'] Already Logged to World', 1,0,0);
 
       LoginUser.SBuf[0]:= AUTH_LOGON_CHALLENGE;
-      LoginUser.SBuf[1]:= AUTH_ALREADY_LOGGED;
-      LoginUser.SockSend(2);
+      LoginUser.SBuf[1]:= 0;
+      LoginUser.SBuf[2]:= AUTH_ALREADY_LOGGED;
+      LoginUser.SBuf[3]:= 0;
+      LoginUser.SockSend(4);
 
       exit;
     end;
@@ -236,6 +242,8 @@ var
 begin
   LoginUser:= TLoginUser(p);
 
+  MainLog('AUTH_LOGON_PROOF ['+LoginUser.AccountName+']');
+
   Move(LoginUser.RBuf[1], LoginUser.Data.SRP6_A, 32);
   Move(LoginUser.RBuf[33], LoginUser.Data.SRP6_M1, 20);
 
@@ -248,18 +256,17 @@ begin
     LoginUser.SBuf[0]:= AUTH_LOGON_PROOF;
     LoginUser.SBuf[1]:= AUTH_OK;
     Move(LoginUser.Data.SRP6_M2[0], LoginUser.SBuf[2], 20);
-    LoginUser.SockSend(2+20+4);
+    LoginUser.SockSend(2+20+4 +6); // BK: +6 bytes
   end
   else
   begin
     MainLog('Password is incorrect', 1,0,0);
 
-    for i:=0 to 4 do
-      LoginUser.SBuf[i]:= 0;
-
     LoginUser.SBuf[0]:= AUTH_LOGON_PROOF;
     LoginUser.SBuf[1]:= AUTH_NOT_VALID;
-    LoginUser.SockSend(2)
+    LoginUser.SBuf[2]:= 0;
+    LoginUser.SBuf[3]:= 0;
+    LoginUser.SockSend(4)
   end;
 end;
 procedure AuthServer_ReconnectChallenge(p: pointer);
@@ -268,7 +275,7 @@ var
   i: longint;
   s: string;
 begin
-  LoginUser := TLoginUser(p);
+  LoginUser:= TLoginUser(p);
 
   s:= '';
   for i:= 1 to LoginUser.RBuf[33] do
@@ -312,7 +319,9 @@ var
   ABuf: array of Byte;
   found: boolean;
 begin
-  LoginUser := TLoginUser(p);
+  LoginUser:= TLoginUser(p);
+
+  MainLog('AUTH_RECONNECT_PROOF ['+LoginUser.AccountName+']');
 
   move(LoginUser.RBuf[1], LoginUser.ReconnectClientSeed[0], 16);
   move(LoginUser.RBuf[17], LoginUser.ReconnectClientDigest[0], 20);
@@ -325,7 +334,7 @@ begin
     begin
       MainLog('['+LoginUser.AccountName+'] found in the World', 1,0,0);
       found:= true;
-      move(ListWorldUsers.UserByIndex[i].KEY[0], LoginUser.Data.Session[0], 40);
+      move(ListWorldUsers.UserByIndex[i].SessionKey[0], LoginUser.Data.Session[0], 40);
     end;
 
   if not found then
@@ -334,7 +343,9 @@ begin
     MainLog('['+LoginUser.AccountName+'] is not found in the World', 1,0,0);
     LoginUser.SBuf[0]:= AUTH_RECONNECT_PROOF;
     LoginUser.SBuf[1]:= 1;
-    LoginUser.SockSend(2);
+    LoginUser.SBuf[2]:= 0;
+    LoginUser.SBuf[3]:= 0;
+    LoginUser.SockSend(4);
 
     exit;
   end;
@@ -360,13 +371,17 @@ begin
 
       LoginUser.SBuf[0]:= AUTH_RECONNECT_PROOF;
       LoginUser.SBuf[1]:= 1;
-      LoginUser.SockSend(2);
+      LoginUser.SBuf[2]:= 0;
+      LoginUser.SBuf[3]:= 0;
+      LoginUser.SockSend(4);
       exit;
     end;
 
   LoginUser.SBuf[0]:= AUTH_RECONNECT_PROOF;
   LoginUser.SBuf[1]:= AUTH_OK;
-  LoginUser.SockSend(2);
+  LoginUser.SBuf[2]:= 0;
+  LoginUser.SBuf[3]:= 0;
+  LoginUser.SockSend(4);
 end;
 procedure AuthServer_RealmList(p: pointer);
 var
@@ -375,18 +390,18 @@ var
 begin
   LoginUser:= TLoginUser(p);
 
+  MainLog('AUTH_REALM_LIST ['+LoginUser.AccountName+']');
+
   pktInitCmd(LoginUser.SBuf, AUTH_REALM_LIST);
   pktAddLong(LoginUser.SBuf, 0);
 
-  pktAddByte(LoginUser.SBuf, 1); // count of realms
+  pktAddWord(LoginUser.SBuf, 1); // 2.0.8 byte->word
   for i:= 1 to 1 do
   begin
     pktAddByte(LoginUser.SBuf, 0); // role
     pktAddByte(LoginUser.SBuf, 0); // lock
     pktAddByte(LoginUser.SBuf, 0); // status
-    pktAddByte(LoginUser.SBuf, 0);
-    pktAddByte(LoginUser.SBuf, 0); // flags
-    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 1.12.1'+#0);
+    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 2.4.3'+#0);
     pktAddStr(LoginUser.SBuf, REALM_ADDR+':7000'+#0);
     pktAddFloat(LoginUser.SBuf, 0); // load
     pktAddByte(LoginUser.SBuf, 0); // chars

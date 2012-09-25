@@ -148,11 +148,11 @@ begin
   AreaTriggerDBC[id].action:=1;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-4839.509766;
-  AreaTriggerDBC[id].target_posy:=-1317.739990;
-  AreaTriggerDBC[id].target_posz:=501.868011;
-  AreaTriggerDBC[id].target_posf:=1.483530;
-  AreaTriggerDBC[id].trigger_title:='metro - ironforge';
+  AreaTriggerDBC[id].target_posx:=-4838.954102;
+  AreaTriggerDBC[id].target_posy:=-1318.460205;
+  AreaTriggerDBC[id].target_posz:=501.867920;
+  AreaTriggerDBC[id].target_posf:=1.423718;
+  AreaTriggerDBC[id].trigger_title:='Deeprun Tram - Ironforge Entrance (inside)';
 
   id:=2171;
   AreaTriggerDBC[id].Entry:=2171;
@@ -168,11 +168,11 @@ begin
   AreaTriggerDBC[id].action:=1;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-8354.230469;
-  AreaTriggerDBC[id].target_posy:=524.067993;
-  AreaTriggerDBC[id].target_posz:=91.797096;
-  AreaTriggerDBC[id].target_posf:=2.356195;
-  AreaTriggerDBC[id].trigger_title:='metro - stormwind';
+  AreaTriggerDBC[id].target_posx:=-8364.570313;
+  AreaTriggerDBC[id].target_posy:=535.980896;
+  AreaTriggerDBC[id].target_posz:=91.796860;
+  AreaTriggerDBC[id].target_posf:=2.246191;
+  AreaTriggerDBC[id].trigger_title:='Deeprun Tram - Stormwind Entrance (inside)';
 
   id:=2173;
   AreaTriggerDBC[id].Entry:=2173;
@@ -188,11 +188,11 @@ begin
   AreaTriggerDBC[id].action:=1;
   AreaTriggerDBC[id].target_map:=369;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=67.760696;
-  AreaTriggerDBC[id].target_posy:=2490.979980;
-  AreaTriggerDBC[id].target_posz:=-4.296490;
-  AreaTriggerDBC[id].target_posf:=3.141593;
-  AreaTriggerDBC[id].trigger_title:='stormwind - metro';
+  AreaTriggerDBC[id].target_posx:=68.300598;
+  AreaTriggerDBC[id].target_posy:=2490.910156;
+  AreaTriggerDBC[id].target_posz:=-4.296469;
+  AreaTriggerDBC[id].target_posf:=3.121915;
+  AreaTriggerDBC[id].trigger_title:='Deeprun Tram - Stormwind Entrance';
 
   id:=2175;
   AreaTriggerDBC[id].Entry:=2175;
@@ -208,11 +208,11 @@ begin
   AreaTriggerDBC[id].action:=1;
   AreaTriggerDBC[id].target_map:=369;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=69.227699;
-  AreaTriggerDBC[id].target_posy:=10.393200;
-  AreaTriggerDBC[id].target_posz:=-4.296650;
-  AreaTriggerDBC[id].target_posf:=3.141593;
-  AreaTriggerDBC[id].trigger_title:='ironforge - metro';
+  AreaTriggerDBC[id].target_posx:=69.254242;
+  AreaTriggerDBC[id].target_posy:=10.256980;
+  AreaTriggerDBC[id].target_posz:=-4.296640;
+  AreaTriggerDBC[id].target_posf:=3.098323;
+  AreaTriggerDBC[id].trigger_title:='Deeprun Tram - Ironforge Entrance';
 
   id:=2187;
   AreaTriggerDBC[id].Entry:=2187;
@@ -385,14 +385,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=10.000000;
   AreaTriggerDBC[id].trigger_box_height:=10.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=329;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=3590.870117;
-  AreaTriggerDBC[id].target_posy:=-3643.219971;
-  AreaTriggerDBC[id].target_posz:=138.490997;
-  AreaTriggerDBC[id].target_posf:=5.497787;
-  AreaTriggerDBC[id].trigger_title:='Eastern Plaguelands - Stratholme';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2216;
   AreaTriggerDBC[id].Entry:=2216;
@@ -445,14 +445,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=17.940001;
   AreaTriggerDBC[id].trigger_box_height:=27.920000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=3233.060059;
-  AreaTriggerDBC[id].target_posy:=-4048.300049;
-  AreaTriggerDBC[id].target_posz:=108.442001;
-  AreaTriggerDBC[id].target_posf:=2.007129;
-  AreaTriggerDBC[id].trigger_title:='Stratholme - Eastern Plaguelands';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2226;
   AreaTriggerDBC[id].Entry:=2226;
@@ -465,14 +465,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=12.190000;
   AreaTriggerDBC[id].trigger_box_height:=25.559999;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1814.989990;
-  AreaTriggerDBC[id].target_posy:=-4419.229980;
-  AreaTriggerDBC[id].target_posz:=-18.815100;
-  AreaTriggerDBC[id].target_posf:=1.919862;
-  AreaTriggerDBC[id].trigger_title:='Ragefire Chasm - Orgrimmar';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2230;
   AreaTriggerDBC[id].Entry:=2230;
@@ -485,14 +485,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=11.830000;
   AreaTriggerDBC[id].trigger_box_height:=21.219999;
   AreaTriggerDBC[id].trigger_box_yaw:=0.576000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=389;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=0.797643;
-  AreaTriggerDBC[id].target_posy:=-8.234290;
-  AreaTriggerDBC[id].target_posz:=-15.528800;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='Orgrimmar - Ragefire Chasm';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2246;
   AreaTriggerDBC[id].Entry:=2246;
@@ -592,7 +592,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2267;
   AreaTriggerDBC[id].Entry:=2267;
@@ -612,7 +612,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2286;
   AreaTriggerDBC[id].Entry:=2286;
@@ -632,7 +632,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2287;
   AreaTriggerDBC[id].Entry:=2287;
@@ -652,7 +652,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2327;
   AreaTriggerDBC[id].Entry:=2327;
@@ -861,9 +861,9 @@ begin
   AreaTriggerDBC[id].trigger_posy:=16318.099609;
   AreaTriggerDBC[id].trigger_posz:=69.444397;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
-  AreaTriggerDBC[id].trigger_box_length:=22.809999;
-  AreaTriggerDBC[id].trigger_box_width:=7.639000;
-  AreaTriggerDBC[id].trigger_box_height:=25.639999;
+  AreaTriggerDBC[id].trigger_box_length:=22.830000;
+  AreaTriggerDBC[id].trigger_box_width:=7.667000;
+  AreaTriggerDBC[id].trigger_box_height:=25.670000;
   AreaTriggerDBC[id].trigger_box_yaw:=2.601000;
   AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
@@ -981,18 +981,18 @@ begin
   AreaTriggerDBC[id].trigger_posy:=-4233.600098;
   AreaTriggerDBC[id].trigger_posz:=56.155701;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
-  AreaTriggerDBC[id].trigger_box_length:=12.420000;
-  AreaTriggerDBC[id].trigger_box_width:=11.920000;
-  AreaTriggerDBC[id].trigger_box_height:=15.060000;
+  AreaTriggerDBC[id].trigger_box_length:=12.440000;
+  AreaTriggerDBC[id].trigger_box_width:=11.940000;
+  AreaTriggerDBC[id].trigger_box_height:=15.080000;
   AreaTriggerDBC[id].trigger_box_yaw:=5.777000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=450;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=222.220001;
-  AreaTriggerDBC[id].target_posy:=74.457001;
-  AreaTriggerDBC[id].target_posz:=25.720900;
-  AreaTriggerDBC[id].target_posf:=0.610865;
-  AreaTriggerDBC[id].trigger_title:='Orgrimmar - Hall of Legends';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2530;
   AreaTriggerDBC[id].Entry:=2530;
@@ -1005,25 +1005,25 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=10.000000;
   AreaTriggerDBC[id].trigger_box_height:=10.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=3.595000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1637.910034;
-  AreaTriggerDBC[id].target_posy:=-4240.250000;
-  AreaTriggerDBC[id].target_posz:=56.174400;
-  AreaTriggerDBC[id].target_posf:=3.926991;
-  AreaTriggerDBC[id].trigger_title:='Hall of Legends - Orgrimmar';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2532;
   AreaTriggerDBC[id].Entry:=2532;
   AreaTriggerDBC[id].trigger_continent_id:=0;
-  AreaTriggerDBC[id].trigger_posx:=-8768.080078;
-  AreaTriggerDBC[id].trigger_posy:=409.204987;
-  AreaTriggerDBC[id].trigger_posz:=103.920998;
+  AreaTriggerDBC[id].trigger_posx:=-8768.525391;
+  AreaTriggerDBC[id].trigger_posy:=409.835663;
+  AreaTriggerDBC[id].trigger_posz:=103.920647;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
-  AreaTriggerDBC[id].trigger_box_length:=8.806000;
-  AreaTriggerDBC[id].trigger_box_width:=4.306000;
-  AreaTriggerDBC[id].trigger_box_height:=7.806000;
+  AreaTriggerDBC[id].trigger_box_length:=8.833000;
+  AreaTriggerDBC[id].trigger_box_width:=4.333000;
+  AreaTriggerDBC[id].trigger_box_height:=7.833000;
   AreaTriggerDBC[id].trigger_box_yaw:=2.251000;
   AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
@@ -1037,13 +1037,13 @@ begin
   id:=2534;
   AreaTriggerDBC[id].Entry:=2534;
   AreaTriggerDBC[id].trigger_continent_id:=449;
-  AreaTriggerDBC[id].trigger_posx:=-0.199573;
-  AreaTriggerDBC[id].trigger_posy:=-1.591120;
+  AreaTriggerDBC[id].trigger_posx:=-0.358041;
+  AreaTriggerDBC[id].trigger_posy:=-1.979860;
   AreaTriggerDBC[id].trigger_posz:=-0.255884;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
-  AreaTriggerDBC[id].trigger_box_length:=4.806000;
-  AreaTriggerDBC[id].trigger_box_width:=4.861000;
-  AreaTriggerDBC[id].trigger_box_height:=8.250000;
+  AreaTriggerDBC[id].trigger_box_length:=7.306000;
+  AreaTriggerDBC[id].trigger_box_width:=3.833000;
+  AreaTriggerDBC[id].trigger_box_height:=6.194000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
   AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
@@ -1125,14 +1125,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=13.030000;
   AreaTriggerDBC[id].trigger_box_height:=21.670000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.471200;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=289;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=190.819000;
-  AreaTriggerDBC[id].target_posy:=126.329002;
-  AreaTriggerDBC[id].target_posz:=137.227005;
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='wetlands - scholomance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2568;
   AreaTriggerDBC[id].Entry:=2568;
@@ -1145,26 +1145,26 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=8.889000;
   AreaTriggerDBC[id].trigger_box_height:=16.389999;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1273.910034;
-  AreaTriggerDBC[id].target_posy:=-2553.090088;
-  AreaTriggerDBC[id].target_posz:=91.839302;
-  AreaTriggerDBC[id].target_posf:=3.577925;
-  AreaTriggerDBC[id].trigger_title:='sholomance - wetlands';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2606;
   AreaTriggerDBC[id].Entry:=2606;
   AreaTriggerDBC[id].trigger_continent_id:=30;
-  AreaTriggerDBC[id].trigger_posx:=-723.593994;
-  AreaTriggerDBC[id].trigger_posy:=-707.598999;
-  AreaTriggerDBC[id].trigger_posz:=52.884800;
+  AreaTriggerDBC[id].trigger_posx:=-1510.089966;
+  AreaTriggerDBC[id].trigger_posy:=-715.864014;
+  AreaTriggerDBC[id].trigger_posz:=48.877399;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
   AreaTriggerDBC[id].trigger_box_length:=9.556000;
   AreaTriggerDBC[id].trigger_box_width:=14.060000;
   AreaTriggerDBC[id].trigger_box_height:=16.170000;
-  AreaTriggerDBC[id].trigger_box_yaw:=5.306000;
+  AreaTriggerDBC[id].trigger_box_yaw:=0.722500;
   AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
@@ -1212,7 +1212,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2626;
   AreaTriggerDBC[id].Entry:=2626;
@@ -1585,14 +1585,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=249;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=30.891600;
-  AreaTriggerDBC[id].target_posy:=-54.078999;
-  AreaTriggerDBC[id].target_posz:=-5.027840;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='Dustwallow Marsh - Onyxia''s Lair';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=2886;
   AreaTriggerDBC[id].Entry:=2886;

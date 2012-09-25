@@ -25,14 +25,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=189;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1687.270020;
-  AreaTriggerDBC[id].target_posy:=1050.089966;
-  AreaTriggerDBC[id].target_posz:=18.677299;
-  AreaTriggerDBC[id].target_posf:=1.570796;
-  AreaTriggerDBC[id].trigger_title:='Tirisfal Glades - Scarlet Monastery';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=60;
   AreaTriggerDBC[id].Entry:=60;
@@ -52,7 +52,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='test';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=71;
   AreaTriggerDBC[id].Entry:=71;
@@ -72,7 +72,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Westfall Inn, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=78;
   AreaTriggerDBC[id].Entry:=78;
@@ -85,14 +85,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=36;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-14.573200;
-  AreaTriggerDBC[id].target_posy:=-385.475006;
-  AreaTriggerDBC[id].target_posz:=62.456100;
-  AreaTriggerDBC[id].target_posf:=1.570796;
-  AreaTriggerDBC[id].trigger_title:='Westfall - The Deadmines';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=81;
   AreaTriggerDBC[id].Entry:=81;
@@ -112,7 +112,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='test';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=83;
   AreaTriggerDBC[id].Entry:=83;
@@ -132,7 +132,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='test';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=84;
   AreaTriggerDBC[id].Entry:=84;
@@ -152,7 +152,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='test';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=87;
   AreaTriggerDBC[id].Entry:=87;
@@ -172,7 +172,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Jasperlode Mine, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=88;
   AreaTriggerDBC[id].Entry:=88;
@@ -192,7 +192,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Fargodeep Mine, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=95;
   AreaTriggerDBC[id].Entry:=95;
@@ -212,7 +212,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: AlteracValley, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=97;
   AreaTriggerDBC[id].Entry:=97;
@@ -232,7 +232,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Frostmane Hold, Dun Morogh, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=98;
   AreaTriggerDBC[id].Entry:=98;
@@ -252,7 +252,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Nesingware''s Expedition, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=100;
   AreaTriggerDBC[id].Entry:=100;
@@ -272,7 +272,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Night Web''s Hollow, Tirisfall glades, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=101;
   AreaTriggerDBC[id].Entry:=101;
@@ -285,14 +285,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=9.694000;
   AreaTriggerDBC[id].trigger_box_height:=7.444000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.663200;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=34;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=48.984901;
-  AreaTriggerDBC[id].target_posy:=0.483882;
-  AreaTriggerDBC[id].target_posz:=-16.394199;
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Stormwind - The Stockade';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=107;
   AreaTriggerDBC[id].Entry:=107;
@@ -312,7 +312,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Stormwind - The Stockade2 CLOSED';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=109;
   AreaTriggerDBC[id].Entry:=109;
@@ -332,7 +332,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Stormwind - The Stockade3 CLOSED';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=119;
   AreaTriggerDBC[id].Entry:=119;
@@ -345,14 +345,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-11208.700195;
-  AreaTriggerDBC[id].target_posy:=1675.900024;
-  AreaTriggerDBC[id].target_posz:=24.573299;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='The Deadmines - Westfall';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=121;
   AreaTriggerDBC[id].Entry:=121;
@@ -365,14 +365,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-11339.900391;
-  AreaTriggerDBC[id].target_posy:=1572.449951;
-  AreaTriggerDBC[id].target_posz:=94.391602;
-  AreaTriggerDBC[id].target_posf:=1.570796;
-  AreaTriggerDBC[id].trigger_title:='The Deadmines - Westfall';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=145;
   AreaTriggerDBC[id].Entry:=145;
@@ -385,14 +385,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=33;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-228.190994;
-  AreaTriggerDBC[id].target_posy:=2111.409912;
-  AreaTriggerDBC[id].target_posz:=76.890404;
-  AreaTriggerDBC[id].target_posf:=1.221731;
-  AreaTriggerDBC[id].trigger_title:='Silverpine Forest - Shadowfang Keep';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=168;
   AreaTriggerDBC[id].Entry:=168;
@@ -412,7 +412,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Frostmane Hold, Dun Morogh, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=169;
   AreaTriggerDBC[id].Entry:=169;
@@ -432,7 +432,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Frostmane Hold, Dun Morogh, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=171;
   AreaTriggerDBC[id].Entry:=171;
@@ -452,7 +452,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Frostmane Hold, Dun Morogh, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=173;
   AreaTriggerDBC[id].Entry:=173;
@@ -472,7 +472,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Dead Field, Silvepine Forest, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=175;
   AreaTriggerDBC[id].Entry:=175;
@@ -492,7 +492,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Event?: Dun Algaz, Wetlands';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=178;
   AreaTriggerDBC[id].Entry:=178;
@@ -512,7 +512,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Event?: Strahnbrad, Alterac Mountains';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=194;
   AreaTriggerDBC[id].Entry:=194;
@@ -525,14 +525,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-233.011002;
-  AreaTriggerDBC[id].target_posy:=1567.500000;
-  AreaTriggerDBC[id].target_posz:=76.892097;
-  AreaTriggerDBC[id].target_posf:=4.276057;
-  AreaTriggerDBC[id].trigger_title:='Shadowfang Keep - Silverpine Forest';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=196;
   AreaTriggerDBC[id].Entry:=196;
@@ -552,7 +552,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Savage Coast, Stranglethorn Vale';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=197;
   AreaTriggerDBC[id].Entry:=197;
@@ -572,7 +572,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Fargodeep Mine, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=205;
   AreaTriggerDBC[id].Entry:=205;
@@ -592,7 +592,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Event?: The Venture Co. Mine, Mulgore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=216;
   AreaTriggerDBC[id].Entry:=216;
@@ -612,7 +612,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Forgotton Pools, The Barrens, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=217;
   AreaTriggerDBC[id].Entry:=217;
@@ -632,7 +632,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E, teleport?: Shadowglen, Teldrassil, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=218;
   AreaTriggerDBC[id].Entry:=218;
@@ -652,7 +652,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E, teleport?: Starbreeze Village. Teldrassil, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=219;
   AreaTriggerDBC[id].Entry:=219;
@@ -672,7 +672,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E, teleport?: Pools of Arlithrien, Teldrassil, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=220;
   AreaTriggerDBC[id].Entry:=220;
@@ -692,7 +692,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E, teleport?: The Oracle Glade, Teldrassil, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=223;
   AreaTriggerDBC[id].Entry:=223;
@@ -712,7 +712,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Masters Glaive, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=224;
   AreaTriggerDBC[id].Entry:=224;
@@ -732,7 +732,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Masters Glaive, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=225;
   AreaTriggerDBC[id].Entry:=225;
@@ -752,7 +752,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: The Masters Glaive, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=226;
   AreaTriggerDBC[id].Entry:=226;
@@ -765,14 +765,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-738.461975;
-  AreaTriggerDBC[id].target_posy:=-2217.800049;
-  AreaTriggerDBC[id].target_posz:=16.919001;
-  AreaTriggerDBC[id].target_posf:=6.021387;
-  AreaTriggerDBC[id].trigger_title:='Wailing Caverns - The Barrens';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=228;
   AreaTriggerDBC[id].Entry:=228;
@@ -785,14 +785,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=43;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-158.440994;
-  AreaTriggerDBC[id].target_posy:=131.600998;
-  AreaTriggerDBC[id].target_posz:=-74.255203;
-  AreaTriggerDBC[id].target_posf:=5.846854;
-  AreaTriggerDBC[id].trigger_title:='The Barrens - Wailing Caverns';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=230;
   AreaTriggerDBC[id].Entry:=230;
@@ -812,7 +812,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Bashal'' Aran, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=231;
   AreaTriggerDBC[id].Entry:=231;
@@ -832,7 +832,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=232;
   AreaTriggerDBC[id].Entry:=232;
@@ -852,7 +852,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=233;
   AreaTriggerDBC[id].Entry:=233;
@@ -872,7 +872,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Twilight Vale, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=234;
   AreaTriggerDBC[id].Entry:=234;
@@ -892,7 +892,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Blackwood Den Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=235;
   AreaTriggerDBC[id].Entry:=235;
@@ -912,7 +912,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Twilight Vale, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=236;
   AreaTriggerDBC[id].Entry:=236;
@@ -932,7 +932,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Twilight Vale, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=237;
   AreaTriggerDBC[id].Entry:=237;
@@ -952,7 +952,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Twilight Vale, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=238;
   AreaTriggerDBC[id].Entry:=238;
@@ -972,7 +972,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Cliffspring River, Darkshore, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=239;
   AreaTriggerDBC[id].Entry:=239;
@@ -992,7 +992,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Ashenvale, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=242;
   AreaTriggerDBC[id].Entry:=242;
@@ -1005,14 +1005,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-4463.319824;
-  AreaTriggerDBC[id].target_posy:=-1664.290039;
-  AreaTriggerDBC[id].target_posz:=84.048897;
-  AreaTriggerDBC[id].target_posf:=3.926991;
-  AreaTriggerDBC[id].trigger_title:='Razorfen Kraul - The Barrens';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=244;
   AreaTriggerDBC[id].Entry:=244;
@@ -1025,14 +1025,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=47;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1942.270020;
-  AreaTriggerDBC[id].target_posy:=1544.229980;
-  AreaTriggerDBC[id].target_posz:=83.305496;
-  AreaTriggerDBC[id].target_posf:=1.308997;
-  AreaTriggerDBC[id].trigger_title:='The Barrens - Razorfen Kraul';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=246;
   AreaTriggerDBC[id].Entry:=246;
@@ -1052,7 +1052,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Thousand Needles';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=254;
   AreaTriggerDBC[id].Entry:=254;
@@ -1072,7 +1072,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: event? Shadowfang Keep';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=255;
   AreaTriggerDBC[id].Entry:=255;
@@ -1092,7 +1092,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: event? Shadowfang Keep';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=256;
   AreaTriggerDBC[id].Entry:=256;
@@ -1112,7 +1112,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: event? Shadowfang Keep';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=257;
   AreaTriggerDBC[id].Entry:=257;
@@ -1132,7 +1132,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='T: Blackfathom Deeps, Unbuilt';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=259;
   AreaTriggerDBC[id].Entry:=259;
@@ -1152,7 +1152,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='T: Blackfathom Deeps, Unbuilt';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=262;
   AreaTriggerDBC[id].Entry:=262;
@@ -1172,7 +1172,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Razorfen Kraul';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=283;
   AreaTriggerDBC[id].Entry:=283;
@@ -1192,7 +1192,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Blackfathom Deeps, Unbuilt';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=284;
   AreaTriggerDBC[id].Entry:=284;
@@ -1212,7 +1212,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Stormwind, Old Town';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=286;
   AreaTriggerDBC[id].Entry:=286;
@@ -1232,7 +1232,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Stonesplinter Valley, Loch Modan';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=288;
   AreaTriggerDBC[id].Entry:=288;
@@ -1252,7 +1252,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Uldaman';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=302;
   AreaTriggerDBC[id].Entry:=302;
@@ -1272,7 +1272,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Sentry Point, Dustwallow Marsh';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=303;
   AreaTriggerDBC[id].Entry:=303;
@@ -1292,7 +1292,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Dustwallow Marsh';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=322;
   AreaTriggerDBC[id].Entry:=322;
@@ -1305,14 +1305,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-5162.569824;
-  AreaTriggerDBC[id].target_posy:=927.841003;
-  AreaTriggerDBC[id].target_posz:=257.177002;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='Gnomeregan';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=324;
   AreaTriggerDBC[id].Entry:=324;
@@ -1325,14 +1325,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=90;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-329.097992;
-  AreaTriggerDBC[id].target_posy:=-3.207220;
-  AreaTriggerDBC[id].target_posz:=-152.850998;
-  AreaTriggerDBC[id].target_posf:=2.967060;
-  AreaTriggerDBC[id].trigger_title:='Gnomeregan';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=342;
   AreaTriggerDBC[id].Entry:=342;
@@ -1352,7 +1352,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Jasperlode Mine, Aliance';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=362;
   AreaTriggerDBC[id].Entry:=362;
@@ -1372,7 +1372,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Temple of Atal'' Hakkar';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=382;
   AreaTriggerDBC[id].Entry:=382;
@@ -1392,7 +1392,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Stormwind, Old Town';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=422;
   AreaTriggerDBC[id].Entry:=422;
@@ -1412,7 +1412,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Desolace, Horde';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=442;
   AreaTriggerDBC[id].Entry:=442;
@@ -1425,14 +1425,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=129;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=2593.679932;
-  AreaTriggerDBC[id].target_posy:=1111.229980;
-  AreaTriggerDBC[id].target_posz:=50.951801;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='The Barrens - Razorfen Downs';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=444;
   AreaTriggerDBC[id].Entry:=444;
@@ -1445,14 +1445,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-4659.640137;
-  AreaTriggerDBC[id].target_posy:=-2524.239990;
-  AreaTriggerDBC[id].target_posz:=81.374001;
-  AreaTriggerDBC[id].target_posf:=0.785398;
-  AreaTriggerDBC[id].trigger_title:='Razorfen Downs - The Barrens';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=446;
   AreaTriggerDBC[id].Entry:=446;
@@ -1465,14 +1465,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=109;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-315.755859;
-  AreaTriggerDBC[id].target_posy:=100.706322;
-  AreaTriggerDBC[id].target_posz:=-131.848831;
-  AreaTriggerDBC[id].target_posf:=3.147876;
-  AreaTriggerDBC[id].trigger_title:='The Temple of Atal'' Hakkar - inside';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=448;
   AreaTriggerDBC[id].Entry:=448;
@@ -1485,14 +1485,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-10183.402344;
-  AreaTriggerDBC[id].target_posy:=-3993.271973;
-  AreaTriggerDBC[id].target_posz:=-109.194519;
-  AreaTriggerDBC[id].target_posf:=2.887124;
-  AreaTriggerDBC[id].trigger_title:='The Temple of Atal'' Hakkar - outside';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=462;
   AreaTriggerDBC[id].Entry:=462;
@@ -1512,7 +1512,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Razorfen Kraul';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=463;
   AreaTriggerDBC[id].Entry:=463;
@@ -1532,7 +1532,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Razorfen Kraul';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=482;
   AreaTriggerDBC[id].Entry:=482;
@@ -1552,7 +1552,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Razorfen Kraul';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=503;
   AreaTriggerDBC[id].Entry:=503;
@@ -1565,14 +1565,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-8766.110352;
-  AreaTriggerDBC[id].target_posy:=845.499023;
-  AreaTriggerDBC[id].target_posz:=87.995201;
-  AreaTriggerDBC[id].target_posf:=3.839725;
-  AreaTriggerDBC[id].trigger_title:='The Stockage - Stormwind';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=522;
   AreaTriggerDBC[id].Entry:=522;
@@ -1592,7 +1592,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Fray Island, The Barrens';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=523;
   AreaTriggerDBC[id].Entry:=523;
@@ -1605,14 +1605,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=90;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-737.344482;
-  AreaTriggerDBC[id].target_posy:=2.302013;
-  AreaTriggerDBC[id].target_posz:=-250.248611;
-  AreaTriggerDBC[id].target_posf:=3.145517;
-  AreaTriggerDBC[id].trigger_title:='Gnomeregan - in';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=525;
   AreaTriggerDBC[id].Entry:=525;
@@ -1625,14 +1625,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-4860.248535;
-  AreaTriggerDBC[id].target_posy:=758.040894;
-  AreaTriggerDBC[id].target_posz:=244.926178;
-  AreaTriggerDBC[id].target_posf:=4.642497;
-  AreaTriggerDBC[id].trigger_title:='Gnomeregan - out';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=527;
   AreaTriggerDBC[id].Entry:=527;
@@ -1652,7 +1652,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Darnassus';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=542;
   AreaTriggerDBC[id].Entry:=542;
@@ -1672,7 +1672,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Rut''theran Village, Teldrassil';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=562;
   AreaTriggerDBC[id].Entry:=562;
@@ -1692,7 +1692,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Lion''s Pride Inn, Goldshire';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=602;
   AreaTriggerDBC[id].Entry:=602;
@@ -1705,14 +1705,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=2915.340088;
-  AreaTriggerDBC[id].target_posy:=-801.580017;
-  AreaTriggerDBC[id].target_posz:=160.332993;
-  AreaTriggerDBC[id].target_posf:=3.490659;
-  AreaTriggerDBC[id].trigger_title:='Scarlet Monastery - Tirisfal Glades';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=604;
   AreaTriggerDBC[id].Entry:=604;
@@ -1725,14 +1725,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=2915.129883;
-  AreaTriggerDBC[id].target_posy:=-823.637024;
-  AreaTriggerDBC[id].target_posz:=160.326996;
-  AreaTriggerDBC[id].target_posf:=3.490659;
-  AreaTriggerDBC[id].trigger_title:='Scarlet Monastery - Tirisfal Glades';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=606;
   AreaTriggerDBC[id].Entry:=606;
@@ -1745,14 +1745,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=2885.959961;
-  AreaTriggerDBC[id].target_posy:=-835.802002;
-  AreaTriggerDBC[id].target_posz:=160.326996;
-  AreaTriggerDBC[id].target_posf:=0.349066;
-  AreaTriggerDBC[id].trigger_title:='Scarlet Monastery - Tirisfal Glades';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=608;
   AreaTriggerDBC[id].Entry:=608;
@@ -1765,14 +1765,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=2869.320068;
-  AreaTriggerDBC[id].target_posy:=-820.817993;
-  AreaTriggerDBC[id].target_posz:=160.332993;
-  AreaTriggerDBC[id].target_posf:=0.349066;
-  AreaTriggerDBC[id].trigger_title:='Scarlet Monastery - Tirisfal Glades';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=610;
   AreaTriggerDBC[id].Entry:=610;
@@ -1785,14 +1785,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=189;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=853.179016;
-  AreaTriggerDBC[id].target_posy:=1319.180054;
-  AreaTriggerDBC[id].target_posz:=18.671400;
-  AreaTriggerDBC[id].target_posf:=1.570796;
-  AreaTriggerDBC[id].trigger_title:='Tirisfal Glades - Scarlet Monastery';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=612;
   AreaTriggerDBC[id].Entry:=612;
@@ -1805,14 +1805,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=189;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1608.099976;
-  AreaTriggerDBC[id].target_posy:=-318.919006;
-  AreaTriggerDBC[id].target_posz:=18.671400;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='Tirisfal Glades - Scarlet Monastery';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=614;
   AreaTriggerDBC[id].Entry:=614;
@@ -1825,14 +1825,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=189;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=253.671997;
-  AreaTriggerDBC[id].target_posy:=-206.623993;
-  AreaTriggerDBC[id].target_posz:=18.677299;
-  AreaTriggerDBC[id].target_posf:=4.712389;
-  AreaTriggerDBC[id].trigger_title:='Tirisfal Glades - Scarlet Monastery';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=682;
   AreaTriggerDBC[id].Entry:=682;
@@ -1852,7 +1852,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Likeshire Inn';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=702;
   AreaTriggerDBC[id].Entry:=702;
@@ -1865,14 +1865,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-9013.824219;
-  AreaTriggerDBC[id].target_posy:=871.220154;
-  AreaTriggerDBC[id].target_posz:=148.616638;
-  AreaTriggerDBC[id].target_posf:=5.212689;
-  AreaTriggerDBC[id].trigger_title:='T: Wizard''s Sanctum - Stormwind';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=704;
   AreaTriggerDBC[id].Entry:=704;
@@ -1885,14 +1885,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-9015.910156;
-  AreaTriggerDBC[id].target_posy:=884.418884;
-  AreaTriggerDBC[id].target_posz:=29.621065;
-  AreaTriggerDBC[id].target_posf:=5.387831;
-  AreaTriggerDBC[id].trigger_title:='T: Stormwind - Wizard''s Sanctum';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=707;
   AreaTriggerDBC[id].Entry:=707;
@@ -1912,7 +1912,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Scarlet Raven Tavern, Darkshire';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=708;
   AreaTriggerDBC[id].Entry:=708;
@@ -1932,7 +1932,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Southshore';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=709;
   AreaTriggerDBC[id].Entry:=709;
@@ -1952,7 +1952,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Theramore Isle';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=710;
   AreaTriggerDBC[id].Entry:=710;
@@ -1972,7 +1972,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Thunderbrew Distillery';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=712;
   AreaTriggerDBC[id].Entry:=712;
@@ -1992,7 +1992,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Stroutlager Inn';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=713;
   AreaTriggerDBC[id].Entry:=713;
@@ -2012,7 +2012,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Deepwater Tavern, Wetlands';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=715;
   AreaTriggerDBC[id].Entry:=715;
@@ -2032,7 +2032,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Dolanaar, Teldrassil';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=716;
   AreaTriggerDBC[id].Entry:=716;
@@ -2052,7 +2052,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN: Auberdine, Darkshore';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=717;
   AreaTriggerDBC[id].Entry:=717;
@@ -2072,7 +2072,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=719;
   AreaTriggerDBC[id].Entry:=719;
@@ -2092,7 +2092,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=720;
   AreaTriggerDBC[id].Entry:=720;
@@ -2105,14 +2105,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=2;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
   AreaTriggerDBC[id].target_posx:=0.000000;
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=721;
   AreaTriggerDBC[id].Entry:=721;
@@ -2132,7 +2132,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=722;
   AreaTriggerDBC[id].Entry:=722;
@@ -2152,7 +2152,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=742;
   AreaTriggerDBC[id].Entry:=742;
@@ -2172,7 +2172,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=743;
   AreaTriggerDBC[id].Entry:=743;
@@ -2192,7 +2192,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=762;
   AreaTriggerDBC[id].Entry:=762;
@@ -2212,7 +2212,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Akumails lair';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=802;
   AreaTriggerDBC[id].Entry:=802;
@@ -2232,7 +2232,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Menethill Harbor';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=803;
   AreaTriggerDBC[id].Entry:=803;
@@ -2252,7 +2252,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Menethill Harbor';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=822;
   AreaTriggerDBC[id].Entry:=822;
@@ -2292,7 +2292,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=844;
   AreaTriggerDBC[id].Entry:=844;
@@ -2312,7 +2312,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=862;
   AreaTriggerDBC[id].Entry:=862;
@@ -2332,7 +2332,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=882;
   AreaTriggerDBC[id].Entry:=882;
@@ -2352,7 +2352,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='???';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=902;
   AreaTriggerDBC[id].Entry:=902;
@@ -2372,7 +2372,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='???';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=922;
   AreaTriggerDBC[id].Entry:=922;
@@ -2385,14 +2385,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=1;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=-6795.560059;
-  AreaTriggerDBC[id].target_posy:=-2890.719971;
-  AreaTriggerDBC[id].target_posz:=8.887420;
-  AreaTriggerDBC[id].target_posf:=3.141593;
-  AreaTriggerDBC[id].trigger_title:='Zul''Farrak - Tanaris';
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
+  AreaTriggerDBC[id].target_posf:=0.000000;
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=924;
   AreaTriggerDBC[id].Entry:=924;
@@ -2405,14 +2405,14 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=1;
-  AreaTriggerDBC[id].target_map:=209;
+  AreaTriggerDBC[id].action:=0;
+  AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
-  AreaTriggerDBC[id].target_posx:=1212.670044;
-  AreaTriggerDBC[id].target_posy:=842.039978;
-  AreaTriggerDBC[id].target_posz:=8.933460;
+  AreaTriggerDBC[id].target_posx:=0.000000;
+  AreaTriggerDBC[id].target_posy:=0.000000;
+  AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='Tanaris - Zul''Farrak';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=942;
   AreaTriggerDBC[id].Entry:=942;
@@ -2432,7 +2432,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Thousand Needles';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=943;
   AreaTriggerDBC[id].Entry:=943;
@@ -2452,7 +2452,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Thousand Needles';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=944;
   AreaTriggerDBC[id].Entry:=944;
@@ -2472,7 +2472,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: Thousand Needles';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=962;
   AreaTriggerDBC[id].Entry:=962;
@@ -2492,7 +2492,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='E: event? Zul''Farrak';
+  AreaTriggerDBC[id].trigger_title:='';
 
   id:=982;
   AreaTriggerDBC[id].Entry:=982;
@@ -2512,7 +2512,7 @@ begin
   AreaTriggerDBC[id].target_posy:=0.000000;
   AreaTriggerDBC[id].target_posz:=0.000000;
   AreaTriggerDBC[id].target_posf:=0.000000;
-  AreaTriggerDBC[id].trigger_title:='INN';
+  AreaTriggerDBC[id].trigger_title:='';
 
 end;
 

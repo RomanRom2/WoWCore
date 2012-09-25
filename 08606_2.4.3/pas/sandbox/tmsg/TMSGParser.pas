@@ -127,7 +127,6 @@ begin
   try
     ofs:= msg_CLIENT_HEADER_LEN;
     m.Entry:= GetBufLong(buf, ofs);
-    m.GUID:= GetBufInt64(buf, ofs);
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -190,8 +189,11 @@ begin
   result:= msg_PARSE_OK;
   try
     ofs:= msg_CLIENT_HEADER_LEN;
+    m.CategoryID:= GetBufLong(buf, ofs);
+    m.TypeID:= GetBufByte(buf, ofs);
+    m.VoiceEnabled:= GetBufByte(buf, ofs);
     m.Name:= GetBufStr(buf, ofs);
-    m.Unk:= GetBufByte(buf, ofs);
+    m.VoiceName:= GetBufStr(buf, ofs);
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -285,6 +287,7 @@ end;
 procedure GetMovementInfo(var buf: TBuffer; var __ofs: longint; var m: T_MSG_MOVE_STATE);
 begin
   m.MovementInfo.m_moveFlags:= GetBufLong(buf, __ofs);
+  m.MovementInfo.unk:= GetBufByte(buf, __ofs);
   m.MovementInfo.m_moveStartTime:= GetBufLong(buf, __ofs);
   m.MovementInfo.m_position.x:= GetBufSingle(buf, __ofs);
   m.MovementInfo.m_position.y:= GetBufSingle(buf, __ofs);
@@ -298,7 +301,7 @@ begin
     m.MovementInfo.Transport.Position.z:= GetBufSingle(buf, __ofs);
     m.MovementInfo.Transport.Facing:= GetBufSingle(buf, __ofs);
   end;
-  if (m.MovementInfo.m_moveFlags and MOVEFLAG_SWIMMING) > 0 then
+  if ( (m.MovementInfo.m_moveFlags and MOVEFLAG_SWIMMING) > 0) or ( (m.MovementInfo.m_moveFlags and MOVEFLAG_FLYING) > 0) then
   begin
     m.MovementInfo.m_pitch:= GetBufSingle(buf, __ofs);
   end;
@@ -432,7 +435,8 @@ begin
     ofs:= msg_CLIENT_HEADER_LEN;
 
     m.SpellID:= GetBufLong(buf, ofs);
-    m.TargetFlags:= GetBufWord(buf, ofs);
+    m.SpellCastCount:= GetBufByte(buf, ofs);
+    m.TargetFlags:= GetBufLong(buf, ofs);
 
     target_flag_code:= 0;
     if (m.TargetFlags and SPELL_TARGET_FLAG_SELF) > 0            then target_flag_code:= 0;
@@ -472,6 +476,7 @@ begin
     ofs:= msg_CLIENT_HEADER_LEN;
 
     m.GUID:= GetBufInt64(buf, ofs);
+    m.Entry:= GetBufLong(buf, ofs);
     m.Option:= GetBufLong(buf, ofs);
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;

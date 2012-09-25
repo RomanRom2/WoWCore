@@ -14,19 +14,21 @@ var
   id: longint;
 begin
 
-  id:=68865;
-  GameObjectTPL[id].Entry:=68865;
-  GameObjectTPL[id].TypeID:=3;
-  GameObjectTPL[id].DisplayID:=760;
-  GameObjectTPL[id].Name[0]:='Snufflenose Command Sticks';
+  id:=67234;
+  GameObjectTPL[id].Entry:=67234;
+  GameObjectTPL[id].TypeID:=8;
+  GameObjectTPL[id].DisplayID:=731;
+  GameObjectTPL[id].Name[0]:='Fire Totem';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=93;
-  GameObjectTPL[id].Param[1]:=4059;
-  GameObjectTPL[id].Param[2]:=0;
-  GameObjectTPL[id].Param[3]:=1;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=4;
+  GameObjectTPL[id].Param[1]:=10;
+  GameObjectTPL[id].Param[2]:=2061;
+  GameObjectTPL[id].Param[3]:=0;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
   GameObjectTPL[id].Param[6]:=0;
@@ -47,6 +49,7 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
 end;
 

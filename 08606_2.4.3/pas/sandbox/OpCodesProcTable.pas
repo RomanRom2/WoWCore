@@ -75,6 +75,9 @@ begin
   @OpCodeProc[MSG_MOVE_FALL_LAND]:=                   @cmd_MSG_MOVE_PLAYER;
   @OpCodeProc[MSG_MOVE_START_SWIM]:=                  @cmd_MSG_MOVE_PLAYER;
   @OpCodeProc[MSG_MOVE_STOP_SWIM]:=                   @cmd_MSG_MOVE_PLAYER;
+  @OpCodeProc[MSG_MOVE_START_ASCEND]:=                @cmd_MSG_MOVE_PLAYER;
+  @OpCodeProc[MSG_MOVE_STOP_ASCEND]:=                 @cmd_MSG_MOVE_PLAYER;
+  @OpCodeProc[MSG_MOVE_START_DESCEND]:=               @cmd_MSG_MOVE_PLAYER;
   @OpCodeProc[CMSG_SET_SELECTION]:=                   @cmd_CMSG_SET_SELECTION;
   @OpCodeProc[CMSG_AREATRIGGER]:=                     @cmd_CMSG_AREATRIGGER;
   @OpCodeProc[CMSG_SWAP_INV_ITEM]:=                   @cmd_CMSG_SWAP_INV_ITEM;

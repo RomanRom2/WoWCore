@@ -19,13 +19,14 @@ function msgBuild(var Buf: TBuffer; var m: T_SMSG_NPC_TEXT_UPDATE): longint; ove
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHANNEL_NOTIFY): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_LOGOUT_COMPLETE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHARACTER_LOGIN_FAILED): longint; overload;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_MD5): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_TIMES): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_TUTORIAL_FLAGS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_INITIAL_SPELLS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACTION_BUTTONS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_LOGIN_SETTIMESPEED): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_RUN_SPEED_CHANGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_SWIM_SPEED_CHANGE): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ATTACKSTART): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ATTACKSTOP): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_TRANSFER_PENDING): longint; overload;
@@ -42,11 +43,16 @@ function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUERY_TIME_RESPONSE): longint;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_INVENTORY_CHANGE_FAILURE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUESTGIVER_STATUS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUESTGIVER_QUEST_LIST): longint; overload;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_CHANGE_ACK): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_UPDATE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_GOSSIP_COMPLETE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_GOSSIP_MESSAGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_EXPLORATION_EXPERIENCE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ITEM_PUSH_RESULT): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_TIME_SYNC_REQ): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOTD): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_SET_CAN_FLY): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_UNSET_CAN_FLY): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ADDON_INFO): longint; overload;
 
 implementation
 
@@ -78,6 +84,10 @@ begin
 // }
   pkt.InitCmd      (Buf, SMSG_AUTH_RESPONSE);
   pkt.AddByte      (Buf, m.ResponseCode);
+  pkt.AddLong      (Buf, m.Count);
+  pkt.AddByte      (Buf, m.Unk1);
+  pkt.AddLong      (Buf, m.Unk2);
+  pkt.AddByte      (Buf, m.GameType);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHAR_ENUM): longint; overload;
@@ -114,6 +124,7 @@ begin
     begin
       pkt.AddLong  (buf, m.Enum[i].inventory[0][k].displayID);
       pkt.AddByte  (buf, m.Enum[i].inventory[0][k].inventoryType);
+      pkt.AddLong  (buf, m.Enum[i].inventory[0][k].auraID);
     end;
   end;
   result:= pkt.pktLen;
@@ -144,7 +155,8 @@ begin
   pkt.AddLong      (Buf, m.Entry);
   pkt.AddLong      (Buf, m.ClassID);
   pkt.AddLong      (Buf, m.SubClassID);
-  for i:=0 to ITEM_NAMES-1 do
+  pkt.AddLong      (Buf, m.Unk1);
+  for i:= 0 to ITEM_NAMES-1 do
     pkt.AddStr     (Buf, m.Name[i]+#0);
   pkt.AddLong      (Buf, m.DisplayInfoID);
   pkt.AddLong      (Buf, m.OverallQualityID);
@@ -166,31 +178,31 @@ begin
   pkt.AddLong      (Buf, m.Stackable);
   pkt.AddLong      (Buf, m.MaxStackCount);
   pkt.AddLong      (Buf, m.ContainerSlots);
-  for i:=0 to 9 do
-    begin
-      pkt.AddLong  (Buf, m.Bonus[i].StatID);
-      pkt.AddLong  (Buf, m.Bonus[i].StatCount);
-    end;
-  for i:=0 to 4 do
-    begin
-      pkt.AddFloat (Buf, m.DamageStat[i].Min);
-      pkt.AddFloat (Buf, m.DamageStat[i].Max);
-      pkt.AddLong  (Buf, m.DamageStat[i].TypeID);
-    end;
-  for i:=0 to 6 do
+  for i:= 0 to 9 do
+  begin
+    pkt.AddLong    (Buf, m.Bonus[i].StatID);
+    pkt.AddLong    (Buf, m.Bonus[i].StatCount);
+  end;
+  for i:= 0 to 4 do
+  begin
+    pkt.AddFloat   (Buf, m.DamageStat[i].Min);
+    pkt.AddFloat   (Buf, m.DamageStat[i].Max);
+    pkt.AddLong    (Buf, m.DamageStat[i].TypeID);
+  end;
+  for i:= 0 to 6 do
     pkt.AddLong    (Buf, m.Resistance[i]);
   pkt.AddLong      (Buf, m.Delay);
   pkt.AddLong      (Buf, m.AmmoType);
   pkt.AddFloat     (Buf, m.ModRanged);
-  for i:=0 to 4 do
-    begin
-      pkt.AddLong  (Buf, m.SpellStat[i].SpellID);
-      pkt.AddLong  (Buf, m.SpellStat[i].TriggerSpellID);
-      pkt.AddLong  (Buf, m.SpellStat[i].Charges);
-      pkt.AddLong  (Buf, m.SpellStat[i].Cooldown);
-      pkt.AddLong  (Buf, m.SpellStat[i].Category);
-      pkt.AddLong  (Buf, m.SpellStat[i].CategoryCoolDown);
-    end;
+  for i:= 0 to 4 do
+  begin
+    pkt.AddLong    (Buf, m.SpellStat[i].SpellID);
+    pkt.AddLong    (Buf, m.SpellStat[i].TriggerSpellID);
+    pkt.AddLong    (Buf, m.SpellStat[i].Charges);
+    pkt.AddLong    (Buf, m.SpellStat[i].Cooldown);
+    pkt.AddLong    (Buf, m.SpellStat[i].Category);
+    pkt.AddLong    (Buf, m.SpellStat[i].CategoryCoolDown);
+  end;
   pkt.AddLong      (Buf, m.Bonding);
   pkt.AddStr       (Buf, m.Description+#0);
   pkt.AddLong      (Buf, m.PageTextID);
@@ -201,31 +213,47 @@ begin
   pkt.AddLong      (Buf, m.LockMaterial);
   pkt.AddLong      (Buf, m.Sheath);
   pkt.AddLong      (Buf, m.Extra); // Random Properties Id
+  pkt.AddLong      (Buf, m.Suffix);
   pkt.AddLong      (Buf, m.Block);
   pkt.AddLong      (Buf, m.SetID);
   pkt.AddLong      (Buf, m.MaxDurability);
   pkt.AddLong      (Buf, m.Area);
   pkt.AddLong      (Buf, m.Map);
   pkt.AddLong      (Buf, m.BagFamily);
+  pkt.AddLong      (Buf, m.ToolID);
+  for i:= 0 to 2 do
+  begin
+    pkt.AddLong  (Buf, m.Socket[i].ID);
+    pkt.AddLong  (Buf, m.Socket[i].Unk);
+  end;
+  pkt.AddLong      (Buf, m.SocketBonus);
+  pkt.AddLong      (Buf, m.GemProperties);
+  pkt.AddLong      (Buf, m.RequiredDisenchantSkill);
+  pkt.AddFloat     (Buf, m.ArmorDamageModifier);
+  pkt.AddLong      (Buf, m.Duration);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CREATURE_QUERY_RESPONSE): longint; overload;
+var
+  i: longint;
 begin
   pkt.InitCmd      (Buf, SMSG_CREATURE_QUERY_RESPONSE);
   pkt.AddLong      (Buf, m.Entry);
-  pkt.AddStr       (Buf, m.Name[0]+#0);
-  pkt.AddStr       (Buf, m.Name[1]+#0);
-  pkt.AddStr       (Buf, m.Name[2]+#0);
-  pkt.AddStr       (Buf, m.Name[3]+#0);
+  for i:=0 to CREATURE_NAMES-1 do
+    pkt.AddStr     (Buf, m.Name[i]+#0);
   pkt.AddStr       (Buf, m.GuildName+#0);
+  pkt.AddStr       (Buf, m.AssistName+#0);
   pkt.AddLong      (Buf, m.Flags);
   pkt.AddLong      (Buf, m.TypeID);
   pkt.AddLong      (Buf, m.Family);
   pkt.AddLong      (Buf, m.Rank);
   pkt.AddLong      (Buf, m.Unk1);
   pkt.AddLong      (Buf, m.SpellDataID);
-  pkt.AddLong      (Buf, m.DisplayID);
-  pkt.AddWord      (Buf, m.Civilian);
+  for i:=0 to CREATURE_MODELS-1 do
+    pkt.AddLong    (Buf, m.DisplayID[i]);
+  pkt.AddFloat     (Buf, m.Unk3);
+  pkt.AddFloat     (Buf, m.Unk4);
+  pkt.AddByte      (Buf, m.Civilian);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_GAMEOBJECT_QUERY_RESPONSE): longint; overload;
@@ -240,6 +268,7 @@ begin
     pkt.AddStr     (Buf, m.Name[i]+#0);
   for i:=0 to GAMEOBJECT_PARAMS-1 do
     pkt.AddLong    (Buf, m.Param[i]);
+  pkt.AddFloat     (Buf, m.ParamFloat);
 
   result:= pkt.pktLen;
 end;
@@ -268,24 +297,8 @@ begin
   pkt.InitCmd      (Buf, SMSG_CHANNEL_NOTIFY);
   pkt.AddByte      (Buf, m.TypeID);
   pkt.AddStr       (Buf, m.Name+#0);
-//  case m.cType of
-//    CHAT_NOTIFY_JOINED    : pkt.AddInt64(Buf, m.cCharGUID);
-//    CHAT_NOTIFY_LEAVE     : pkt.AddInt64(Buf, m.cCharGUID);
-//    CHAT_NOTIFY_YOU_JOINED: pkt.AddInt64(Buf, m.cCharGUID);
-//    CHAT_NOTIFY_YOU_JOINED:
-//      begin
-//        pkt.AddByte(Buf, m.cVoiceNumber);
-//        pkt.AddLong(Buf, m.cCategory);
-//        pkt.AddLong(Buf, CHAT_NOTIFY_JOINED);
-//      end;
-//    CHAT_NOTIFY_YOU_LEFT  :
-//      begin
-//        pkt.AddLong(Buf, m.cCategory);
-//        pkt.AddByte(Buf, CHAT_NOTIFY_LEAVE);
-//      end;
-//  end;
-  pkt.AddLong      (Buf, 0);
-  pkt.AddLong      (Buf, 0);
+  pkt.AddLong      (Buf, m.CategoryID);
+  pkt.AddLong      (Buf, m.Unk);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_LOGOUT_COMPLETE): longint; overload;
@@ -299,11 +312,11 @@ begin
   pkt.AddByte      (Buf, m.ResponseCode);
   result:= pkt.pktLen;
 end;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_MD5): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_TIMES): longint; overload;
 var
   i: longint;
 begin
-  pkt.InitCmd      (Buf, SMSG_ACCOUNT_DATA_MD5);
+  pkt.InitCmd      (Buf, SMSG_ACCOUNT_DATA_TIMES);
   for i:= 0 to 31 do
     pkt.AddLong    (Buf, m.tmp[i]);
   result:= pkt.pktLen;
@@ -356,12 +369,21 @@ begin
   pkt.InitCmd      (Buf, SMSG_FORCE_RUN_SPEED_CHANGE);
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.Count);
+  pkt.AddByte      (Buf, m.unk);
   pkt.AddFloat     (Buf, m.Value);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_SWIM_SPEED_CHANGE): longint; overload;
 begin
   pkt.InitCmd      (Buf, SMSG_FORCE_SWIM_SPEED_CHANGE);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  pkt.AddFloat     (Buf, m.Value);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_FORCE_FLIGHT_SPEED_CHANGE);
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.Count);
   pkt.AddFloat     (Buf, m.Value);
@@ -404,6 +426,7 @@ begin
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.MoveCount);
   pkt.AddLong      (Buf, m.MoveFlags);
+  pkt.AddByte      (Buf, m.FacingFlags);
   pkt.AddLong      (Buf, m.MoveStartTime);
   pkt.AddFloat     (Buf, m.Position.X);
   pkt.AddFloat     (Buf, m.Position.Y);
@@ -417,17 +440,17 @@ begin
   pkt.InitCmd      (Buf, SMSG_MESSAGECHAT);
   pkt.AddByte      (Buf, m.TypeID);
   pkt.AddLong      (Buf, m.LangID);
+  pkt.AddInt64     (Buf, m.OriginatorGUID);
+  pkt.AddLong      (Buf, 0); // BC
 
   Case m.TypeID of
     CHAT_MSG_SAY, CHAT_MSG_PARTY, CHAT_MSG_YELL:
     begin
-      pkt.AddInt64 (Buf, m.OriginatorGUID);
     end;
 
     CHAT_MSG_CHANNEL:
     begin
       pkt.AddStr   (Buf, m.TargetName+#0);
-      pkt.AddLong  (Buf, 0);
     end;
   End;
 
@@ -442,8 +465,9 @@ function msgBuild(var Buf: TBuffer; var m: T_SMSG_SPELL_START): longint; overloa
 begin
   pkt.InitCmd      (Buf, SMSG_SPELL_START);
   pkt.AddGUID      (Buf, m.CasterGUID);
-  pkt.AddGUID      (Buf, m.CasterItemGUID);
+  pkt.AddGUID      (Buf, m.CasterLinkedGUID);
   pkt.AddLong      (Buf, m.SpellID);
+  pkt.AddByte      (Buf, m.SpellCastCount);
   pkt.AddWord      (Buf, m.CastFlags);
   pkt.AddLong      (Buf, m.Duration);
   pkt.AddWord      (Buf, m.TargetFlags);
@@ -479,9 +503,10 @@ var
 begin
   pkt.InitCmd      (Buf, SMSG_SPELL_GO);
   pkt.AddGUID      (Buf, m.CasterGUID);
-  pkt.AddGUID      (Buf, m.CasterItemGUID);
+  pkt.AddGUID      (Buf, m.CasterLinkedGUID);
   pkt.AddLong      (Buf, m.SpellID);
   pkt.AddWord      (Buf, m.CastFlags);
+  pkt.AddLong      (Buf, m.CastStartTime);
 
   k:= Length(m.AffectedTarget);
   pkt.AddByte      (Buf, k);
@@ -539,6 +564,7 @@ begin
   pkt.InitCmd      (Buf, m.MovementInfo.m_lastNetMsgID);
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.MovementInfo.m_moveFlags);
+  pkt.AddByte      (Buf, m.MovementInfo.unk);
   pkt.AddLong      (Buf, m.MovementInfo.m_moveStartTime);
   pkt.AddFloat     (Buf, m.MovementInfo.m_position.x);
   pkt.AddFloat     (Buf, m.MovementInfo.m_position.y);
@@ -584,6 +610,8 @@ begin
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_NAME_QUERY_RESPONSE): longint; overload;
+var
+  i: longint;
 begin
   pkt.InitCmd      (Buf, SMSG_NAME_QUERY_RESPONSE);
   pkt.AddInt64     (Buf, m.GUID);
@@ -592,6 +620,12 @@ begin
   pkt.AddByte      (Buf, m.raceID);
   pkt.AddByte      (Buf, m.sexID);
   pkt.AddByte      (Buf, m.classID);
+  pkt.AddByte      (Buf, m.LocaleNamesPresent);
+  if m.LocaleNamesPresent <> 0 then
+  begin
+    for i:= 0 to 4 do
+      pkt.AddStr   (Buf, m.LocaleName[i]+#0);
+  end;
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUERY_TIME_RESPONSE): longint; overload;
@@ -626,9 +660,9 @@ begin
   pkt.AddByte      (Buf, m.Unk);
   result:= pkt.pktLen;
 end;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_CHANGE_ACK): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_UPDATE): longint; overload;
 begin
-  pkt.InitCmd      (Buf, SMSG_STANDSTATE_CHANGE_ACK);
+  pkt.InitCmd      (Buf, SMSG_STANDSTATE_UPDATE);
   pkt.AddByte      (Buf, m.StandStateID);
   result:= pkt.pktLen;
 end;
@@ -643,6 +677,7 @@ var
 begin
   pkt.InitCmd      (Buf, SMSG_GOSSIP_MESSAGE);
   pkt.AddInt64     (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Entry);
   pkt.AddLong      (Buf, m.NPCTextID);
 
   pkt.AddLong      (Buf, Length(m.GossipMenu));
@@ -651,7 +686,9 @@ begin
     pkt.AddLong    (Buf, m.GossipMenu[i].Option);
     pkt.AddByte    (Buf, m.GossipMenu[i].IconID);
     pkt.AddByte    (Buf, m.GossipMenu[i].InputBox);
+    pkt.AddLong    (Buf, m.GossipMenu[i].PayCost);
     pkt.AddStr     (Buf, m.GossipMenu[i].Title+#0);
+    pkt.AddStr     (Buf, m.GossipMenu[i].PayText+#0);
   end;
 
   pkt.AddLong      (Buf, Length(m.QuestMenu));
@@ -685,6 +722,45 @@ begin
   pkt.AddLong      (Buf, m.ItemTime);
   pkt.AddLong      (Buf, m.ItemSuffix);
   pkt.AddLong      (Buf, m.ItemCount);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_TIME_SYNC_REQ): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_TIME_SYNC_REQ);
+  pkt.AddLong      (Buf, m.Count);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOTD): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_MOTD);
+  pkt.AddLong      (Buf, m.LinesCount);
+  pkt.AddStr       (Buf, m.Lines+#0);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_SET_CAN_FLY): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_MOVE_SET_CAN_FLY);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_UNSET_CAN_FLY): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_MOVE_UNSET_CAN_FLY);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ADDON_INFO): longint; overload;
+var
+  i: longint;
+begin
+  pkt.InitCmd      (Buf, SMSG_ADDON_INFO);
+  for i:= 0 to 15 do
+  begin
+    pkt.AddLong    (Buf, m.Info[i].Flags);
+    pkt.AddLong    (Buf, m.Info[i].Value);
+  end;
   result:= pkt.pktLen;
 end;
 

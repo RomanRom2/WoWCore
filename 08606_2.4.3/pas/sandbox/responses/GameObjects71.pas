@@ -14,19 +14,21 @@ var
   id: longint;
 begin
 
-  id:=90566;
-  GameObjectTPL[id].Entry:=90566;
-  GameObjectTPL[id].TypeID:=0;
-  GameObjectTPL[id].DisplayID:=907;
-  GameObjectTPL[id].Name[0]:='Workshop Door';
+  id:=89634;
+  GameObjectTPL[id].Entry:=89634;
+  GameObjectTPL[id].TypeID:=3;
+  GameObjectTPL[id].DisplayID:=2251;
+  GameObjectTPL[id].Name[0]:='Iron Coral';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=0;
-  GameObjectTPL[id].Param[1]:=92;
-  GameObjectTPL[id].Param[2]:=196608;
-  GameObjectTPL[id].Param[3]:=0;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=43;
+  GameObjectTPL[id].Param[1]:=4227;
+  GameObjectTPL[id].Param[2]:=0;
+  GameObjectTPL[id].Param[3]:=1;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
   GameObjectTPL[id].Param[6]:=0;
@@ -47,20 +49,23 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
-  id:=90567;
-  GameObjectTPL[id].Entry:=90567;
-  GameObjectTPL[id].TypeID:=1;
-  GameObjectTPL[id].DisplayID:=295;
-  GameObjectTPL[id].Name[0]:='Lever';
+  id:=89635;
+  GameObjectTPL[id].Entry:=89635;
+  GameObjectTPL[id].TypeID:=3;
+  GameObjectTPL[id].DisplayID:=4075;
+  GameObjectTPL[id].Name[0]:='Sunscorched Shell';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=0;
-  GameObjectTPL[id].Param[1]:=0;
-  GameObjectTPL[id].Param[2]:=196608;
-  GameObjectTPL[id].Param[3]:=0;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=43;
+  GameObjectTPL[id].Param[1]:=4228;
+  GameObjectTPL[id].Param[2]:=0;
+  GameObjectTPL[id].Param[3]:=1;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
   GameObjectTPL[id].Param[6]:=0;
@@ -81,18 +86,21 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
-  id:=90858;
-  GameObjectTPL[id].Entry:=90858;
-  GameObjectTPL[id].TypeID:=0;
-  GameObjectTPL[id].DisplayID:=907;
-  GameObjectTPL[id].Name[0]:='Workshop Door';
+  id:=89931;
+  GameObjectTPL[id].Entry:=89931;
+  GameObjectTPL[id].TypeID:=2;
+  GameObjectTPL[id].DisplayID:=216;
+  GameObjectTPL[id].Name[0]:='Bath''rah''s Cauldron';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=0;
-  GameObjectTPL[id].Param[1]:=92;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=93;
+  GameObjectTPL[id].Param[1]:=1151;
   GameObjectTPL[id].Param[2]:=0;
   GameObjectTPL[id].Param[3]:=0;
   GameObjectTPL[id].Param[4]:=0;
@@ -115,6 +123,7 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
 end;
 

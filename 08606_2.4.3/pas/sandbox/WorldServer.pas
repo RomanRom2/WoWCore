@@ -52,11 +52,13 @@ var
   OBJ: TWorldRecord;
   imsg: T_CMSG_PLAYER_LOGIN;
   omsg1: T_SMSG_CHARACTER_LOGIN_FAILED;
-  omsg2: T_SMSG_ACCOUNT_DATA_MD5;
+  omsg2: T_SMSG_ACCOUNT_DATA_TIMES;
   omsg3: T_SMSG_TUTORIAL_FLAGS;
   omsg4: T_SMSG_INITIAL_SPELLS;
   omsg5: T_SMSG_ACTION_BUTTONS;
   omsg6: T_SMSG_LOGIN_SETTIMESPEED;
+  omsg7: T_SMSG_TIME_SYNC_REQ;
+  omsg8: T_SMSG_MOTD;
 begin
   if logon then
   begin
@@ -131,10 +133,13 @@ begin
   { welcome message }
   if logon then
   begin
+    omsg8.LinesCount:= 1;
+    omsg8.Lines:= 'Welcome to the World of Warcraft Explore Realms!';
+    sender.SockSend(msgBuild(sender.SBuf, omsg8));
+
     s:= '';
-    s:= s + 'Welcome to the World of Warcraft Explore Realms!'#13;
-    s:= s + '|c8f20ff20WoWCore SandBox '+UPDATEFIELDS_VERSION+'.'+UPDATEFIELDS_BUILD+'.'+APP_BUILD+'|r'#13;
-    s:= s + '|c8fff2020Use [.h] command for help|r'#13;
+    s:= s + '|c8f20ff20WoWCore SandBox '+UPDATEFIELDS_VERSION+'.'+UPDATEFIELDS_BUILD+'.'+APP_BUILD+''#13;
+    s:= s + '|c8fff2020Use [.h] command for help';
     sender.Send_Message(0, CHAT_MSG_SYSTEM, 0, '', s);
   end;
 
@@ -166,12 +171,17 @@ begin
         TWorldUser(World.ObjectByIndex[i].woAddr).Send_CreateFromPlayer(OBJ);
       end;
     end;
+
+  { SMSG_TIME_SYNC_REQ - mandatory to send }
+  omsg7.Count:= 0;
+  sender.SockSend(msgBuild(sender.SBuf, omsg7));
 
   { restore speeds }
   if not logon then
   begin
     ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
     ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+    ListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
   end;
 end;
 
@@ -278,6 +288,7 @@ begin
   omsg.raceID:= TWorldUser(World[omsg.GUID].woAddr).CharData.Enum.raceID;
   omsg.sexID:= TWorldUser(World[omsg.GUID].woAddr).CharData.Enum.sexID;
   omsg.classID:= TWorldUser(World[omsg.GUID].woAddr).CharData.Enum.classID;
+  omsg.LocaleNamesPresent:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_QUERY_TIME(var sender: TWorldUser);
@@ -550,7 +561,7 @@ procedure cmd_CMSG_STANDSTATECHANGE(var sender: TWorldUser);
 var
   i: longint;
   imsg: T_CMSG_STANDSTATECHANGE;
-  omsg: T_SMSG_STANDSTATE_CHANGE_ACK;
+  omsg: T_SMSG_STANDSTATE_UPDATE;
   OBJ: TWorldRecord;
   VR: CValuesRecord;
 begin
@@ -610,8 +621,10 @@ begin
 
   SR.caster_guid:= sender.CharData.Enum.GUID;
 
-  SR.spell_cast_time:= 1000;
+  SR.spell_cast_duration:= 1000;
   SR.spell_id:= imsg.SpellID;
+  SR.spell_cast_count:= imsg.SpellCastCount;
+  SR.spell_cast_start_time:= GetTickCount;
   SR.target_flags:= imsg.TargetFlags;
   SR.target_guid:= imsg.TargetGUID;
   SR.target_x:= imsg.TargetPosition.x;
@@ -625,7 +638,7 @@ begin
   MainLog('CMSG_CAST_SPELL: spell='+strr(SR.spell_id)+', flags='+IntToHex(SR.target_flags, 4), 1,0,0);
 
   ListWorldUsers.Send_UpdateFromPlayer_SpellStart(SR);
-  sleep(SR.spell_cast_time); // for actual animation
+  sleep(SR.spell_cast_duration); // for actual animation
   ListWorldUsers.Send_UpdateFromPlayer_SpellGo(SR);
 end;
 procedure cmd_CMSG_GOSSIP_SELECT_OPTION(var sender: TWorldUser);
@@ -640,7 +653,7 @@ begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
 
-  mainlog('CMSG_GOSSIP_SELECT_OPTION: GUID='+int64tohex(imsg.GUID)+', option='+IntToHex(imsg.Option, 8));
+  mainlog('CMSG_GOSSIP_SELECT_OPTION: GUID='+int64tohex(imsg.GUID)+', entry='+strr(imsg.Entry)+', option='+IntToHex(imsg.Option, 8));
 
   // ---------------------------------------------------------------------------
   if imsg.Option and $10000000 > 0 then
@@ -659,6 +672,7 @@ begin
 
       GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
       GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+      GOSSIP_MESSAGE.Entry:= imsg.Entry;
       GOSSIP_MESSAGE.NPCTextID:= Length(sender.CharData.VR.Values);
 
       if p > 1 then
@@ -666,7 +680,9 @@ begin
         g.Option:= $11000000 +p-1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<previuos page>';
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -676,7 +692,9 @@ begin
         g.Option:= $10000000 + sender.CharData.VR.Values[k];
         g.IconID:= GOSSIP_ACTION_INNKEEPER;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= Trim(ItemTPL[sender.CharData.VR.Values[k]].Name[0] + ' (' + strr(sender.CharData.VR.Values[k]) + ')');
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -686,7 +704,9 @@ begin
         g.Option:= $11000000 +p+1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<next page>';
+        g.PayText:='';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -720,6 +740,7 @@ begin
 
       GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
       GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+      GOSSIP_MESSAGE.Entry:= imsg.Entry;
       GOSSIP_MESSAGE.NPCTextID:= Length(sender.CharData.VR.Values);
 
       if p > 1 then
@@ -727,7 +748,9 @@ begin
         g.Option:= $22000000 +p-1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<previuos page>';
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -737,7 +760,9 @@ begin
         g.Option:= $20000000 + sender.CharData.VR.Values[k];
         g.IconID:= GOSSIP_ACTION_INNKEEPER;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[k]].Name[0] + ' (' + strr(sender.CharData.VR.Values[k]) + ')');
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -747,7 +772,9 @@ begin
         g.Option:= $22000000 +p+1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<next page>';
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -781,6 +808,7 @@ begin
 
       GOSSIP_TOOL.Init(GOSSIP_MESSAGE);
       GOSSIP_MESSAGE.GUID:= sender.CharData.Enum.GUID;
+      GOSSIP_MESSAGE.Entry:= imsg.Entry;
       GOSSIP_MESSAGE.NPCTextID:= Length(sender.CharData.VR.Values);
 
       if p > 1 then
@@ -788,7 +816,9 @@ begin
         g.Option:= $44000000 +p-1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<previuos page>';
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -798,7 +828,9 @@ begin
         g.Option:= $40000000 + sender.CharData.VR.Values[k];
         g.IconID:= GOSSIP_ACTION_INNKEEPER;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= Trim(CreatureTPL[sender.CharData.VR.Values[k]].Name[0] + ' (' + strr(sender.CharData.VR.Values[k]) + ')');
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -808,7 +840,9 @@ begin
         g.Option:= $44000000 +p+1;
         g.IconID:= GOSSIP_ACTION_GOSSIP;
         g.InputBox:= 0;
+        g.PayCost:= 0;
         g.Title:= '<next page>';
+        g.PayText:= '';
 
         GOSSIP_TOOL.AddGossip(GOSSIP_MESSAGE, g);
       end;
@@ -820,7 +854,7 @@ begin
     begin
       // mount creature
       sender.SockSend(msgBuild(sender.SBuf, GOSSIP_COMPLETE));
-      ParseCommand(sender, '.mom '+strr(CreatureTPL[imsg.Option and not $40000000].DisplayID));
+      ParseCommand(sender, '.mom '+strr(CreatureTPL[imsg.Option and not $40000000].DisplayID[0]));
       exit;
     end;
   end;

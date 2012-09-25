@@ -16,7 +16,8 @@ const
 
   ITEM_NAMES                           = 4;
   CREATURE_NAMES                       = 4;
-  GAMEOBJECT_NAMES                     = 5;
+  CREATURE_MODELS                      = 4;
+  GAMEOBJECT_NAMES                     = 7;
   GAMEOBJECT_PARAMS                    = 24;
 
   GOSSIP_MENU_COUNT                    = 12;
@@ -37,13 +38,21 @@ const
   MOVEFLAG_PITCH_MASK                  = $000000C0;
   MOVEFLAG_MOTION_MASK                 = $000000FF;
   MOVEFLAG_WALK                        = $00000100;
-  MOVEFLAG_FALLING                     = $00002000;
-  MOVEFLAG_FALLEN_FAR                  = $00004000;
+  MOVEFLAG_ON_TRANSPORT                = $00000200;
+  MOVEFLAG_LEVITATING                  = $00000400;
+//  MOVEFLAG_ROOT                        = $00000800; // unapproved
+  MOVEFLAG_FALLING                     = $00001000;
+  MOVEFLAG_FALLEN_FAR                  = $00002000;
   MOVEFLAG_SWIMMING                    = $00200000;
-  MOVEFLAG_SPLINE_MOVER                = $00400000;
-  MOVEFLAG_ON_TRANSPORT                = $02000000;
+  MOVEFLAG_ASCENDING                   = $00400000;
+  MOVEFLAG_DESCENDING                  = $00800000;
+  MOVEFLAG_CAN_FLY                     = $01000000;
+  MOVEFLAG_FLYING                      = $02000000;
   MOVEFLAG_FALL_START_ELEVATION        = $04000000;
+//  MOVEFLAG_SPLINE_ENABLED              = $08000000; // unapproved
   MOVEFLAG_WATERWALKING                = $10000000;
+//  MOVEFLAG_SAFE_FALLING                = $20000000; // unapproved
+//  MOVEFLAG_HOVER                       = $40000000; // unapproved
 
 // common types
 ////////////////////////////////////////////////////////////////////////////////
@@ -80,6 +89,10 @@ type
 
   T_SMSG_AUTH_RESPONSE = record
     ResponseCode: byte;
+    Count: longint;
+    Unk1: byte;
+    Unk2: longint;
+    GameType: byte;
   end;
 
   T_CMSG_PING = record
@@ -100,6 +113,7 @@ type
     entry: longint;
     displayID: longint;
     inventoryType: longint;
+    auraID: longint;
   end;
   TCharEnumInfo = record
     GUID: uInt64;
@@ -159,7 +173,6 @@ type
 // -----------------------------------------------------------------------------
   T_CMSG_ITEM_QUERY_SINGLE = record
     Entry: longint;
-    GUID: uInt64;
   end;
 
   TItemBonus = record
@@ -179,11 +192,15 @@ type
     Category: longint;
     CategoryCoolDown: longint;
   end;
-  T_SMSG_ITEM_QUERY_SINGLE_RESPONSE = record
+  TItemSocket = record
+    ID: longint;
+    Unk: longint;
+  end;  T_SMSG_ITEM_QUERY_SINGLE_RESPONSE = record
     Entry: longint;
 
     ClassID: longint;
     SubClassID: longint;
+    Unk1: longint; // 2.0.3
     Name: array[0..ITEM_NAMES-1] of string;
     DisplayInfoID: longint;
     OverallQualityID: longint;
@@ -222,12 +239,22 @@ type
     LockMaterial: longint;
     Sheath: longint;
     Extra: longint;
+    Suffix: longint; // 2.0.3
     Block: longint;
     SetID: longint;
     MaxDurability: longint;
     Area: longint;
     Map: longint;
     BagFamily: longint; // 1.11.0
+    ToolID: longint; // BC
+    Socket: array[0..2] of TItemSocket; // BC
+    SocketBonus: longint; // BC
+    GemProperties: longint; // BC
+//    ExtendedCost: longint; // BC 2.0.3, removed in 2.4.0 PTR
+//    ReqArenaRank: longint; // BC 2.0.3, removed in 2.4.0 PTR
+    RequiredDisenchantSkill: longint; // BC
+    ArmorDamageModifier: single; // BC 2.1.x
+    Duration: longint; // BC 2.1.x
   end;
 
   T_CMSG_CREATURE_QUERY = record
@@ -239,14 +266,17 @@ type
     Entry: longint;
     Name: array[0..CREATURE_NAMES-1] of string;
     GuildName: string;
+    AssistName: string; // BC 2.3.0
     Flags: longint;
     TypeID: longint;
     Family: longint;
     Rank: longint;
     Unk1: longint;
     SpellDataID: longint;
-    DisplayID: longint;
-    Civilian: word;
+    DisplayID: array[0..CREATURE_MODELS-1] of longint; // BC 2.2.0
+    Unk3: single; // BC 2.0.3
+    Unk4: single; // BC 2.0.3
+    Civilian: byte; // BC 2.3.0: word->bytes
 
     GossipID: longint;
     Greetings: string;
@@ -263,8 +293,9 @@ type
     Entry: longint;
     TypeID: longint;
     DisplayID: longint;
-    Name: array[0..GAMEOBJECT_NAMES-1] of string; // 1.12.0: +1
+    Name: array[0..GAMEOBJECT_NAMES-1] of string; // 1.12.0: +1, BC: +2
     Param: array[0..GAMEOBJECT_PARAMS-1] of longint; // 1.12.0: +8
+    ParamFloat: single;
   end;
 
   T_CMSG_NPC_TEXT_QUERY = record
@@ -291,13 +322,18 @@ type
 // CHANNEL + CHAT
 // -----------------------------------------------------------------------------
   T_CMSG_JOIN_CHANNEL = record
+    CategoryID: longint;
+    TypeID: byte;
+    VoiceEnabled: byte;
     Name: string;
-    Unk: byte;
+    VoiceName: string;
   end;
 
   T_SMSG_CHANNEL_NOTIFY = record
     TypeID: byte;
     Name: string;
+    CategoryID: longint;
+    Unk: longint;
   end;
 
   T_CMSG_MESSAGECHAT = record
@@ -333,7 +369,7 @@ type
     ResponseCode: byte;
   end;
 
-  T_SMSG_ACCOUNT_DATA_MD5 = record
+  T_SMSG_ACCOUNT_DATA_TIMES = record
     tmp: array[0..31] of longint;
   end;
 
@@ -371,10 +407,17 @@ type
   T_SMSG_FORCE_RUN_SPEED_CHANGE = record
     GUID: uInt64;
     Count: longint;
+    unk: byte; // BC 2.1.0
     Value: single;
   end;
 
   T_SMSG_FORCE_SWIM_SPEED_CHANGE = record
+    GUID: uInt64;
+    Count: longint;
+    Value: single;
+  end;
+
+  T_SMSG_FORCE_FLIGHT_SPEED_CHANGE = record
     GUID: uInt64;
     Count: longint;
     Value: single;
@@ -405,6 +448,7 @@ type
     GUID: uInt64;
     MoveCount: longint;
     MoveFlags: longint;
+    FacingFlags: byte; // BC 2.3.0
     MoveStartTime: longint;
     Position: C3Vector;
     Facing: single;
@@ -421,15 +465,17 @@ type
 
   T_CMSG_CAST_SPELL = record
     SpellID: longint;
-    TargetFlags: word;
+    SpellCastCount: byte; // 2.3.0
+    TargetFlags: longint; // 2.4.0: word->long
     TargetGUID: uInt64;
     TargetPosition: C3Vector;
   end;
 
   T_SMSG_SPELL_START = record
     CasterGUID: uInt64;
-    CasterItemGUID: uInt64;
+    CasterLinkedGUID: uInt64;
     SpellID: longint;
+    SpellCastCount: byte; // 2.3.0
     CastFlags: word;
     Duration: longint;
     TargetFlags: word;
@@ -439,9 +485,10 @@ type
 
   T_SMSG_SPELL_GO = record
     CasterGUID: uInt64;
-    CasterItemGUID: uInt64;
+    CasterLinkedGUID: uInt64;
     SpellID: longint;
     CastFlags: word;
+    CastStartTime: longint; // BC 2.4.0
     AffectedTarget: array of uInt64;
     ResistedTarget: array of uInt64;
     TargetFlags: word;
@@ -506,6 +553,7 @@ type
     m_spline: TMoveSpline;
     Transport: TTransportInfo;
     m_timeSkipped: longword;
+    unk: byte;
   end;
   T_MSG_MOVE_STATE = record
     GUID: longword;
@@ -538,6 +586,8 @@ type
     raceID: byte;
     sexID: byte;
     classID: byte;
+    LocaleNamesPresent: byte; // 2.4.0
+    LocaleName: array[0..4] of string; // 2.4.0
   end;
 
   T_SMSG_QUERY_TIME_RESPONSE = record
@@ -594,7 +644,7 @@ type
     StandStateID: longint;
   end;
 
-  T_SMSG_STANDSTATE_CHANGE_ACK = record
+  T_SMSG_STANDSTATE_UPDATE = record
     StandStateID: byte;
   end;
 
@@ -610,7 +660,9 @@ type
     Option: longint;
     IconID: byte;
     InputBox: byte;
+    PayCost: longint; // BC 2.0.1
     Title: string;
+    PayText: string; // BC 2.0.1
   end;
   QuestMenuRecord = record
     ID: longint;
@@ -620,6 +672,7 @@ type
   end;
   T_SMSG_GOSSIP_MESSAGE = record
     GUID: uInt64;
+    Entry: longint; // BC 2.4.0
     NPCTextID: longint;
     GossipMenu: array of GossipMenuRecord;
     QuestMenu: array of QuestMenuRecord;
@@ -627,6 +680,7 @@ type
 
   T_CMSG_GOSSIP_SELECT_OPTION = record
     GUID: uInt64;
+    Entry: longint; // BC 2.4.0
     Option: longint;
   end;
 
@@ -641,6 +695,33 @@ type
     ItemTime: longint;
     ItemSuffix: longint;
     ItemCount: longint;
+  end;
+
+  T_SMSG_TIME_SYNC_REQ = record
+    Count: longint;
+  end;
+
+  T_SMSG_MOTD = record
+    LinesCount: longint;
+    Lines: string;
+  end;
+
+  T_SMSG_MOVE_SET_CAN_FLY = record
+    GUID: uInt64;
+    Count: longint;
+  end;
+
+  T_SMSG_MOVE_UNSET_CAN_FLY = record
+    GUID: uInt64;
+    Count: longint;
+  end;
+
+  TAddonInfo = record
+    Flags: longint;
+    Value: longint;
+  end;
+  T_SMSG_ADDON_INFO = record
+    Info: array[0..15] of TAddonInfo;
   end;
 
 implementation

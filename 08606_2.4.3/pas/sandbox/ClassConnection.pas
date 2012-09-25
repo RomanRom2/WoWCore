@@ -75,7 +75,8 @@ type
     AccountName: string;
 
     ServerSeed: longint;
-    KEY: array [0..39] of Byte;
+    SessionKey: array [0..39] of Byte;
+    NetworkKey: TSHA1Digest;
     di, dj, ei, ej: byte;
     d_first, e_first: boolean;
 
@@ -84,6 +85,7 @@ type
     constructor Create;
     procedure Free;
 
+    procedure CreateNetworkKey;
     procedure Decode;
     procedure Encode;
 
@@ -107,6 +109,9 @@ type
     procedure Send_UpdateFromPlayer_Move(MR: TMovementRecord);
     procedure Send_UpdateFromPlayer_ForceRunSpeed(guid: uInt64; value: single);
     procedure Send_UpdateFromPlayer_ForceSwimSpeed(guid: uInt64; value: single);
+    procedure Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+    procedure Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+    procedure Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
     procedure Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
     procedure Send_UpdateFromPlayer_AttackStart(guid_attacker, guid_target: uInt64);
     procedure Send_UpdateFromPlayer_AttackStop(guid_attacker, guid_target: uInt64);
@@ -148,6 +153,9 @@ type
       procedure Send_UpdateFromPlayer_Move(MR: TMovementRecord);
       procedure Send_UpdateFromPlayer_ForceRunSpeed(guid: uInt64; value: single);
       procedure Send_UpdateFromPlayer_ForceSwimSpeed(guid: uInt64; value: single);
+      procedure Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+      procedure Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+      procedure Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
       procedure Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
       procedure Send_UpdateFromPlayer_AttackStart(guid_attacker, guid_target: uInt64);
       procedure Send_UpdateFromPlayer_AttackStop(guid_attacker, guid_target: uInt64);
@@ -498,6 +506,37 @@ begin
   PostMessage(Mainform.Handle, WM_ASYNC_WS, Sock, FD_CLOSE);
 end;
 
+procedure TWorldUser.CreateNetworkKey;
+const
+  HMAC_KEY: array [0..15] of byte = ($38, $0A7, $83, $15, $F8, $92, $25, $30, $71, $98,  $67, $B1, $8C, $4,  $E2, $AA);
+var
+  HMAC_IPAD, HMAC_OPAD: array [0..63] of byte;
+  i: longint;
+  Hasher: TSHA1Context;
+  Digest: TSHA1Digest;
+begin
+  for i:= 0 to 63 do
+  begin
+    HMAC_IPAD[i]:= $36;
+    HMAC_OPAD[i]:= $5C;
+
+    if i < 16 then
+    begin
+      HMAC_IPAD[i]:= HMAC_IPAD[i] xor HMAC_KEY[i];
+      HMAC_OPAD[i]:= HMAC_OPAD[i] xor HMAC_KEY[i];
+    end;
+  end;
+
+  InitSHA1(Hasher);
+  UpdateSHA1(Hasher, HMAC_IPAD, 64);
+  UpdateSHA1(Hasher, SessionKey, 40);
+  FinalizeSHA1(Hasher, Digest);
+
+  InitSHA1(Hasher);
+  UpdateSHA1(Hasher, HMAC_OPAD, 64);
+  UpdateSHA1(Hasher, Digest, 20);
+  FinalizeSHA1(Hasher, NetworkKey);
+end;
 procedure TWorldUser.Decode;
 var
   t,x,k: byte;
@@ -512,11 +551,11 @@ begin
     exit;
   end;
 
-  k:= sizeOf(KEY);
+  k:= sizeOf(NetworkKey);
   for t:=0 to len-1 do
     begin
       di:= di mod k;
-      x:= (RBuf[t+ofs]-dj) xor ord(KEY[di]);
+      x:= (RBuf[t+ofs]-dj) xor ord(NetworkKey[di]);
       di:= di+1;
       dj:= RBuf[t+ofs];
       RBuf[t+ofs]:= x;
@@ -536,11 +575,11 @@ begin
     exit;
   end;
 
-  k:= sizeOf(KEY);
+  k:= sizeOf(NetworkKey);
   for t:=0 to len-1 do
     begin
       ei:= ei mod k;
-      x:= (SBuf[t+ofs] xor ord(KEY[ei])) + ej;
+      x:= (SBuf[t+ofs] xor ord(NetworkKey[ei])) + ej;
       ei:= ei+1;
       ej:= x;
       SBuf[t+ofs]:= x;
@@ -572,6 +611,7 @@ begin
   pkt.AddByte(SBuf, WO_PLAYER);
   pkt.AddByte(SBuf, $71); // m.UpdateFlags + m.ActivePlayer
   pkt.AddLong(SBuf, 0);   // m.Movement.m_moveFlags
+  pkt.AddByte(SBuf, 0);   // BC 2.3.0
   pkt.AddLong(SBuf, GetTickCount); // m.UpdateTime
 
   pkt.AddFloat(SBuf, CharData.Enum.position.x);
@@ -594,12 +634,14 @@ begin
   pkt.AddFloat(SBuf, CharData.speed_run_back);
   pkt.AddFloat(SBuf, CharData.speed_swim);
   pkt.AddFloat(SBuf, CharData.speed_swim_back);
+  pkt.AddFloat(SBuf, CharData.speed_flight); // BC 2.0.1
+  pkt.AddFloat(SBuf, CharData.speed_flight_back); // BC 2.0.1
   pkt.AddFloat(SBuf, 3.141593);
 
   // spline
 
   // create_flag $10
-  pkt.AddLong(SBuf, 1);
+  pkt.AddLong(SBuf, CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(     OBJECT_FIELD_GUID,                     CharData.Enum.GUID);
@@ -640,9 +682,17 @@ begin
 
     for i:= 0 to STAT_MAX do
       upkt.AddLong(    UNIT_FIELD_STAT0+i,                    CharData.stat[i]);
+    for i:= 0 to STAT_MAX do
+      upkt.AddInt(     UNIT_FIELD_POSSTAT0+i,                 0);
+    for i:= 0 to STAT_MAX do
+      upkt.AddInt(     UNIT_FIELD_NEGSTAT0+i,                 0);
 
     for i:= 0 to RESISTANCE_MAX do
       upkt.AddLong(    UNIT_FIELD_RESISTANCES+i,              40);
+    for i:= 0 to RESISTANCE_MAX do
+      upkt.AddInt(     UNIT_FIELD_RESISTANCEBUFFMODSPOSITIVE+i, 0);
+    for i:= 0 to RESISTANCE_MAX do
+      upkt.AddInt(     UNIT_FIELD_RESISTANCEBUFFMODSNEGATIVE+i, 0);
 
     upkt.AddLong(      UNIT_FIELD_BASE_MANA,                  CharData.base_mana);
     upkt.AddLong(      UNIT_FIELD_BASE_HEALTH,                CharData.base_health);
@@ -690,6 +740,7 @@ begin
     upkt.AddFloat(     PLAYER_PARRY_PERCENTAGE,               4.0);
     upkt.AddFloat(     PLAYER_CRIT_PERCENTAGE,                4.0);
     upkt.AddFloat(     PLAYER_RANGED_CRIT_PERCENTAGE,         4.0);
+    upkt.AddFloat(     PLAYER_OFFHAND_CRIT_PERCENTAGE,        4.0);
 
     for i:=0 to 63 do
       upkt.AddLong(    PLAYER_EXPLORED_ZONES_1+i,             $FFFFFFFF);
@@ -697,15 +748,6 @@ begin
     upkt.AddInt(       PLAYER_REST_STATE_EXPERIENCE,          CharData.rest_state_xp);
     upkt.AddLong(      PLAYER_FIELD_COINAGE,                  CharData.coinage);
 
-    for i:=0 to STAT_MAX do
-      upkt.AddInt(     PLAYER_FIELD_POSSTAT0+i,               0);
-    for i:=0 to STAT_MAX do
-      upkt.AddInt(     PLAYER_FIELD_NEGSTAT0+i,               0);
-
-    for i:=0 to RESISTANCE_MAX do
-      upkt.AddInt(     PLAYER_FIELD_RESISTANCEBUFFMODSPOSITIVE+i, 0);
-    for i:=0 to RESISTANCE_MAX do
-      upkt.AddInt(     PLAYER_FIELD_RESISTANCEBUFFMODSNEGATIVE+i, 0);
     for i:=0 to RESISTANCE_MAX do
       upkt.AddInt(     PLAYER_FIELD_MOD_DAMAGE_DONE_POS+i,    0);
     for i:=0 to RESISTANCE_MAX do
@@ -714,6 +756,7 @@ begin
       upkt.AddFloat(   PLAYER_FIELD_MOD_DAMAGE_DONE_PCT+i,    1.0);
 
     upkt.AddInt(       PLAYER_FIELD_WATCHED_FACTION_INDEX,    -1);
+    upkt.AddLong(      PLAYER_FIELD_MAX_LEVEL,                70);
 
     upkt.MakeUpdateBlock(@upkt_buf);
   pkt.AddByte(SBuf, upkt.blocks);
@@ -820,22 +863,27 @@ begin
 
   pkt.AddByte(SBuf, $70);
   pkt.AddLong(SBuf, 0);
+  pkt.AddByte(SBuf, 0); // BC 2.3.0
   pkt.AddLong(SBuf, GetTickCount);
   
   pkt.AddFloat(SBuf, U.woLoc.x);
   pkt.AddFloat(SBuf, U.woLoc.y);
   pkt.AddFloat(SBuf, U.woLoc.z);
   pkt.AddFloat(SBuf, U.woLoc.facing);
-  pkt.AddFloat(SBuf, 0);
+
+  pkt.AddLong(SBuf, 0);
 
   pkt.AddFloat(SBuf, U.woSpeedWalk);
   pkt.AddFloat(SBuf, U.woSpeedRun);
   pkt.AddFloat(SBuf, U.woSpeedRunBack);
   pkt.AddFloat(SBuf, U.woSpeedSwim);
   pkt.AddFloat(SBuf, U.woSpeedSwimBack);
+  pkt.AddFloat(SBuf, CharData.speed_flight); // BC 2.0.3
+  pkt.AddFloat(SBuf, CharData.speed_flight_back); // BC 2.0.3
   pkt.AddFloat(SBuf, 3.14);
 
-  pkt.AddInt(SBuf, 1);
+  // create_flag $10
+  pkt.AddLong(SBuf, U.woGUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(UNIT_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,            U.woGUID);
@@ -862,8 +910,8 @@ begin
     upkt.AddLong(    UNIT_FIELD_BASEATTACKTIME+1,  U.unOffhandAttackTime);
     upkt.AddFloat(   UNIT_FIELD_BOUNDINGRADIUS,    U.unBoundingRadius);
     upkt.AddFloat(   UNIT_FIELD_COMBATREACH,       U.unCombatReach);
-    upkt.AddLong(    UNIT_FIELD_DISPLAYID,         CreatureTPL[U.woEntry].DisplayID);
-    upkt.AddLong(    UNIT_FIELD_NATIVEDISPLAYID,   CreatureTPL[U.woEntry].DisplayID);
+    upkt.AddLong(    UNIT_FIELD_DISPLAYID,         CreatureTPL[U.woEntry].DisplayID[0]);
+    upkt.AddLong(    UNIT_FIELD_NATIVEDISPLAYID,   CreatureTPL[U.woEntry].DisplayID[0]);
     upkt.AddFloat(   UNIT_MOD_CAST_SPEED,          U.unCastSpeed);
     if CreatureTPL[U.woEntry].Greetings <> '' then
       upkt.zAddLong( UNIT_NPC_FLAGS,               UNIT_NPC_FLAG_QUESTGIVER); // simulation
@@ -896,22 +944,27 @@ begin
 
   pkt.AddByte(SBuf, $70);
   pkt.AddLong(SBuf, 0);
+  pkt.AddByte(SBuf, 0); // BC 2.3.0
   pkt.AddLong(SBuf, GetTickCount);
 
   pkt.AddFloat(SBuf, P.CharData.Enum.position.x);
   pkt.AddFloat(SBuf, P.CharData.Enum.position.y);
   pkt.AddFloat(SBuf, P.CharData.Enum.position.z);
   pkt.AddFloat(SBuf, P.CharData.facing);
-  pkt.AddFloat(SBuf, 0);
+
+  pkt.AddLong(SBuf, 0);
 
   pkt.AddFloat(SBuf, P.CharData.speed_walk);
   pkt.AddFloat(SBuf, P.CharData.speed_run);
   pkt.AddFloat(SBuf, P.CharData.speed_run_back);
   pkt.AddFloat(SBuf, P.CharData.speed_swim);
   pkt.AddFloat(SBuf, P.CharData.speed_swim_back);
+  pkt.AddFloat(SBuf, P.CharData.speed_flight); // BC 2.0.3
+  pkt.AddFloat(SBuf, P.CharData.speed_flight_back); // BC 2.0.3
   pkt.AddFloat(SBuf, 3.14);
 
-  pkt.AddInt(SBuf, 1);
+  // create_flag $10
+  pkt.AddLong(SBuf, P.CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,                       P.CharData.Enum.GUID);
@@ -990,6 +1043,7 @@ var
 begin
   omsg.GUID:= guid;
   omsg.Count:= 0;
+  omsg.unk:= 1;
   omsg.Value:= value;
   SockSend(msgBuild(SBuf, omsg));
 end;
@@ -1000,6 +1054,31 @@ begin
   omsg.GUID:= guid;
   omsg.Count:= 0;
   omsg.Value:= value;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+var
+  omsg: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
+  omsg.Value:= value;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+var
+  omsg: T_SMSG_MOVE_SET_CAN_FLY;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
+var
+  omsg: T_SMSG_MOVE_UNSET_CAN_FLY;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
   SockSend(msgBuild(SBuf, omsg));
 end;
 procedure TWorldUser.Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
@@ -1072,10 +1151,11 @@ var
   omsg: T_SMSG_SPELL_START;
 begin
   omsg.CasterGUID:= SR.caster_guid;
-  omsg.CasterItemGUID:= SR.caster_guid;
+  omsg.CasterLinkedGUID:= SR.caster_guid;
   omsg.SpellID:= SR.spell_id;
+  omsg.SpellCastCount:= SR.spell_cast_count;
   omsg.CastFlags:= 2; // flags [2] [F]
-  omsg.Duration:= SR.spell_cast_time;
+  omsg.Duration:= SR.spell_cast_duration;
   omsg.TargetFlags:= SR.target_flags;
   omsg.TargetGUID:= SR.target_guid;
   omsg.TargetPosition.x:= SR.target_x;
@@ -1088,9 +1168,10 @@ var
   omsg: T_SMSG_SPELL_GO;
 begin
   omsg.CasterGUID:= SR.caster_guid;
-  omsg.CasterItemGUID:= SR.caster_guid;
+  omsg.CasterLinkedGUID:= SR.caster_guid;
   omsg.SpellID:= SR.spell_id;
   omsg.CastFlags:= $100;
+  omsg.CastStartTime:= SR.spell_cast_start_time;
   SetLength(omsg.AffectedTarget, 1);
   omsg.AffectedTarget[0]:= SR.target_guid;
   SetLength(omsg.ResistedTarget, 0);
@@ -1179,6 +1260,7 @@ begin
     omsg3.GUID:= CharData.Enum.GUID;
     omsg3.MoveCount:= 0;
     omsg3.MoveFlags:= 0;
+    omsg3.FacingFlags:= 0;
     omsg3.MoveStartTime:= GetTickCount;
     omsg3.Position.x:= NewPosX;
     omsg3.Position.y:= NewPosY;
@@ -1429,6 +1511,30 @@ begin
   for i:= 0 to World.Count-1 do
     if World.ObjectByIndex[i].woType = WO_PLAYER then
       TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_ForceSwimSpeed(guid, value);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_ForceFlightSpeed(guid, value);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_SetCanFly(guid);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_UnsetCanFly(guid);
 end;
 procedure TListWorldUsers.Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
 var

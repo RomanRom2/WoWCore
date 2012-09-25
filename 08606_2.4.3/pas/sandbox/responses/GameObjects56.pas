@@ -14,18 +14,20 @@ var
   id: longint;
 begin
 
-  id:=67234;
-  GameObjectTPL[id].Entry:=67234;
-  GameObjectTPL[id].TypeID:=8;
-  GameObjectTPL[id].DisplayID:=731;
-  GameObjectTPL[id].Name[0]:='Fire Totem';
+  id:=66780;
+  GameObjectTPL[id].Entry:=66780;
+  GameObjectTPL[id].TypeID:=5;
+  GameObjectTPL[id].DisplayID:=171;
+  GameObjectTPL[id].Name[0]:='Lionheart Armory';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=4;
-  GameObjectTPL[id].Param[1]:=10;
-  GameObjectTPL[id].Param[2]:=2061;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=1;
+  GameObjectTPL[id].Param[1]:=1;
+  GameObjectTPL[id].Param[2]:=0;
   GameObjectTPL[id].Param[3]:=0;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
@@ -47,6 +49,7 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
 end;
 

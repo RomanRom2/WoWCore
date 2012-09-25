@@ -115,6 +115,29 @@ begin
       end;
     end;
 
+    RACE_DRAENEI:
+    begin
+      c.scale_x            := 1.0;
+      c.Enum.zoneID        := 3524;
+      c.Enum.mapID         := 530;
+      c.Enum.position.x    := -3961.639893;
+      c.Enum.position.y    := -13931.200195;
+      c.Enum.position.z    := 100.614998;
+      c.facing             := 2.083644;
+      c.bounding_radius    := 1.000000;
+      c.combat_reach       := 1.000000;
+      c.enum_model         := 16125+Gender;
+      c.faction_template   := 1629; // DRAENEI
+      case cclass of
+        CLASS_WARRIOR:     RACE_DRAENEI_CLASS_WARRIOR(c);
+        CLASS_PALADIN:     RACE_DRAENEI_CLASS_PALADIN(c);
+        CLASS_HUNTER:      RACE_DRAENEI_CLASS_HUNTER(c);
+        CLASS_PRIEST:      RACE_DRAENEI_CLASS_PRIEST(c);
+        CLASS_SHAMAN:      RACE_DRAENEI_CLASS_SHAMAN(c);
+        CLASS_MAGE:        RACE_DRAENEI_CLASS_MAGE(c);
+      end;
+    end;
+
     // -------------------------------------------------------------------------
     // HORDE
     // -------------------------------------------------------------------------
@@ -206,14 +229,38 @@ begin
       end;
     end;
 
+    RACE_BLOOD_ELF:
+    begin
+      c.scale_x            := 1.0;
+      c.Enum.zoneID        := 3430;
+      c.Enum.mapID         := 530;
+      c.Enum.position.x    := 10349.599609;
+      c.Enum.position.y    := -6357.290039;
+      c.Enum.position.z    := 33.402599;
+      c.facing             := 5.316046;
+      c.bounding_radius    := 0.383;
+      c.combat_reach       := 1.500000;
+      c.enum_model         := 15476-gender;
+      c.faction_template   :=1610; // BLOOD_ELF
+      case cclass of
+        CLASS_PALADIN:     RACE_BLOODELF_CLASS_PALADIN(c);
+        CLASS_HUNTER:      RACE_BLOODELF_CLASS_HUNTER(c);
+        CLASS_ROGUE:       RACE_BLOODELF_CLASS_ROGUE(c);
+        CLASS_PRIEST:      RACE_BLOODELF_CLASS_PRIEST(c);
+        CLASS_MAGE:        RACE_BLOODELF_CLASS_MAGE(c);
+        CLASS_WARLOCK:     RACE_BLOODELF_CLASS_WARLOCK(c);
+      end;
+    end;
   End;
 
   // common
   c.speed_walk             := 2.5;
   c.speed_run              := 7.0;
-  c.speed_run_back         := 4.5;
+  c.speed_run_back         := 2.5;
   c.speed_swim             := 4.722222;
   c.speed_swim_back        := 2.5;
+  c.speed_flight           := 7.0;
+  c.speed_flight_back      := 4.5;
 
   c.health                 := c.max_health;
   c.power[POWER_MANA]      := c.max_power[POWER_MANA];

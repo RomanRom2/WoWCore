@@ -73,8 +73,8 @@ begin
   // Find session KEY from ListLoginUsers
   for i:=0 to ListLoginUsers.Count-1 do
     if ListLoginUsers.UserByIndex[i].AccountName = imsg.Login then
-      move(ListLoginUsers.UserByIndex[i].Data.Session[0], sender.KEY[0], 40);
-                     
+      move(ListLoginUsers.UserByIndex[i].Data.Session[0], sender.SessionKey[0], 40);
+
   // Calculate Server Digest
   login_len:= Length(imsg.Login);
 
@@ -87,7 +87,7 @@ begin
   Move(i, Temp[login_len], 4);
   Move(imsg.ClientSeed, Temp[login_len + 4], 4);
   Move(sender.ServerSeed, Temp[login_len + 4 + 4], 4);
-  Move(sender.KEY[0], Temp[login_len + 4 + 4 + 4], 40);
+  Move(sender.SessionKey[0], Temp[login_len + 4 + 4 + 4], 40);
 
   Hasher.HashBuffer(Temp[0], Length(Temp));
   Hasher.GetDigest(server_digest);
@@ -111,14 +111,23 @@ begin
     MainLog('CMSG_AUTH_SESSION: AUTH_VERSION_MISMATCH');
   end;
 
+  // create traffic key
+  sender.CreateNetworkKey;
+
   // Answer
+  omsg.Count:= 0;
+  omsg.Unk1:= 0;
+  omsg.Unk2:= 0;
+  omsg.GameType:= GAME_TYPE_BC;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 
   if omsg.ResponseCode = AUTH_OK  then
   begin
     MainLog('CMSG_AUTH_SESSION: AUTH_OK');
-    s:= ''; for i:=0 to 39 do s:= s + inttohex(sender.KEY[i],2);
+    s:= ''; for i:=0 to 39 do s:= s + inttohex(sender.SessionKey[i],2);
     MainLog('SESSION KEY: ' + s);
+    s:= ''; for i:=0 to 19 do s:= s + inttohex(sender.NetworkKey[i],2);
+    MainLog('NETWORK KEY: ' + s);
   end
   else
   begin
@@ -126,6 +135,7 @@ begin
     exit;
   end;
 
+  // Autocreate several chars
   if ListChars.Count > 0 then exit;
 
   // creating Human Mage Male
@@ -149,6 +159,38 @@ begin
   imsg2.raceID:= RACE_ORC;
   imsg2.classID:= CLASS_WARRIOR;
   imsg2.sexID:= GENDER_MALE;
+  imsg2.skinID:= 0;
+  imsg2.faceID:= 0;
+  imsg2.hairStyleID:= 0;
+  imsg2.hairColorID:= 0;
+  imsg2.facialHairStyleID:= 0;
+  imsg2.outfitID:= 0;
+  c:= TCharData.Create;
+  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_AddChar(sender.AccountName, c);
+  MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
+
+  // creating Draenei Shaman Male
+  imsg2.name:= 'Drau';
+  imsg2.raceID:= RACE_DRAENEI;
+  imsg2.classID:= CLASS_SHAMAN;
+  imsg2.sexID:= GENDER_FEMALE;
+  imsg2.skinID:= 0;
+  imsg2.faceID:= 0;
+  imsg2.hairStyleID:= 0;
+  imsg2.hairColorID:= 0;
+  imsg2.facialHairStyleID:= 0;
+  imsg2.outfitID:= 0;
+  c:= TCharData.Create;
+  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_AddChar(sender.AccountName, c);
+  MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
+
+  // creating BloodElf Paladin Female
+  imsg2.name:= 'Blua';
+  imsg2.raceID:= RACE_BLOOD_ELF;
+  imsg2.classID:= CLASS_PALADIN;
+  imsg2.sexID:= GENDER_FEMALE;
   imsg2.skinID:= 0;
   imsg2.faceID:= 0;
   imsg2.hairStyleID:= 0;
@@ -247,7 +289,7 @@ begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
 
-  MainLog('CMSG_ITEM_QUERY_SINGLE: entry='+strr(imsg.Entry)+', GUID='+int64tohex(imsg.GUID));
+  MainLog('CMSG_ITEM_QUERY_SINGLE: entry='+strr(imsg.Entry));
 
   if imsg.Entry >= Length(ItemTPL) then
   begin
@@ -366,13 +408,15 @@ begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
 
-  MainLog('CMSG_JOIN_CHANNEL: ['+imsg.Name+'], unk='+strr(imsg.Unk));
+  MainLog('CMSG_JOIN_CHANNEL: category='+strr(imsg.CategoryID)+', type='+strr(imsg.TypeID)+', voice='+strr(imsg.VoiceEnabled)+', name=['+imsg.Name+'], voicename=['+imsg.VoiceName+']');
 
   // channel logic here
-
-  // answer
-  omsg.TypeID:= CHAT_NOTIFY_YOU_JOINED;
+                
+  // answer     
+  omsg.TypeID:= CHAT_NOTIFY_YOU_JOINED; 
   omsg.Name:= imsg.Name;
+  omsg.CategoryID:= imsg.CategoryID;
+  omsg.Unk:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_MESSAGECHAT(var sender: TWorldUser);

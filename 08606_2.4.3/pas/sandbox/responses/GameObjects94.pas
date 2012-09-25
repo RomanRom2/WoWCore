@@ -14,19 +14,21 @@ var
   id: longint;
 begin
 
-  id:=122088;
-  GameObjectTPL[id].Entry:=122088;
-  GameObjectTPL[id].TypeID:=1;
-  GameObjectTPL[id].DisplayID:=1247;
-  GameObjectTPL[id].Name[0]:='Containment Coffer';
+  id:=121264;
+  GameObjectTPL[id].Entry:=121264;
+  GameObjectTPL[id].TypeID:=3;
+  GameObjectTPL[id].DisplayID:=41;
+  GameObjectTPL[id].Name[0]:='Lucius''s Lockbox';
   GameObjectTPL[id].Name[1]:='';
   GameObjectTPL[id].Name[2]:='';
   GameObjectTPL[id].Name[3]:='';
   GameObjectTPL[id].Name[4]:='';
-  GameObjectTPL[id].Param[0]:=1;
-  GameObjectTPL[id].Param[1]:=0;
-  GameObjectTPL[id].Param[2]:=0;
-  GameObjectTPL[id].Param[3]:=103575;
+  GameObjectTPL[id].Name[5]:='';
+  GameObjectTPL[id].Name[6]:='';
+  GameObjectTPL[id].Param[0]:=23;
+  GameObjectTPL[id].Param[1]:=5026;
+  GameObjectTPL[id].Param[2]:=1;
+  GameObjectTPL[id].Param[3]:=0;
   GameObjectTPL[id].Param[4]:=0;
   GameObjectTPL[id].Param[5]:=0;
   GameObjectTPL[id].Param[6]:=0;
@@ -47,6 +49,7 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
+  GameObjectTPL[id].ParamFloat:=0.000000;
 
 end;
 
