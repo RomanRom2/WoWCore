@@ -241,7 +241,7 @@ begin
       c.bounding_radius    := 0.383;
       c.combat_reach       := 1.500000;
       c.enum_model         := 15476-gender;
-      c.faction_template   :=1610; // BLOOD_ELF
+      c.faction_template   := 1610; // BLOOD_ELF
       case cclass of
         CLASS_PALADIN:     RACE_BLOODELF_CLASS_PALADIN(c);
         CLASS_HUNTER:      RACE_BLOODELF_CLASS_HUNTER(c);
@@ -256,7 +256,7 @@ begin
   // common
   c.speed_walk             := 2.5;
   c.speed_run              := 7.0;
-  c.speed_run_back         := 2.5;
+  c.speed_run_back         := 4.5;
   c.speed_swim             := 4.722222;
   c.speed_swim_back        := 2.5;
   c.speed_flight           := 7.0;

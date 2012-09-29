@@ -26,6 +26,7 @@ implementation
 
 uses
   Logs, Convert,
+  wowZLib,
   LbCipher, LbClass,
   TMSGStruct, TMSGBuilder, TMSGParser, TMSGBufGets,
   NetMessages, NetMessagesStr,
@@ -57,9 +58,12 @@ var
   Hasher: TLbSHA1;
   Temp: array of Byte;
   imsg: T_CMSG_AUTH_SESSION;
+  imsg2: T_CLIENT_ADDON_INFO;
   omsg: T_SMSG_AUTH_RESPONSE;
-  imsg2: T_CMSG_CHAR_CREATE;
+  imsg3: T_CMSG_CHAR_CREATE;
+  omsg2: T_SMSG_ADDON_INFO;
   c: TCharData;
+  z_err, unzipped: longint;
 begin
   // default that's ok
   omsg.ResponseCode:= AUTH_OK;
@@ -135,75 +139,123 @@ begin
     exit;
   end;
 
+  // Addon Info
+  // client sends info for Blizzard addons only, hardcoded somewhere in the client
+
+  // 1. unzip the data
+  for i:= 0 to length(sender.RBuf)-1 do sender.RBuf[i]:= 0;
+  sender.RBuf[0]:= hi(imsg.zipLen + msg_CLIENT_HEADER_LEN - 2);
+  sender.RBuf[1]:= lo(imsg.zipLen + msg_CLIENT_HEADER_LEN - 2);
+  z_err:= wowDezip(addr(imsg.zipData[0]), imsg.zipLen, addr(sender.RBuf[msg_CLIENT_HEADER_LEN]), unzipped);
+  if (z_err <> wowZ_OK) or (imsg.zipLen <> unzipped) then
+  begin
+    mainlog('BlizzardAddonInfo: unzip error');
+    exit;
+  end;
+
+  i:= msgParse(sender.RBuf, imsg2);
+  if i <> msg_PARSE_OK then
+  begin
+    MainLog('BlizzardAddonInfo: '+NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
+    exit;
+  end;
+
+  // 2. answer
+  MainLog('BlizzardAddonInfo:');
+  omsg2.Count:= imsg2.Count;
+  SetLength(omsg2.Info, omsg2.Count);
+  for i:= 0 to omsg2.Count-1 do
+  begin
+    s:= strr(i+1)+': '+inttohex(imsg2.Info[i].Enabled, 2)+' '+inttohex(imsg2.Info[i].CRC, 8)+' '+inttohex(imsg2.Info[i].Unk, 8)+' '+imsg2.Info[i].Name;
+    omsg2.Info[i].TypeID:= ADDON_TYPE_BLIZZARD;
+    omsg2.Info[i].isInfoBlockPresent:= 1; // true
+    if imsg2.Info[i].CRC = BlizzardPublickKeyCRC then
+    begin
+      omsg2.Info[i].isPublicKeyPresent:= 0; // false
+      MainLog(s);
+    end
+    else
+    begin
+      omsg2.Info[i].isPublicKeyPresent:= 1; // true
+      move(BlizzardPublicKey[0], omsg2.Info[i].PublicKeyData[0], 256);
+      MainLog(s+' <RESTORED>');
+    end;
+    omsg2.Info[i].Flags:= 0;
+    omsg2.Info[i].isURLPresent:= 0; // false
+  end;
+  omsg2.BannedCount:= 0;
+  SetLength(omsg2.BannedInfo, omsg2.BannedCount);
+  sender.SockSend(msgBuild(sender.SBuf, omsg2));
+
   // Autocreate several chars
   if ListChars.Count > 0 then exit;
 
   // creating Human Mage Male
-  imsg2.name:= 'Maga';
-  imsg2.raceID:= RACE_HUMAN;
-  imsg2.classID:= CLASS_MAGE;
-  imsg2.sexID:= GENDER_MALE;
-  imsg2.skinID:= 0;
-  imsg2.faceID:= 0;
-  imsg2.hairStyleID:= 0;
-  imsg2.hairColorID:= 0;
-  imsg2.facialHairStyleID:= 0;
-  imsg2.outfitID:= 0;
+  imsg3.name:= 'Maga';
+  imsg3.raceID:= RACE_HUMAN;
+  imsg3.classID:= CLASS_MAGE;
+  imsg3.sexID:= GENDER_MALE;
+  imsg3.skinID:= 0;
+  imsg3.faceID:= 0;
+  imsg3.hairStyleID:= 0;
+  imsg3.hairColorID:= 0;
+  imsg3.facialHairStyleID:= 0;
+  imsg3.outfitID:= 0;
   c:= TCharData.Create;
-  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_MakeNewChar(imsg3, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
 
   // creating Orc Warrior Male
-  imsg2.name:= 'Wara';
-  imsg2.raceID:= RACE_ORC;
-  imsg2.classID:= CLASS_WARRIOR;
-  imsg2.sexID:= GENDER_MALE;
-  imsg2.skinID:= 0;
-  imsg2.faceID:= 0;
-  imsg2.hairStyleID:= 0;
-  imsg2.hairColorID:= 0;
-  imsg2.facialHairStyleID:= 0;
-  imsg2.outfitID:= 0;
+  imsg3.name:= 'Wara';
+  imsg3.raceID:= RACE_ORC;
+  imsg3.classID:= CLASS_WARRIOR;
+  imsg3.sexID:= GENDER_MALE;
+  imsg3.skinID:= 0;
+  imsg3.faceID:= 0;
+  imsg3.hairStyleID:= 0;
+  imsg3.hairColorID:= 0;
+  imsg3.facialHairStyleID:= 0;
+  imsg3.outfitID:= 0;
   c:= TCharData.Create;
-  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_MakeNewChar(imsg3, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
 
-  // creating Draenei Shaman Male
-  imsg2.name:= 'Drau';
-  imsg2.raceID:= RACE_DRAENEI;
-  imsg2.classID:= CLASS_SHAMAN;
-  imsg2.sexID:= GENDER_FEMALE;
-  imsg2.skinID:= 0;
-  imsg2.faceID:= 0;
-  imsg2.hairStyleID:= 0;
-  imsg2.hairColorID:= 0;
-  imsg2.facialHairStyleID:= 0;
-  imsg2.outfitID:= 0;
+  // creating Draenei Shaman Female
+  imsg3.name:= 'Drau';
+  imsg3.raceID:= RACE_DRAENEI;
+  imsg3.classID:= CLASS_SHAMAN;
+  imsg3.sexID:= GENDER_FEMALE;
+  imsg3.skinID:= 0;
+  imsg3.faceID:= 0;
+  imsg3.hairStyleID:= 0;
+  imsg3.hairColorID:= 0;
+  imsg3.facialHairStyleID:= 0;
+  imsg3.outfitID:= 0;
   c:= TCharData.Create;
-  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_MakeNewChar(imsg3, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
 
   // creating BloodElf Paladin Female
-  imsg2.name:= 'Blua';
-  imsg2.raceID:= RACE_BLOOD_ELF;
-  imsg2.classID:= CLASS_PALADIN;
-  imsg2.sexID:= GENDER_FEMALE;
-  imsg2.skinID:= 0;
-  imsg2.faceID:= 0;
-  imsg2.hairStyleID:= 0;
-  imsg2.hairColorID:= 0;
-  imsg2.facialHairStyleID:= 0;
-  imsg2.outfitID:= 0;
+  imsg3.name:= 'Blua';
+  imsg3.raceID:= RACE_BLOOD_ELF;
+  imsg3.classID:= CLASS_PALADIN;
+  imsg3.sexID:= GENDER_FEMALE;
+  imsg3.skinID:= 0;
+  imsg3.faceID:= 0;
+  imsg3.hairStyleID:= 0;
+  imsg3.hairColorID:= 0;
+  imsg3.facialHairStyleID:= 0;
+  imsg3.outfitID:= 0;
   c:= TCharData.Create;
-  DB_MakeNewChar(imsg2, c); // born char params of race, class, gender
+  DB_MakeNewChar(imsg3, c); // born char params of race, class, gender
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
 
   // you can add more autocreated chars,
-  // just fill imsg2 what are you want and do DB_MakeNewChar and DB_AddChar after
+  // just fill imsg3 what are you want and do DB_MakeNewChar and DB_AddChar after
 
 end;
 procedure cmd_CMSG_CHAR_ENUM(var sender: TWorldUser);

@@ -205,6 +205,7 @@ begin
   MR.GUID:= sender.CharData.Enum.GUID;
   MR.OpCode:= imsg.MovementInfo.m_lastNetMsgID;
   MR.Flags:= imsg.MovementInfo.m_moveFlags;
+  MR.Flags2:= imsg.MovementInfo.m_moveFlags2;
   MR.StartTime:= imsg.MovementInfo.m_moveStartTime;
   MR.x:= imsg.MovementInfo.m_position.x;
   MR.y:= imsg.MovementInfo.m_position.y;
@@ -623,7 +624,6 @@ begin
 
   SR.spell_cast_duration:= 1000;
   SR.spell_id:= imsg.SpellID;
-  SR.spell_cast_count:= imsg.SpellCastCount;
   SR.spell_cast_start_time:= GetTickCount;
   SR.target_flags:= imsg.TargetFlags;
   SR.target_guid:= imsg.TargetGUID;

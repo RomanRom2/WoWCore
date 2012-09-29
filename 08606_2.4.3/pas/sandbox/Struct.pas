@@ -10,7 +10,6 @@ type
   TSpellRecord = record
     caster_guid: uInt64;
     spell_id: longint;
-    spell_cast_count: byte;
     spell_cast_duration: longint;
     spell_cast_start_time: longint;
     target_flags: longint;
@@ -22,6 +21,7 @@ type
     GUID: uInt64;
     OpCode: word;
     Flags: longint;
+    Flags2: byte;
     StartTime: longint;
     x: single;
     y: single;

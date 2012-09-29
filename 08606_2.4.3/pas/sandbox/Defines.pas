@@ -314,12 +314,11 @@ const
   GUID_TYPE_ITEM                       = $1000000000000000;
   GUID_TYPE_CONTAINER                  = $2000000000000000;
   GUID_TYPE_UNIT                       = $3000000000000000;
-  GUID_TYPE_PET                        = $3300000000000000;
+  GUID_TYPE_PLAYER                     = $0000000000000000;
+  GUID_TYPE_PET                        = $0000000000000000;
   GUID_TYPE_GAMEOBJECT                 = $5000000000000000;
   GUID_TYPE_DYNAMICOBJECT              = $6000000000000000;
   GUID_TYPE_CORPSE                     = $7000000000000000;
-  GUID_TYPE_PLAYER_CORPSE              = $7700000000000000;
-  GUID_TYPE_PLAYER                     = $0000000000000000;
   GUID_TYPE_GROUP                      = $FFFF000000000000;
 
   WO_ITEM                              = 1;
@@ -423,6 +422,28 @@ const
   SPELL_TARGET_FLAG_STRING             = $2000;
   SPELL_TARGET_FLAG_UNKNOWN            = $4000;
   SPELL_TARGET_FLAG_CORPSE             = $8000;
+
+  ADDON_TYPE_BANNED                    = 0;
+  ADDON_TYPE_ENABLED                   = 1;
+  ADDON_TYPE_BLIZZARD                  = 2;
+  BlizzardPublicKey: array [0..255] of byte =
+  ($C3, $5B, $50, $84,  $B9, $3E, $32, $42,  $8C, $D0, $C7, $48,  $FA, $0E, $5D, $54,
+   $5A, $A3, $0E, $14,  $BA, $9E, $0D, $B9,  $5D, $8B, $EE, $B6,  $84, $93, $45, $75,
+   $FF, $31, $FE, $2F,  $64, $3F, $3D, $6D,  $07, $D9, $44, $9B,  $40, $85, $59, $34,
+   $4E, $10, $E1, $E7,  $43, $69, $EF, $7C,  $16, $FC, $B4, $ED,  $1B, $95, $28, $A8,
+   $23, $76, $51, $31,  $57, $30, $2B, $79,  $08, $50, $10, $1C,  $4A, $1A, $2C, $C8,
+   $8B, $8F, $05, $2D,  $22, $3D, $DB, $5A,  $24, $7A, $0F, $13,  $50, $37, $8F, $5A,
+   $CC, $9E, $04, $44,  $0E, $87, $01, $D4,  $A3, $15, $94, $16,  $34, $C6, $C2, $C3,
+   $FB, $49, $FE, $E1,  $F9, $DA, $8C, $50,  $3C, $BE, $2C, $BB,  $57, $ED, $46, $B9,
+   $AD, $8B, $C6, $DF,  $0E, $D6, $0F, $BE,  $80, $B3, $8B, $1E,  $77, $CF, $AD, $22,
+   $CF, $B7, $4B, $CF,  $FB, $F0, $6B, $11,  $45, $2D, $7A, $81,  $18, $F2, $92, $7E,
+   $98, $56, $5D, $5E,  $69, $72, $0A, $0D,  $03, $0A, $85, $A2,  $85, $9C, $CB, $FB,
+   $56, $6E, $8F, $44,  $BB, $8F, $02, $22,  $68, $63, $97, $BC,  $85, $BA, $A8, $F7,
+   $B5, $40, $68, $3C,  $77, $86, $6F, $4B,  $D7, $88, $CA, $8A,  $D7, $CE, $36, $F0,
+   $45, $6E, $D5, $64,  $79, $0F, $17, $FC,  $64, $DD, $10, $6F,  $F3, $F5, $E0, $A6,
+   $C3, $FB, $1B, $8C,  $29, $EF, $8E, $E5,  $34, $CB, $D1, $2A,  $CE, $79, $C3, $9A,
+   $0D, $36, $EA, $01,  $E0, $AA, $91, $20,  $54, $F0, $72, $D8,  $1E, $C7, $89, $D2);
+  BlizzardPublickKeyCRC                = $4C1C776D;
 
   // Inventory
   INVTYPE_NON_EQUIP                    = 0;

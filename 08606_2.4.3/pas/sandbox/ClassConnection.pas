@@ -1019,6 +1019,7 @@ begin
   omsg.GUID:= MR.GUID;
   omsg.MovementInfo.m_lastNetMsgID:= MR.OpCode;
   omsg.MovementInfo.m_moveFlags:= MR.Flags;
+  omsg.MovementInfo.m_moveFlags2:= MR.Flags2;
   omsg.MovementInfo.m_moveStartTime:= MR.StartTime;
   omsg.MovementInfo.m_position.x:= MR.x;
   omsg.MovementInfo.m_position.y:= MR.y;
@@ -1153,7 +1154,7 @@ begin
   omsg.CasterGUID:= SR.caster_guid;
   omsg.CasterLinkedGUID:= SR.caster_guid;
   omsg.SpellID:= SR.spell_id;
-  omsg.SpellCastCount:= SR.spell_cast_count;
+  omsg.Unk:= 0;
   omsg.CastFlags:= 2; // flags [2] [F]
   omsg.Duration:= SR.spell_cast_duration;
   omsg.TargetFlags:= SR.target_flags;
