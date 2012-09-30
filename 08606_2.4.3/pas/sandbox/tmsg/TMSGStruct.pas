@@ -465,7 +465,7 @@ type
 
   T_CMSG_CAST_SPELL = record
     SpellID: longint;
-    SpellCastCount: byte; // 2.3.0
+    Unk: byte; // 2.3.0
     TargetFlags: longint; // 2.4.0: word->long
     TargetGUID: uInt64;
     TargetPosition: C3Vector;
@@ -475,7 +475,7 @@ type
     CasterGUID: uInt64;
     CasterLinkedGUID: uInt64;
     SpellID: longint;
-    SpellCastCount: byte; // 2.3.0
+    Unk: byte; // 2.3.0
     CastFlags: word;
     Duration: longint;
     TargetFlags: word;
@@ -536,6 +536,7 @@ type
     m_facing: single;
     m_pitch: single;
     m_moveFlags: longword;
+    m_moveFlags2: byte;
     m_prev_moveFlags: longword;
     m_moveStartTime: longword;
     m_cosAnchorPitch: single;
@@ -553,10 +554,9 @@ type
     m_spline: TMoveSpline;
     Transport: TTransportInfo;
     m_timeSkipped: longword;
-    unk: byte;
   end;
   T_MSG_MOVE_STATE = record
-    GUID: longword;
+    GUID: uInt64;
     MovementInfo: TMovementInfo;
   end;
 
@@ -717,11 +717,37 @@ type
   end;
 
   TAddonInfo = record
+    TypeID: byte;
+    isInfoBlockPresent: byte;
+    isPublicKeyPresent: byte;
+    PublicKeyData: array[0..255] of byte;
     Flags: longint;
-    Value: longint;
+    isURLPresent: byte;
+    URLText: string;
+  end;
+  TBannedAddonInfo = record
+    Unk1: longint;
+    Unk2_1: array[0..15] of byte;
+    Unk2_2: array[0..15] of byte;
+    Unk3: longint;
+    Unk4: longint;
   end;
   T_SMSG_ADDON_INFO = record
-    Info: array[0..15] of TAddonInfo;
+    Count: longint;
+    Info: array of TAddonInfo;
+    BannedCount: longint;
+    BannedInfo: array of TBannedAddonInfo;
+  end;
+
+  TClientAddonInfo = record
+    Name: string;
+    Enabled: byte;
+    CRC: longint;
+    Unk: longint;
+  end;
+  T_CLIENT_ADDON_INFO = record
+    Count: longint;
+    Info: array of TClientAddonInfo;
   end;
 
 implementation

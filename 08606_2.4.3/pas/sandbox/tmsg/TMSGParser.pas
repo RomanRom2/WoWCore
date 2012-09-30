@@ -20,6 +20,7 @@ const
   );
             
 function msgParse(var buf: TBuffer; var m: T_CMSG_AUTH_SESSION): longint; overload;
+function msgParse(var buf: TBuffer; var m: T_CLIENT_ADDON_INFO): longint; overload;
 function msgParse(var buf: TBuffer; var m: T_CMSG_CHAR_CREATE): longint; overload;
 function msgParse(var buf: TBuffer; var m: T_CMSG_CHAR_DELETE): longint; overload;
 function msgParse(var buf: TBuffer; var m: T_CMSG_PING): longint; overload;
@@ -50,6 +51,7 @@ function msgParse(var buf: TBuffer; var m: T_CMSG_ZONEUPDATE): longint; overload
 implementation
 
 uses
+  SysUtils,
   Defines,
   UpdateFields,
   TMSGBufGets;
@@ -69,6 +71,37 @@ begin
     GetBufArray(buf, ofs, @m.Digest, 20);
     m.ZipLen:=               GetBufLong(buf, ofs);
     GetBufArray(buf, ofs, @m.ZipData, abs(GetBufPktLen(buf) - ofs));
+
+    if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
+  except
+    result:= msg_PARSE_ERROR;
+  end;
+end;
+function msgParse(var buf: TBuffer; var m: T_CLIENT_ADDON_INFO): longint; overload;
+var
+  i: longint;
+begin
+  result:= msg_PARSE_OK;
+  try
+    ofs:= msg_CLIENT_HEADER_LEN;
+
+    SetLength(m.Info, 100);
+    for i:= 0 to Length(m.Info)-1 do
+    begin
+      m.Info[i].Name:=      GetBufStr(buf, ofs);
+
+      if trim(m.Info[i].Name) = '' then
+      begin
+        dec(ofs);
+        m.Count:= i;
+        SetLength(m.Info, m.Count);
+        break;
+      end;
+
+      m.Info[i].Enabled:=   GetBufByte(buf, ofs);
+      m.Info[i].CRC:=       GetBufLong(buf, ofs);
+      m.Info[i].Unk:=       GetBufLong(buf, ofs);
+    end;
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -287,7 +320,7 @@ end;
 procedure GetMovementInfo(var buf: TBuffer; var __ofs: longint; var m: T_MSG_MOVE_STATE);
 begin
   m.MovementInfo.m_moveFlags:= GetBufLong(buf, __ofs);
-  m.MovementInfo.unk:= GetBufByte(buf, __ofs);
+  m.MovementInfo.m_moveFlags2:= GetBufByte(buf, __ofs);
   m.MovementInfo.m_moveStartTime:= GetBufLong(buf, __ofs);
   m.MovementInfo.m_position.x:= GetBufSingle(buf, __ofs);
   m.MovementInfo.m_position.y:= GetBufSingle(buf, __ofs);
@@ -435,7 +468,7 @@ begin
     ofs:= msg_CLIENT_HEADER_LEN;
 
     m.SpellID:= GetBufLong(buf, ofs);
-    m.SpellCastCount:= GetBufByte(buf, ofs);
+    m.Unk:= GetBufByte(buf, ofs);
     m.TargetFlags:= GetBufLong(buf, ofs);
 
     target_flag_code:= 0;

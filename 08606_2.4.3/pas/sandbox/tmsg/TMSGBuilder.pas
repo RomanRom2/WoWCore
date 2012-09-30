@@ -444,10 +444,6 @@ begin
   pkt.AddLong      (Buf, 0); // BC
 
   Case m.TypeID of
-    CHAT_MSG_SAY, CHAT_MSG_PARTY, CHAT_MSG_YELL:
-    begin
-    end;
-
     CHAT_MSG_CHANNEL:
     begin
       pkt.AddStr   (Buf, m.TargetName+#0);
@@ -467,7 +463,7 @@ begin
   pkt.AddGUID      (Buf, m.CasterGUID);
   pkt.AddGUID      (Buf, m.CasterLinkedGUID);
   pkt.AddLong      (Buf, m.SpellID);
-  pkt.AddByte      (Buf, m.SpellCastCount);
+  pkt.AddByte      (Buf, m.Unk);
   pkt.AddWord      (Buf, m.CastFlags);
   pkt.AddLong      (Buf, m.Duration);
   pkt.AddWord      (Buf, m.TargetFlags);
@@ -564,7 +560,7 @@ begin
   pkt.InitCmd      (Buf, m.MovementInfo.m_lastNetMsgID);
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.MovementInfo.m_moveFlags);
-  pkt.AddByte      (Buf, m.MovementInfo.unk);
+  pkt.AddByte      (Buf, m.MovementInfo.m_moveFlags2);
   pkt.AddLong      (Buf, m.MovementInfo.m_moveStartTime);
   pkt.AddFloat     (Buf, m.MovementInfo.m_position.x);
   pkt.AddFloat     (Buf, m.MovementInfo.m_position.y);
@@ -756,10 +752,29 @@ var
   i: longint;
 begin
   pkt.InitCmd      (Buf, SMSG_ADDON_INFO);
-  for i:= 0 to 15 do
+  for i:= 0 to m.Count-1 do
   begin
-    pkt.AddLong    (Buf, m.Info[i].Flags);
-    pkt.AddLong    (Buf, m.Info[i].Value);
+    pkt.AddByte    (Buf, m.Info[i].TypeID);
+    pkt.AddByte    (Buf, m.Info[i].isInfoBlockPresent);
+    if m.Info[i].isInfoBlockPresent <> 0 then
+    begin
+      pkt.AddByte  (Buf, m.Info[i].isPublicKeyPresent);
+      if m.Info[i].isPublicKeyPresent <> 0 then
+        pkt.AddArray(Buf, @m.Info[i].PublicKeyData[0], 256);
+      pkt.AddLong  (Buf, m.Info[i].Flags);
+    end;
+    pkt.AddByte    (Buf, m.Info[i].isURLPresent);
+    if m.Info[i].isURLPresent <> 0 then
+      pkt.AddStr   (Buf, m.Info[i].URLText+#0);
+  end;
+  pkt.AddLong      (Buf, m.BannedCount);
+  for i:= 0 to m.BannedCount-1 do
+  begin
+    pkt.AddLong    (Buf, m.BannedInfo[i].Unk1);
+    pkt.AddArray   (Buf, @m.BannedInfo[i].Unk2_1[0], 16);
+    pkt.AddArray   (Buf, @m.BannedInfo[i].Unk2_2[0], 16);
+    pkt.AddLong    (Buf, m.BannedInfo[i].Unk3);
+    pkt.AddLong    (Buf, m.BannedInfo[i].Unk4);
   end;
   result:= pkt.pktLen;
 end;
