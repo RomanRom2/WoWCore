@@ -13,6 +13,19 @@ uses
   LbProc in 'libs\TPLockBox\LbProc.pas',
   LbString in 'libs\TPLockBox\LbString.pas',
 
+  zlibpas in 'libs\zlib\1.1.0\zlibpas.pas',
+  zutil in 'libs\zlib\1.1.0\zutil.pas',
+  zinflate in 'libs\zlib\1.1.0\zinflate.pas',
+  infblock in 'libs\zlib\1.1.0\infblock.pas',
+  infcodes in 'libs\zlib\1.1.0\infcodes.pas',
+  infutil in 'libs\zlib\1.1.0\infutil.pas',
+  inffast in 'libs\zlib\1.1.0\inffast.pas',
+  inftrees in 'libs\zlib\1.1.0\inftrees.pas',
+  adler in 'libs\zlib\1.1.0\adler.pas',
+  zdeflate in 'libs\zlib\1.1.0\zdeflate.pas',
+  trees in 'libs\zlib\1.1.0\trees.pas',
+  wowZLib in 'libs\zlib\wowZLib.pas',
+
   Convert in 'libs\Convert.pas',
   SRP6_LockBox in 'libs\SRP6_LockBox.pas',
 
