@@ -49,7 +49,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=0.498125;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34013;
   GameObjectTPL[id].Entry:=34013;
@@ -86,7 +92,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=0.498125;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34025;
   GameObjectTPL[id].Entry:=34025;
@@ -123,7 +135,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34026;
   GameObjectTPL[id].Entry:=34026;
@@ -160,7 +178,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34027;
   GameObjectTPL[id].Entry:=34027;
@@ -197,7 +221,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34028;
   GameObjectTPL[id].Entry:=34028;
@@ -234,7 +264,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34029;
   GameObjectTPL[id].Entry:=34029;
@@ -271,7 +307,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34030;
   GameObjectTPL[id].Entry:=34030;
@@ -308,7 +350,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34031;
   GameObjectTPL[id].Entry:=34031;
@@ -345,7 +393,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34032;
   GameObjectTPL[id].Entry:=34032;
@@ -382,7 +436,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34033;
   GameObjectTPL[id].Entry:=34033;
@@ -419,7 +479,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34034;
   GameObjectTPL[id].Entry:=34034;
@@ -456,7 +522,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34035;
   GameObjectTPL[id].Entry:=34035;
@@ -493,7 +565,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000001;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34036;
   GameObjectTPL[id].Entry:=34036;
@@ -530,7 +608,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34037;
   GameObjectTPL[id].Entry:=34037;
@@ -567,7 +651,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34038;
   GameObjectTPL[id].Entry:=34038;
@@ -604,7 +694,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34167;
   GameObjectTPL[id].Entry:=34167;
@@ -641,7 +737,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34168;
   GameObjectTPL[id].Entry:=34168;
@@ -678,7 +780,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34360;
   GameObjectTPL[id].Entry:=34360;
@@ -715,7 +823,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.000000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34571;
   GameObjectTPL[id].Entry:=34571;
@@ -752,7 +866,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.100000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
   id:=34572;
   GameObjectTPL[id].Entry:=34572;
@@ -789,7 +909,13 @@ begin
   GameObjectTPL[id].Param[21]:=0;
   GameObjectTPL[id].Param[22]:=0;
   GameObjectTPL[id].Param[23]:=0;
-  GameObjectTPL[id].ParamFloat:=0.000000;
+  GameObjectTPL[id].ParamFloat:=1.100000;
+  GameObjectTPL[id].Item[0]:=0;
+  GameObjectTPL[id].Item[1]:=0;
+  GameObjectTPL[id].Item[2]:=0;
+  GameObjectTPL[id].Item[3]:=0;
+  GameObjectTPL[id].Item[4]:=0;
+  GameObjectTPL[id].Item[5]:=0;
 
 end;
 

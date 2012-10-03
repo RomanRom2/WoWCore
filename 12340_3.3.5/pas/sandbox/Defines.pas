@@ -49,7 +49,7 @@ const
   AUTH_DB_BUSY                         = $1F;
   AUTH_SUSPENDED                       = $20;
   AUTH_PARENTAL_CONTROL                = $21;
-  AUTH_LOCKED_ENFORCED                 = $22; // new 2.4.0
+  AUTH_LOCKED_ENFORCED                 = $22;
 
   // enum REALM_LIST_RESULT
   REALM_LIST_IN_PROGRESS               = $23;
@@ -84,47 +84,61 @@ const
   CHAR_CREATE_SERVER_QUEUE             = $37;
   CHAR_CREATE_ONLY_EXISTING            = $38;
   CHAR_CREATE_EXPANSION                = $39;
-  LAST_CHAR_CREATE_RESULT              = $3A;
+  CHAR_CREATE_EXPANSION_CLASS          = $3A;
+  CHAR_CREATE_LEVEL_REQUIREMENT        = $3B;
+  CHAR_CREATE_UNIQUE_CLASS_LIMIT       = $3C;
+  CHAR_CREATE_CHARACTER_IN_GUILD       = $3D;
+  CHAR_CREATE_RESTRICTED_RACECLASS     = $3E;
+  CHAR_CREATE_CHARACTER_CHOOSE_RACE    = $3F;
+  CHAR_CREATE_CHARACTER_ARENA_LEADER   = $40;
+  CHAR_CREATE_CHARACTER_DELETE_MAIL    = $41;
+  CHAR_CREATE_CHARACTER_SWAP_FACTION   = $42;
+  CHAR_CREATE_CHARACTER_RACE_ONLY      = $43;
+  CHAR_CREATE_CHARACTER_GOLD_LIMIT     = $44;
+  CHAR_CREATE_FORCE_LOGIN              = $45;
+  LAST_CHAR_CREATE_RESULT              = $46;
 
   // enum CHAR_DELETE_RESULT
-  CHAR_DELETE_IN_PROGRESS              = $3A;
-  CHAR_DELETE_SUCCESS                  = $3B;
-  CHAR_DELETE_FAILED                   = $3C;
-  CHAR_DELETE_FAILED_LOCKED_FOR_TRANSFER = $3D;
-  CHAR_DELETE_FAILED_GUILD_LEADER      = $3E;
-  LAST_CHAR_DELETE_RESULT              = $3F;
+  CHAR_DELETE_IN_PROGRESS              = $46;
+  CHAR_DELETE_SUCCESS                  = $47;
+  CHAR_DELETE_FAILED                   = $48;
+  CHAR_DELETE_FAILED_LOCKED_FOR_TRANSFER = $49;
+  CHAR_DELETE_FAILED_GUILD_LEADER      = $4A;
+  CHAR_DELETE_FAILED_ARENA_CAPTAIN     = $4B;
+  LAST_CHAR_DELETE_RESULT              = $4C;
 
   // enum CHAR_LOGIN_RESULT
-  CHAR_LOGIN_IN_PROGRESS               = $3F;
-  CHAR_LOGIN_SUCCESS                   = $40;
-  CHAR_LOGIN_NO_WORLD                  = $41;
-  CHAR_LOGIN_DUPLICATE_CHARACTER       = $42;
-  CHAR_LOGIN_NO_INSTANCES              = $43;
-  CHAR_LOGIN_FAILED                    = $44;
-  CHAR_LOGIN_DISABLED                  = $45;
-  CHAR_LOGIN_NO_CHARACTER              = $46;
-  CHAR_LOGIN_LOCKED_FOR_TRANSFER       = $47;
-  CHAR_LOGIN_LOCKED_BY_BILLING         = $48;
-  LAST_CHAR_LOGIN_RESULT               = $49;
+  CHAR_LOGIN_IN_PROGRESS               = $4C;
+  CHAR_LOGIN_SUCCESS                   = $4D;
+  CHAR_LOGIN_NO_WORLD                  = $4E;
+  CHAR_LOGIN_DUPLICATE_CHARACTER       = $4F;
+  CHAR_LOGIN_NO_INSTANCES              = $50;
+  CHAR_LOGIN_FAILED                    = $51;
+  CHAR_LOGIN_DISABLED                  = $52;
+  CHAR_LOGIN_NO_CHARACTER              = $53;
+  CHAR_LOGIN_LOCKED_FOR_TRANSFER       = $54;
+  CHAR_LOGIN_LOCKED_BY_BILLING         = $55;
+  CHAR_LOGIN_LOCKED_BY_MOBILE_AH       = $56;
+  LAST_CHAR_LOGIN_RESULT               = $57;
 
   // enum CHAR_NAME_RESULT
-  CHAR_NAME_SUCCESS                    = $49;
-  CHAR_NAME_FAILURE                    = $4A;
-  CHAR_NAME_NO_NAME                    = $4B;
-  CHAR_NAME_TOO_SHORT                  = $4C;
-  CHAR_NAME_TOO_LONG                   = $4D;
-  CHAR_NAME_INVALID_CHARACTER          = $4E;
-  CHAR_NAME_MIXED_LANGUAGES            = $4F;
-  CHAR_NAME_PROFANE                    = $50;
-  CHAR_NAME_RESERVED                   = $51;
-  CHAR_NAME_INVALID_APOSTROPHE         = $52;
-  CHAR_NAME_MULTIPLE_APOSTROPHES       = $53;
-  CHAR_NAME_THREE_CONSECUTIVE          = $54;
-  CHAR_NAME_INVALID_SPACE              = $55;
-  CHAR_NAME_CONSECUTIVE_SPACES         = $56;
-  CHAR_NAME_RUSSIAN_CONSECUTIVE_SILENT_CHARACTERS = $57;
-  CHAR_NAME_RUSSIAN_SILENT_CHARACTER_AT_BEGINNING_OR_END = $58;
-  CHAR_NAME_DECLENSION_DOESNT_MATCH_BASE_NAME = $59;
+  CHAR_NAME_SUCCESS                    = $57;
+  CHAR_NAME_FAILURE                    = $58;
+  CHAR_NAME_NO_NAME                    = $59;
+  CHAR_NAME_TOO_SHORT                  = $5A;
+  CHAR_NAME_TOO_LONG                   = $5B;
+  CHAR_NAME_INVALID_CHARACTER          = $5C;
+  CHAR_NAME_MIXED_LANGUAGES            = $5D;
+  CHAR_NAME_PROFANE                    = $5E;
+  CHAR_NAME_RESERVED                   = $5F;
+  CHAR_NAME_INVALID_APOSTROPHE         = $60;
+  CHAR_NAME_MULTIPLE_APOSTROPHES       = $61;
+  CHAR_NAME_THREE_CONSECUTIVE          = $62;
+  CHAR_NAME_INVALID_SPACE              = $63;
+  CHAR_NAME_CONSECUTIVE_SPACES         = $64;
+  CHAR_NAME_RUSSIAN_CONSECUTIVE_SILENT_CHARACTERS = $65;
+  CHAR_NAME_RUSSIAN_SILENT_CHARACTER_AT_BEGINNING_OR_END = $66;
+  CHAR_NAME_DECLENSION_DOESNT_MATCH_BASE_NAME = $67;
 
   // chat system
   LANG_UNIVERSAL                       = 0;
@@ -235,6 +249,23 @@ const
   CHAT_NOTIFY_VOICE_OFF                = $22;
   CHAT_NOTIFY_COMPLAINT_ADDED          = $23;
 
+  USER_CHANNEL                         = 1;
+  DEFAULT_CHANNEL                      = 8;
+  CITY_CHANNEL                         = 12;
+  COMMON_CHANNEL                       = 24;
+  GUILD_REC_CHANNEL                    = 56;
+  TRADE_CHANNEL                        = 60;
+
+  Channel_Owner                        = 5;
+  Channel_Moderator                    = 2;
+  Channel_Member                       = 4;
+  Channel_Category_General             = 1;
+  Channel_Category_Trade               = 2;
+  Channel_Category_LocalDefense        = 22;
+  Channel_Category_WorldDefense        = 23;
+  Channel_Category_GuildRecruitment    = 25;
+  Channel_Category_LookingForGroup     = 26;
+
   GENDER_MALE                          = 0;
   GENDER_FEMALE                        = 1;
   GENDER_NONE                          = 2;
@@ -311,14 +342,14 @@ const
 
   // World Server
   // ===========================================================================
-  GUID_TYPE_ITEM                       = $1000000000000000;
-  GUID_TYPE_CONTAINER                  = $2000000000000000;
-  GUID_TYPE_UNIT                       = $3000000000000000;
-  GUID_TYPE_PLAYER                     = $0000000000000000;
+  GUID_TYPE_ITEM                       = $4700000000000000;
+  GUID_TYPE_CONTAINER                  = $4700000000000000;
+  GUID_TYPE_UNIT                       = $F130000000000000;
+  GUID_TYPE_PLAYER                     = $0700000000000000;
   GUID_TYPE_PET                        = $0000000000000000;
-  GUID_TYPE_GAMEOBJECT                 = $5000000000000000;
-  GUID_TYPE_DYNAMICOBJECT              = $6000000000000000;
-  GUID_TYPE_CORPSE                     = $7000000000000000;
+  GUID_TYPE_GAMEOBJECT                 = $F110000000000000;
+  GUID_TYPE_DYNAMICOBJECT              = $0000000000000000;
+  GUID_TYPE_CORPSE                     = $0000000000000000;
   GUID_TYPE_GROUP                      = $FFFF000000000000;
 
   WO_ITEM                              = 1;

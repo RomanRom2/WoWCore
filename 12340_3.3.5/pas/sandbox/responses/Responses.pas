@@ -35,11 +35,16 @@ uses
   Items11, Items12, Items13, Items14, Items15, Items16, Items17, Items18, Items19, Items20, 
   Items21, Items22, Items23, Items24, Items25, Items26, Items27, Items28, Items29, Items30, 
   Items31, Items32, Items33, Items34, Items35, Items36, Items37, Items38, Items39, Items40, 
-  Items41, Items42, Items43, Items44, Items45, 
+  Items41, Items42, Items43, Items44, Items45, Items46, Items47, Items48, Items49, Items50, 
+  Items51, Items52, Items53, Items54, Items55, Items56, Items57, Items58, Items59, Items60, 
+  Items61, Items62, Items63, Items64, Items65, Items66, Items67, Items68, Items69, Items70, 
+  Items71, Items72, Items73, Items74, Items75, Items76, 
 
   Creatures1, Creatures2, Creatures3, Creatures4, Creatures5, Creatures6, Creatures7, Creatures8, Creatures9, Creatures10, 
   Creatures11, Creatures12, Creatures13, Creatures14, Creatures15, Creatures16, Creatures17, Creatures18, Creatures19, Creatures20, 
-  Creatures21, Creatures22, Creatures23, Creatures24, Creatures25, Creatures26, Creatures27, 
+  Creatures21, Creatures22, Creatures23, Creatures24, Creatures25, Creatures26, Creatures27, Creatures28, Creatures29, Creatures30, 
+  Creatures31, Creatures32, Creatures33, Creatures34, Creatures35, Creatures36, Creatures37, Creatures38, Creatures39, Creatures40, 
+  
 
   GameObjects1, GameObjects2, GameObjects3, GameObjects4, GameObjects5, GameObjects6, GameObjects7, GameObjects8, GameObjects9, GameObjects10, 
   GameObjects11, GameObjects12, GameObjects13, GameObjects14, GameObjects15, GameObjects16, GameObjects17, GameObjects18, GameObjects19, GameObjects20, 
@@ -56,15 +61,18 @@ uses
   GameObjects121, GameObjects122, GameObjects123, GameObjects124, GameObjects125, GameObjects126, GameObjects127, GameObjects128, GameObjects129, GameObjects130, 
   GameObjects131, GameObjects132, GameObjects133, GameObjects134, GameObjects135, GameObjects136, GameObjects137, GameObjects138, GameObjects139, GameObjects140, 
   GameObjects141, GameObjects142, GameObjects143, GameObjects144, GameObjects145, GameObjects146, GameObjects147, GameObjects148, GameObjects149, GameObjects150, 
-  GameObjects151, GameObjects152, GameObjects153, GameObjects154, 
+  GameObjects151, GameObjects152, GameObjects153, GameObjects154, GameObjects155, GameObjects156, GameObjects157, GameObjects158, GameObjects159, GameObjects160, 
+  GameObjects161, GameObjects162, GameObjects163, GameObjects164, GameObjects165, 
 
   AreaTriggers1, AreaTriggers2, AreaTriggers3, AreaTriggers4, AreaTriggers5, 
 
   Logs, Convert;
 
 procedure LoadAllResponses;
+var
+  i, b, e, c: longint;
 begin
-  SetLength(ItemTPL, 37930);
+  SetLength(ItemTPL, 54807);
   LoadItems1;
   LoadItems2;
   LoadItems3;
@@ -110,9 +118,48 @@ begin
   LoadItems43;
   LoadItems44;
   LoadItems45;
-  MainLog('DB: Items loaded');
+  LoadItems46;
+  LoadItems47;
+  LoadItems48;
+  LoadItems49;
+  LoadItems50;
+  LoadItems51;
+  LoadItems52;
+  LoadItems53;
+  LoadItems54;
+  LoadItems55;
+  LoadItems56;
+  LoadItems57;
+  LoadItems58;
+  LoadItems59;
+  LoadItems60;
+  LoadItems61;
+  LoadItems62;
+  LoadItems63;
+  LoadItems64;
+  LoadItems65;
+  LoadItems66;
+  LoadItems67;
+  LoadItems68;
+  LoadItems69;
+  LoadItems70;
+  LoadItems71;
+  LoadItems72;
+  LoadItems73;
+  LoadItems74;
+  LoadItems75;
+  LoadItems76;
+  b:= 0; e:= 0; c:= 0;
+  for i:= 0 to Length(ItemTPL)-1 do
+    if ItemTPL[i].Entry <> 0 then
+    begin
+      inc(c);
+      if b = 0 then b:= i;
+      e:= i;
+    end;
+  MainLog('DB: '+strr(c)+' Items loaded ['+strr(b)+'..'+strr(e)+']');
 
-  SetLength(CreatureTPL, 27724);
+  SetLength(CreatureTPL, 40704);
   LoadCreatures1;
   LoadCreatures2;
   LoadCreatures3;
@@ -140,7 +187,28 @@ begin
   LoadCreatures25;
   LoadCreatures26;
   LoadCreatures27;
-  MainLog('DB: Creatures loaded');
+  LoadCreatures28;
+  LoadCreatures29;
+  LoadCreatures30;
+  LoadCreatures31;
+  LoadCreatures32;
+  LoadCreatures33;
+  LoadCreatures34;
+  LoadCreatures35;
+  LoadCreatures36;
+  LoadCreatures37;
+  LoadCreatures38;
+  LoadCreatures39;
+  LoadCreatures40;
+  b:= 0; e:= 0; c:= 0;
+  for i:= 0 to Length(CreatureTPL)-1 do
+    if CreatureTPL[i].Entry <> 0 then
+    begin
+      inc(c);
+      if b = 0 then b:= i;
+      e:= i;
+    end;
+  MainLog('DB: '+strr(c)+' Creatures loaded ['+strr(b)+'..'+strr(e)+']');
 
   SetLength(GameObjectTPL, 210132);
   LoadGameObjects1;
@@ -297,15 +365,42 @@ begin
   LoadGameObjects152;
   LoadGameObjects153;
   LoadGameObjects154;
-  MainLog('DB: GameObjects loaded');
+  LoadGameObjects155;
+  LoadGameObjects156;
+  LoadGameObjects157;
+  LoadGameObjects158;
+  LoadGameObjects159;
+  LoadGameObjects160;
+  LoadGameObjects161;
+  LoadGameObjects162;
+  LoadGameObjects163;
+  LoadGameObjects164;
+  LoadGameObjects165;
+  b:= 0; e:= 0; c:= 0;
+  for i:= 0 to Length(GameObjectTPL)-1 do
+    if GameObjectTPL[i].Entry <> 0 then
+    begin
+      inc(c);
+      if b = 0 then b:= i;
+      e:= i;
+    end;
+  MainLog('DB: '+strr(c)+' GameObjects loaded ['+strr(b)+'..'+strr(e)+']');
 
-  SetLength(AreaTriggerDBC, 5043);
+  SetLength(AreaTriggerDBC, 5873);
   LoadAreaTriggers1;
   LoadAreaTriggers2;
   LoadAreaTriggers3;
   LoadAreaTriggers4;
   LoadAreaTriggers5;
-  MainLog('DB: AreaTriggers loaded');
+  b:= 0; e:= 0; c:= 0;
+  for i:= 0 to Length(AreaTriggerDBC)-1 do
+    if AreaTriggerDBC[i].Entry <> 0 then
+    begin
+      inc(c);
+      if b = 0 then b:= i;
+      e:= i;
+    end;
+  MainLog('DB: '+strr(c)+' AreaTriggers loaded ['+strr(b)+'..'+strr(e)+']');
 
 end;
 

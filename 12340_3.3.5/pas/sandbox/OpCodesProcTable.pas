@@ -50,6 +50,7 @@ begin
   @OpCodeProc[CMSG_DESTROYITEM]:=                     @cmd_CMSG_DESTROYITEM;
   @OpCodeProc[CMSG_NPC_TEXT_QUERY]:=                  @cmd_CMSG_NPC_TEXT_QUERY;
   @OpCodeProc[CMSG_ZONEUPDATE]:=                      @cmd_CMSG_ZONEUPDATE;
+  @OpCodeProc[CMSG_UI_TIME_REQUEST]:=                 @cmd_CMSG_UI_TIME_REQUEST;
 
   // World Server
   @OpCodeProc[CMSG_PLAYER_LOGIN]:=                    @cmd_CMSG_PLAYER_LOGIN;

@@ -21,6 +21,7 @@ procedure cmd_CMSG_MESSAGECHAT(var sender: TWorldUser);
 procedure cmd_CMSG_LOGOUT_REQUEST(var sender: TWorldUser);
 procedure cmd_CMSG_DESTROYITEM(var sender: TWorldUser);
 procedure cmd_CMSG_ZONEUPDATE(var sender: TWorldUser);
+procedure cmd_CMSG_UI_TIME_REQUEST(var sender: TWorldUser);
 
 implementation
 
@@ -37,7 +38,7 @@ uses
   OpCodesProcTable,
   Commands,
   Responses,
-  SysUtils, Windows;
+  SysUtils, DateUtils, Windows;
 
 procedure cmd_SMSG_AUTH_CHALLENGE(var sender: TWorldUser);
 var
@@ -46,7 +47,16 @@ begin
   Randomize;
   sender.ServerSeed:= random(65535) * 65535 + random(65535);
 
+  msg.unk:= 1; // 1..31
   msg.ServerSeed:= sender.ServerSeed;
+  msg.Random1:= random(65535) * 65535 + random(65535);
+  msg.Random2:= random(65535) * 65535 + random(65535);
+  msg.Random3:= random(65535) * 65535 + random(65535);
+  msg.Random4:= random(65535) * 65535 + random(65535);
+  msg.Random5:= random(65535) * 65535 + random(65535);
+  msg.Random6:= random(65535) * 65535 + random(65535);
+  msg.Random7:= random(65535) * 65535 + random(65535);
+  msg.Random8:= random(65535) * 65535 + random(65535);
   sender.SockSend(msgBuild(sender.SBuf, msg));
 end;
 procedure cmd_CMSG_AUTH_SESSION(var sender: TWorldUser);
@@ -116,13 +126,13 @@ begin
   end;
 
   // create traffic key
-  sender.CreateNetworkKey;
+  sender.InitCryptors;
 
   // Answer
-  omsg.Count:= 0;
   omsg.Unk1:= 0;
   omsg.Unk2:= 0;
-  omsg.GameType:= GAME_TYPE_BC;
+  omsg.Unk3:= 0;
+  omsg.GameType:= GAME_TYPE_WOTLK;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 
   if omsg.ResponseCode = AUTH_OK  then
@@ -130,8 +140,6 @@ begin
     MainLog('CMSG_AUTH_SESSION: AUTH_OK');
     s:= ''; for i:=0 to 39 do s:= s + inttohex(sender.SessionKey[i],2);
     MainLog('SESSION KEY: ' + s);
-    s:= ''; for i:=0 to 19 do s:= s + inttohex(sender.NetworkKey[i],2);
-    MainLog('NETWORK KEY: ' + s);
   end
   else
   begin
@@ -254,6 +262,22 @@ begin
   DB_AddChar(sender.AccountName, c);
   MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
 
+  // creating Human DeathKnight Male
+  imsg3.name:= 'Deak';
+  imsg3.raceID:= RACE_HUMAN;
+  imsg3.classID:= CLASS_DEATHKNIGHT;
+  imsg3.sexID:= GENDER_MALE;
+  imsg3.skinID:= 0;
+  imsg3.faceID:= 0;
+  imsg3.hairStyleID:= 0;
+  imsg3.hairColorID:= 0;
+  imsg3.facialHairStyleID:= 0;
+  imsg3.outfitID:= 0;
+  c:= TCharData.Create;
+  DB_MakeNewChar(imsg3, c); // born char params of race, class, gender
+  DB_AddChar(sender.AccountName, c);
+  MainLog('AUTO_CREATE_CHAR ['+c.Enum.name+'], '+RaceStr[c.Enum.raceID]+', '+ClassStr[c.Enum.classID]+', '+GenderStr[c.Enum.sexID]+', '+Int64ToHex(c.Enum.GUID));
+
   // you can add more autocreated chars,
   // just fill imsg3 what are you want and do DB_MakeNewChar and DB_AddChar after
 
@@ -357,6 +381,7 @@ begin
 
   omsg:= ItemTPL[imsg.Entry];
   omsg.Entry:= imsg.Entry;
+  omsg.BonusCount:= 10;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_CREATURE_QUERY(var sender: TWorldUser);
@@ -465,10 +490,25 @@ begin
   // channel logic here
                 
   // answer     
-  omsg.TypeID:= CHAT_NOTIFY_YOU_JOINED; 
+  omsg.TypeID:= CHAT_NOTIFY_YOU_JOINED;
   omsg.Name:= imsg.Name;
   omsg.CategoryID:= imsg.CategoryID;
-  omsg.Unk:= 0;
+  Case imsg.CategoryID of
+    Channel_Category_Trade:
+    begin
+      omsg.VoiceID:= TRADE_CHANNEL;
+    end;
+
+    Channel_Category_GuildRecruitment:
+    begin
+      omsg.VoiceID:= GUILD_REC_CHANNEL;
+    end;
+
+    else
+    begin
+      omsg.VoiceID:= COMMON_CHANNEL;
+    end;
+  End;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_MESSAGECHAT(var sender: TWorldUser);
@@ -547,7 +587,7 @@ begin
   // update self
   VR:= CValuesRecord.Create;
   if imsg.Slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + imsg.Slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.Slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   VR.Add(PLAYER_FIELD_INV_SLOT_HEAD + imsg.Slot*2);
   sender.Send_UpdateSelf(VR);
   VR.Free;
@@ -560,7 +600,7 @@ begin
 
   VR:= CValuesRecord.Create;
   if imsg.Slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + imsg.Slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.Slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   ListWorldUsers.Send_UpdateFromPlayer_Values(OBJ, VR);
   VR.Free;
 end;
@@ -577,6 +617,13 @@ begin
 
   omsg.AreaID:= imsg.AreaID;
   omsg.XP:= 100;
+  sender.SockSend(msgBuild(sender.SBuf, omsg));
+end;
+procedure cmd_CMSG_UI_TIME_REQUEST(var sender: TWorldUser);
+var
+  omsg: T_SMSG_UI_TIME;
+begin
+  omsg.DateTimeValue:= DateTimeToUnix(Now);
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 

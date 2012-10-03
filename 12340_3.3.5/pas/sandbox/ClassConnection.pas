@@ -8,10 +8,10 @@ uses
   TMSGStruct,
   ClassWorld,
   LbCipher,
-  SRP6_LockBox;
+  SRP6_LockBox, RC4, HMAC;
 
 const
-  WS_BUFFER_SIZE = 30*1024;
+  WS_BUFFER_SIZE = 60*1024;
 
 type
   TBuffer = array[0..WS_BUFFER_SIZE-1] of byte;
@@ -75,8 +75,9 @@ type
     AccountName: string;
 
     ServerSeed: longint;
+    Decoder: TRC4;
+    Encoder: TRC4;
     SessionKey: array [0..39] of Byte;
-    NetworkKey: TSHA1Digest;
     di, dj, ei, ej: byte;
     d_first, e_first: boolean;
 
@@ -85,7 +86,7 @@ type
     constructor Create;
     procedure Free;
 
-    procedure CreateNetworkKey;
+    procedure InitCryptors;
     procedure Decode;
     procedure Encode;
 
@@ -506,84 +507,66 @@ begin
   PostMessage(Mainform.Handle, WM_ASYNC_WS, Sock, FD_CLOSE);
 end;
 
-procedure TWorldUser.CreateNetworkKey;
+procedure TWorldUser.InitCryptors;
 const
-  HMAC_KEY: array [0..15] of byte = ($38, $0A7, $83, $15, $F8, $92, $25, $30, $71, $98,  $67, $B1, $8C, $4,  $E2, $AA);
+//  EncoderKey: array [0..15] of byte = ($22, $BE, $E5, $CF, $BB, $07, $64, $D9, $00, $45, $1B, $D0, $24, $B8, $D5, $45);
+//  DecoderKey: array [0..15] of byte = ($F4, $66, $31, $59, $FC, $83, $6E, $31, $31, $02, $51, $D5, $44, $31, $67, $98);
+
+  // new cryptors from 3.3.3
+  EncoderKey: array [0..15] of byte = ($CC, $98, $AE, $04, $E8, $97, $EA, $CA, $12, $DD, $C0, $93, $42, $91, $53, $57);
+  DecoderKey: array [0..15] of byte = ($C2, $B3, $72, $3C, $C6, $AE, $D9, $B5, $34, $3C, $53, $EE, $2F, $43, $67, $CE);
 var
-  HMAC_IPAD, HMAC_OPAD: array [0..63] of byte;
-  i: longint;
-  Hasher: TSHA1Context;
-  Digest: TSHA1Digest;
+  Hasher: THMAC_SHA1;
+  EncoderHash: TSHA1Digest;
+  DecoderHash: TSHA1Digest;
+
+  ClientEncoder: TRc4;
+  ClientDecoder: TRc4;
+
+  SyncBuff : array [0..1023] of Byte;
 begin
-  for i:= 0 to 63 do
-  begin
-    HMAC_IPAD[i]:= $36;
-    HMAC_OPAD[i]:= $5C;
+  Hasher := THMAC_SHA1.Create(EncoderKey, 16);
+  Hasher.Update(SessionKey, 40);
+  EncoderHash := Hasher.Final;
 
-    if i < 16 then
-    begin
-      HMAC_IPAD[i]:= HMAC_IPAD[i] xor HMAC_KEY[i];
-      HMAC_OPAD[i]:= HMAC_OPAD[i] xor HMAC_KEY[i];
-    end;
-  end;
+  Hasher.ReInit(DecoderKey, 16);
+  Hasher.Update(SessionKey, 40);
+  DecoderHash := Hasher.Final;
+  Hasher.Free;
 
-  InitSHA1(Hasher);
-  UpdateSHA1(Hasher, HMAC_IPAD, 64);
-  UpdateSHA1(Hasher, SessionKey, 40);
-  FinalizeSHA1(Hasher, Digest);
+  RC4_Init(ClientEncoder,EncoderHash);
+  RC4_Init(ClientDecoder,DecoderHash);
 
-  InitSHA1(Hasher);
-  UpdateSHA1(Hasher, HMAC_OPAD, 64);
-  UpdateSHA1(Hasher, Digest, 20);
-  FinalizeSHA1(Hasher, NetworkKey);
+  RC4_Init(Encoder, EncoderHash);
+  RC4_Init(Decoder, DecoderHash);
+
+  FillChar(SyncBuff,1024,#0);
+  RC4_transform(ClientEncoder, SyncBuff, SyncBuff, length(SyncBuff));
+  RC4_transform(Encoder, SyncBuff, SyncBuff, length(SyncBuff));
+
+  FillChar(SyncBuff,1024,#0);
+  RC4_transform(ClientDecoder, SyncBuff, SyncBuff, length(SyncBuff));
+  RC4_transform(Decoder, SyncBuff, SyncBuff, length(SyncBuff));
 end;
 procedure TWorldUser.Decode;
-var
-  t,x,k: byte;
-  ofs, len: byte;
 begin
-  ofs:= 0;
-  len:= 6;
-
   if d_first then
   begin
     d_first:= false;
     exit;
   end;
 
-  k:= sizeOf(NetworkKey);
-  for t:=0 to len-1 do
-    begin
-      di:= di mod k;
-      x:= (RBuf[t+ofs]-dj) xor ord(NetworkKey[di]);
-      di:= di+1;
-      dj:= RBuf[t+ofs];
-      RBuf[t+ofs]:= x;
-   end;
+  RC4_transform(Decoder, RBuf[0], RBuf[0], 6)
 end;
 procedure TWorldUser.Encode;
-var
-  t,x,k: byte;
-  ofs, len: byte;
 begin
-  ofs:= 0;
-  len:= 4;
-
   if e_first then
   begin
     e_first:= false;
     exit;
   end;
 
-  k:= sizeOf(NetworkKey);
-  for t:=0 to len-1 do
-    begin
-      ei:= ei mod k;
-      x:= (SBuf[t+ofs] xor ord(NetworkKey[ei])) + ej;
-      ei:= ei+1;
-      ej:= x;
-      SBuf[t+ofs]:= x;
-    end;
+  RC4_transform(Encoder, SBuf[0], SBuf[0], 4)
 end;
 
 procedure TWorldUser.Send_Destroy(guid: uInt64);
@@ -604,14 +587,14 @@ var
 begin
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1); // count of objects
-  pkt.AddByte(SBuf, 0);
+//  pkt.AddByte(SBuf, 0); // removed in 3.0.1
   pkt.AddByte(SBuf, 3); // m.UpdateType + m.ActivePlayer
   pkt.AddGUID(SBuf, CharData.Enum.GUID);
 
   pkt.AddByte(SBuf, WO_PLAYER);
-  pkt.AddByte(SBuf, $71); // m.UpdateFlags + m.ActivePlayer
+  pkt.AddWord(SBuf, $61); // m.UpdateFlags + m.ActivePlayer // 3.1.0: byte->word
   pkt.AddLong(SBuf, 0);   // m.Movement.m_moveFlags
-  pkt.AddByte(SBuf, 0);   // BC 2.3.0
+  pkt.AddWord(SBuf, 0);   // m.Movement.m_moveFlags2; BC 2.3.0; 3.0.1 (8714): byte->word
   pkt.AddLong(SBuf, GetTickCount); // m.UpdateTime
 
   pkt.AddFloat(SBuf, CharData.Enum.position.x);
@@ -637,40 +620,44 @@ begin
   pkt.AddFloat(SBuf, CharData.speed_flight); // BC 2.0.1
   pkt.AddFloat(SBuf, CharData.speed_flight_back); // BC 2.0.1
   pkt.AddFloat(SBuf, 3.141593);
+  pkt.AddFloat(SBuf, 3.141593); // 3.0.1
 
   // spline
 
-  // create_flag $10
-  pkt.AddLong(SBuf, CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
+  // m.UpdateFlags $8
+//  pkt.AddLong(SBuf, CharData.Enum.GUID); // part of GUID
+  // m.UpdateFlags $10
+//  pkt.AddLong(SBuf, CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(     OBJECT_FIELD_GUID,                     CharData.Enum.GUID);
     upkt.AddLong(      OBJECT_FIELD_TYPE,                     TYPE_PLAYER or TYPE_UNIT or TYPE_OBJECT);
     upkt.AddFloat(     OBJECT_FIELD_SCALE_X,                  CharData.scale_x);
 
+    upkt.AddLong(      UNIT_FIELD_BYTES_0,                    CharData.Enum.raceID or (CharData.Enum.classID shl 8) or (CharData.Enum.sexID shl 16) or (CharData.power_type shl 24));
     upkt.AddLong(      UNIT_FIELD_HEALTH,                     CharData.health);
     upkt.AddLong(      UNIT_FIELD_POWER1,                     CharData.power[POWER_MANA]);
     upkt.AddLong(      UNIT_FIELD_POWER2,                     CharData.power[POWER_RAGE]);
     upkt.AddLong(      UNIT_FIELD_POWER3,                     CharData.power[POWER_FOCUS]);
     upkt.AddLong(      UNIT_FIELD_POWER4,                     CharData.power[POWER_ENERGY]);
     upkt.AddLong(      UNIT_FIELD_POWER5,                     CharData.power[POWER_HAPPINESS]);
+    upkt.AddLong(      UNIT_FIELD_POWER6,                     CharData.power[POWER_RUNES]);
+    upkt.AddLong(      UNIT_FIELD_POWER7,                     CharData.power[POWER_RUNIC]);
     upkt.AddLong(      UNIT_FIELD_MAXHEALTH,                  CharData.max_health);
     upkt.AddLong(      UNIT_FIELD_MAXPOWER1,                  CharData.max_power[POWER_MANA]);
     upkt.AddLong(      UNIT_FIELD_MAXPOWER2,                  CharData.max_power[POWER_RAGE]);
     upkt.AddLong(      UNIT_FIELD_MAXPOWER3,                  CharData.max_power[POWER_FOCUS]);
     upkt.AddLong(      UNIT_FIELD_MAXPOWER4,                  CharData.max_power[POWER_ENERGY]);
     upkt.AddLong(      UNIT_FIELD_MAXPOWER5,                  CharData.max_power[POWER_HAPPINESS]);
-
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER6,                  CharData.max_power[POWER_RUNES]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER7,                  CharData.max_power[POWER_RUNIC]);
     upkt.AddLong(      UNIT_FIELD_LEVEL,                      CharData.Enum.experienceLevel);
     upkt.AddLong(      UNIT_FIELD_FACTIONTEMPLATE,            CharData.faction_template);
-    upkt.AddLong(      UNIT_FIELD_BYTES_0,                    CharData.Enum.raceID or (CharData.Enum.classID shl 8) or (CharData.Enum.sexID shl 16) or (CharData.power_type shl 24));
     upkt.AddLong(      UNIT_FIELD_FLAGS,                      CharData.flags);
-
-    // UNIT_FIELD_AURA
-
+    upkt.AddLong(      UNIT_FIELD_FLAGS_2,                    CharData.flags2);
     upkt.AddLong(      UNIT_FIELD_BASEATTACKTIME+0,           CharData.mainhand_attack_time);
     upkt.AddLong(      UNIT_FIELD_BASEATTACKTIME+1,           CharData.offhand_attack_time);
-
+    upkt.AddLong(      UNIT_FIELD_RANGEDATTACKTIME,           CharData.ranged_attack_time);
     upkt.AddFloat(     UNIT_FIELD_BOUNDINGRADIUS,             CharData.bounding_radius);
     upkt.AddFloat(     UNIT_FIELD_COMBATREACH,                CharData.combat_reach);
     upkt.AddLong(      UNIT_FIELD_DISPLAYID,                  CharData.enum_model);
@@ -683,7 +670,7 @@ begin
 
     upkt.AddLong(      UNIT_FIELD_BYTES_1,                    CharData.stand_state or (0 shl 8) or (0 shl 16) or (0 shl 24));
 
-    upkt.AddFloat(     UNIT_MOD_CAST_SPEED,                   1.0);
+    upkt.AddFloat(     UNIT_MOD_CAST_SPEED,                   CharData.mod_cast_speed);
 
     for i:= 0 to STAT_MAX do
       upkt.AddLong(    UNIT_FIELD_STAT0+i,                    CharData.stat[i]);
@@ -693,7 +680,7 @@ begin
       upkt.AddInt(     UNIT_FIELD_NEGSTAT0+i,                 0);
 
     for i:= 0 to RESISTANCE_MAX do
-      upkt.AddLong(    UNIT_FIELD_RESISTANCES+i,              40);
+      upkt.AddLong(    UNIT_FIELD_RESISTANCES+i,              CharData.resist[i]);
     for i:= 0 to RESISTANCE_MAX do
       upkt.AddInt(     UNIT_FIELD_RESISTANCEBUFFMODSPOSITIVE+i, 0);
     for i:= 0 to RESISTANCE_MAX do
@@ -705,23 +692,24 @@ begin
     upkt.AddLong(      UNIT_FIELD_BYTES_2,                    CharData.sheathed or (0 shl 8) or (0 shl 16) or (0 shl 24));
 
     upkt.AddLong(      UNIT_FIELD_ATTACK_POWER,               CharData.attack_power);
-    upkt.AddLong(      UNIT_FIELD_ATTACK_POWER_MODS,          CharData.attack_power_mod);
+    upkt.AddLong(      UNIT_FIELD_ATTACK_POWER_MODS,          0);
+    upkt.AddFloat(     UNIT_FIELD_ATTACK_POWER_MULTIPLIER,    1.0);
     upkt.AddLong(      UNIT_FIELD_RANGED_ATTACK_POWER,        CharData.ranged_attack_power);
-    upkt.AddLong(      UNIT_FIELD_RANGED_ATTACK_POWER_MODS,   CharData.ranged_attack_power_mod);
-
+    upkt.AddLong(      UNIT_FIELD_RANGED_ATTACK_POWER_MODS,   0);
+    upkt.AddFloat(     UNIT_FIELD_RANGED_ATTACK_POWER_MULTIPLIER, 1.0);
     upkt.AddFloat(     UNIT_FIELD_MINRANGEDDAMAGE,            CharData.min_ranged_damage);
     upkt.AddFloat(     UNIT_FIELD_MAXRANGEDDAMAGE,            CharData.max_ranged_damage);
+    upkt.AddFloat(     UNIT_FIELD_HOVERHEIGHT,                CharData.hover_height);
 
     upkt.AddLong(      PLAYER_FLAGS,                          CharData.player_flags);
-
     upkt.AddLong(      PLAYER_BYTES,                          CharData.Enum.skinID or (CharData.Enum.faceID shl 8) or (CharData.Enum.hairStyleID shl 16) or (CharData.Enum.hairColorID shl 24));
     upkt.AddLong(      PLAYER_BYTES_2,                        CharData.Enum.facialHairStyleID or (0 shl 8) or (0 shl 16) or (CharData.Enum.restInfo shl 24));
     upkt.AddLong(      PLAYER_BYTES_3,                        CharData.Enum.sexID or (0 shl 8)or (0 shl 16) or (0 shl 24));
 
-    delta:= PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0;
+    delta:= PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID;
     for i:= 0 to PLAYER_VISIBLE_ITEMS_COUNT-1 do
       if CharData.inventory_bag[0][i].Entry <> 0 then
-        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + i*delta,     CharData.inventory_bag[0][i].Entry );
+        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + i*delta, CharData.inventory_bag[0][i].Entry );
 
     for i:= 0 to Length(CharData.inventory_bag[0])-1 do
       if CharData.inventory_bag[0][i].Entry <> 0 then
@@ -733,14 +721,14 @@ begin
     for i:=0 to PLAYER_SKILLS_COUNT-1 do
       if (CharData.Skills[i].id > 0) then
       begin
-        upkt.AddLong(  PLAYER_SKILL_INFO_1_1+ i*3,            CharData.Skills[i].id);
+        upkt.AddLong(  PLAYER_SKILL_INFO_1_1+ i*3,            (CharData.Skills[i].flag shl 16) + CharData.Skills[i].id);
         if CharData.Skills[i].max_level > 0 then
-          upkt.AddLong(PLAYER_SKILL_INFO_1_1+ i*3 +1,         CharData.Skills[i].max_level shl 16 + CharData.Skills[i].current_level);
+          upkt.AddLong(PLAYER_SKILL_INFO_1_1+ i*3 +1,         (CharData.Skills[i].max_level shl 16) + CharData.Skills[i].current_level);
         if CharData.Skills[i].stat_max_level > 0 then
-          upkt.AddLong(PLAYER_SKILL_INFO_1_1+ i*3 +2,         CharData.Skills[i].stat_max_level shl 16 + CharData.Skills[i].stat_current_level);
+          upkt.AddLong(PLAYER_SKILL_INFO_1_1+ i*3 +2,         (CharData.Skills[i].stat_max_level shl 16) + CharData.Skills[i].stat_current_level);
       end;
 
-    upkt.AddLong(      PLAYER_CHARACTER_POINTS1,              0);
+    upkt.AddLong(      PLAYER_CHARACTER_POINTS1,              CharData.points1);
     upkt.AddLong(      PLAYER_CHARACTER_POINTS2,              CharData.professions_left);
     upkt.AddFloat(     PLAYER_BLOCK_PERCENTAGE,               4.0);
     upkt.AddFloat(     PLAYER_DODGE_PERCENTAGE,               4.0);
@@ -749,7 +737,7 @@ begin
     upkt.AddFloat(     PLAYER_RANGED_CRIT_PERCENTAGE,         4.0);
     upkt.AddFloat(     PLAYER_OFFHAND_CRIT_PERCENTAGE,        4.0);
 
-    for i:=0 to 63 do
+    for i:=0 to 127 do
       upkt.AddLong(    PLAYER_EXPLORED_ZONES_1+i,             $FFFFFFFF);
 
     upkt.AddInt(       PLAYER_REST_STATE_EXPERIENCE,          CharData.rest_state_xp);
@@ -762,8 +750,16 @@ begin
     for i:=0 to RESISTANCE_MAX do
       upkt.AddFloat(   PLAYER_FIELD_MOD_DAMAGE_DONE_PCT+i,    1.0);
 
+    // PLAYER_FIELD_BYTES
+
     upkt.AddInt(       PLAYER_FIELD_WATCHED_FACTION_INDEX,    -1);
-    upkt.AddLong(      PLAYER_FIELD_MAX_LEVEL,                70);
+    upkt.AddLong(      PLAYER_FIELD_MAX_LEVEL,                80);
+
+    for i:=0 to 3 do
+      upkt.AddFloat(   PLAYER_RUNE_REGEN_1+i,                 0.1);
+
+    for i:=0 to 5 do
+      upkt.AddFloat(   PLAYER_FIELD_GLYPH_SLOTS_1+i,          21+i);
 
     upkt.MakeUpdateBlock(@upkt_buf);
   pkt.AddByte(SBuf, upkt.blocks);
@@ -782,7 +778,6 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 0); // UPDATETYPE_VALUES
   pkt.AddGUID(SBuf, CharData.Enum.GUID);
 
@@ -798,9 +793,9 @@ begin
         UNIT_FIELD_MOUNTDISPLAYID:  upkt.AddLong(  FIELD,  CharData.mount_model);
         UNIT_FIELD_BYTES_1:         upkt.AddLong(  FIELD,  CharData.stand_state or (CharData.stealth_visual_effect shl 8) or (CharData.shape_shift_form shl 16) or (CharData.shape_shift_stand shl 24));
         UNIT_FIELD_BYTES_2:         upkt.AddLong(  FIELD,  CharData.sheathed or (0 shl 8) or (0 shl 16) or (0 shl 24));
-        PLAYER_VISIBLE_ITEM_1_CREATOR..PLAYER_VISIBLE_ITEM_19_PAD:
+        PLAYER_VISIBLE_ITEM_1_ENTRYID..PLAYER_VISIBLE_ITEM_19_ENCHANTMENT:
         begin
-          item_slot:= (FIELD - PLAYER_VISIBLE_ITEM_1_0) div (PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0);
+          item_slot:= (FIELD - PLAYER_VISIBLE_ITEM_1_ENTRYID) div (PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID);
           upkt.AddLong(                            FIELD,  CharData.inventory_bag[0][item_slot].Entry);
         end;
         PLAYER_FIELD_INV_SLOT_HEAD..PLAYER_FARSIGHT-1:
@@ -828,13 +823,12 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 2); // create type full
   pkt.AddGUID(SBuf, ItemTemplate.GUID);
 
   pkt.AddByte(SBuf, WO_ITEM);
-  pkt.AddByte(SBuf, $10);
-  pkt.AddLong(SBuf, 0);
+  pkt.AddWord(SBuf, $10);
+  pkt.AddLong(SBuf, GetTickCount);
 
     upkt.Init(CONTAINER_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,            ItemTemplate.GUID);
@@ -862,15 +856,14 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 2); // update type full
 
   pkt.AddGUID(SBuf, U.woGUID);
   pkt.AddByte(SBuf, WO_UNIT);
 
-  pkt.AddByte(SBuf, $70);
+  pkt.AddWord(SBuf, $60);
   pkt.AddLong(SBuf, 0);
-  pkt.AddByte(SBuf, 0); // BC 2.3.0
+  pkt.AddWord(SBuf, 0);
   pkt.AddLong(SBuf, GetTickCount);
   
   pkt.AddFloat(SBuf, U.woLoc.x);
@@ -885,18 +878,17 @@ begin
   pkt.AddFloat(SBuf, U.woSpeedRunBack);
   pkt.AddFloat(SBuf, U.woSpeedSwim);
   pkt.AddFloat(SBuf, U.woSpeedSwimBack);
-  pkt.AddFloat(SBuf, CharData.speed_flight); // BC 2.0.3
-  pkt.AddFloat(SBuf, CharData.speed_flight_back); // BC 2.0.3
+  pkt.AddFloat(SBuf, CharData.speed_flight);
+  pkt.AddFloat(SBuf, CharData.speed_flight_back);
   pkt.AddFloat(SBuf, 3.14);
-
-  // create_flag $10
-  pkt.AddLong(SBuf, U.woGUID); // BC 2.0.1.6180 - LOW part of GUID
+  pkt.AddFloat(SBuf, 3.14);
 
     upkt.Init(UNIT_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,            U.woGUID);
     upkt.AddLong(    OBJECT_FIELD_TYPE,            TYPE_OBJECT + TYPE_UNIT);
     upkt.AddLong(    OBJECT_FIELD_ENTRY,           U.woEntry);
     upkt.AddFloat(   OBJECT_FIELD_SCALE_X,         U.woScaleX);
+    upkt.AddLong(    UNIT_FIELD_BYTES_0,           U.unFieldBytes0);
     upkt.AddLong(    UNIT_FIELD_HEALTH,            U.unHealth);
     upkt.zAddLong(   UNIT_FIELD_POWER1,            U.unPower[POWER_MANA]);
     upkt.zAddLong(   UNIT_FIELD_POWER2,            U.unPower[POWER_RAGE]);
@@ -911,7 +903,6 @@ begin
     upkt.zAddLong(   UNIT_FIELD_MAXPOWER5,         U.unMaxPower[POWER_HAPPINESS]);
     upkt.AddLong(    UNIT_FIELD_LEVEL,             U.unLevel);
     upkt.AddLong(    UNIT_FIELD_FACTIONTEMPLATE,   U.unFactionTemplate);
-    upkt.AddLong(    UNIT_FIELD_BYTES_0,           U.unFieldBytes0);
     upkt.zAddLong(   UNIT_FIELD_FLAGS,             U.unFieldFlags);
     upkt.AddLong(    UNIT_FIELD_BASEATTACKTIME+0,  U.unMainhandAttackTime);
     upkt.AddLong(    UNIT_FIELD_BASEATTACKTIME+1,  U.unOffhandAttackTime);
@@ -944,14 +935,13 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 2); // update type full
   pkt.AddGUID(SBuf, P.CharData.Enum.GUID);
   pkt.AddByte(SBuf, WO_PLAYER);
 
-  pkt.AddByte(SBuf, $70);
+  pkt.AddWord(SBuf, $60);
   pkt.AddLong(SBuf, 0);
-  pkt.AddByte(SBuf, 0); // BC 2.3.0
+  pkt.AddWord(SBuf, 0);
   pkt.AddLong(SBuf, GetTickCount);
 
   pkt.AddFloat(SBuf, P.CharData.Enum.position.x);
@@ -966,34 +956,36 @@ begin
   pkt.AddFloat(SBuf, P.CharData.speed_run_back);
   pkt.AddFloat(SBuf, P.CharData.speed_swim);
   pkt.AddFloat(SBuf, P.CharData.speed_swim_back);
-  pkt.AddFloat(SBuf, P.CharData.speed_flight); // BC 2.0.3
-  pkt.AddFloat(SBuf, P.CharData.speed_flight_back); // BC 2.0.3
+  pkt.AddFloat(SBuf, P.CharData.speed_flight);
+  pkt.AddFloat(SBuf, P.CharData.speed_flight_back);
   pkt.AddFloat(SBuf, 3.14);
-
-  // create_flag $10
-  pkt.AddLong(SBuf, P.CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
+  pkt.AddFloat(SBuf, 3.14);
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,                       P.CharData.Enum.GUID);
     upkt.AddLong(    OBJECT_FIELD_TYPE,                       TYPE_OBJECT + TYPE_UNIT + TYPE_PLAYER);
     upkt.AddFloat(   OBJECT_FIELD_SCALE_X,                    P.CharData.scale_x);
-
+    upkt.AddLong(    UNIT_FIELD_BYTES_0,                      P.CharData.Enum.raceID or (P.CharData.Enum.classID shl 8) or (P.CharData.Enum.sexID shl 16) or (P.CharData.power_type shl 24));
     upkt.AddLong(    UNIT_FIELD_HEALTH,                       P.CharData.health);
     upkt.AddLong(    UNIT_FIELD_POWER1,                       P.CharData.power[POWER_MANA]);
     upkt.AddLong(    UNIT_FIELD_POWER2,                       P.CharData.power[POWER_RAGE]);
     upkt.AddLong(    UNIT_FIELD_POWER3,                       P.CharData.power[POWER_FOCUS]);
     upkt.AddLong(    UNIT_FIELD_POWER4,                       P.CharData.power[POWER_ENERGY]);
     upkt.AddLong(    UNIT_FIELD_POWER5,                       P.CharData.power[POWER_HAPPINESS]);
+    upkt.AddLong(    UNIT_FIELD_POWER6,                       P.CharData.power[POWER_RUNES]);
+    upkt.AddLong(    UNIT_FIELD_POWER7,                       P.CharData.power[POWER_RUNIC]);
     upkt.AddLong(    UNIT_FIELD_MAXHEALTH,                    P.CharData.max_health);
     upkt.AddLong(    UNIT_FIELD_MAXPOWER1,                    P.CharData.max_power[POWER_MANA]);
     upkt.AddLong(    UNIT_FIELD_MAXPOWER2,                    P.CharData.max_power[POWER_RAGE]);
     upkt.AddLong(    UNIT_FIELD_MAXPOWER3,                    P.CharData.max_power[POWER_FOCUS]);
     upkt.AddLong(    UNIT_FIELD_MAXPOWER4,                    P.CharData.max_power[POWER_ENERGY]);
     upkt.AddLong(    UNIT_FIELD_MAXPOWER5,                    P.CharData.max_power[POWER_HAPPINESS]);
+    upkt.AddLong(    UNIT_FIELD_MAXPOWER6,                    P.CharData.max_power[POWER_RUNES]);
+    upkt.AddLong(    UNIT_FIELD_MAXPOWER7,                    P.CharData.max_power[POWER_RUNIC]);
     upkt.AddLong(    UNIT_FIELD_LEVEL,                        P.CharData.Enum.experienceLevel);
     upkt.AddLong(    UNIT_FIELD_FACTIONTEMPLATE,              P.CharData.faction_template);
-    upkt.AddLong(    UNIT_FIELD_BYTES_0,                      P.CharData.Enum.raceID or (P.CharData.Enum.classID shl 8) or (P.CharData.Enum.sexID shl 16) or (P.CharData.power_type shl 24));
     upkt.AddLong(    UNIT_FIELD_FLAGS,                        P.CharData.flags);
+    upkt.AddLong(    UNIT_FIELD_FLAGS_2,                      P.CharData.flags2);
     upkt.AddLong(    UNIT_FIELD_BASEATTACKTIME+0,             P.CharData.mainhand_attack_time);
     upkt.AddLong(    UNIT_FIELD_BASEATTACKTIME+1,             P.CharData.offhand_attack_time);
     upkt.AddLong(    UNIT_FIELD_RANGEDATTACKTIME,             P.CharData.ranged_attack_time);
@@ -1007,15 +999,16 @@ begin
     upkt.AddLong(    UNIT_FIELD_BASE_MANA,                    P.CharData.base_mana);
     upkt.AddLong(    UNIT_FIELD_BASE_HEALTH,                  P.CharData.base_health);
     upkt.AddLong(    UNIT_FIELD_BYTES_2,                      P.CharData.sheathed or (0 shl 8) or (0 shl 16) or (0 shl 24));
+    upkt.AddFloat(   UNIT_FIELD_HOVERHEIGHT,                  1.0);
     upkt.AddLong(    PLAYER_FLAGS,                            P.CharData.player_flags);
     upkt.AddLong(    PLAYER_BYTES,                            P.CharData.Enum.skinID or (P.CharData.Enum.faceID shl 8) or (P.CharData.Enum.hairStyleID shl 16) or (P.CharData.Enum.hairColorID shl 24));
     upkt.AddLong(    PLAYER_BYTES_2,                          P.CharData.Enum.facialHairStyleID or (0 shl 8) or (0 shl 16) or (P.CharData.Enum.restInfo shl 24));
     upkt.AddLong(    PLAYER_BYTES_3,                          P.CharData.Enum.sexID or (0 shl 8) or (0 shl 16) or (0 shl 24));
 
-    delta:= PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0;
+    delta:= PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID;
     for i:= 0 to PLAYER_VISIBLE_ITEMS_COUNT-1 do
       if P.CharData.inventory_bag[0][i].Entry <> 0 then
-        upkt.AddLong(PLAYER_VISIBLE_ITEM_1_0 + i*delta,       P.CharData.inventory_bag[0][i].Entry );
+        upkt.AddLong(PLAYER_VISIBLE_ITEM_1_ENTRYID + i*delta, P.CharData.inventory_bag[0][i].Entry );
 
     upkt.MakeUpdateBlock(@upkt_buf);
 
@@ -1038,7 +1031,6 @@ begin
   omsg.GUID:= MR.GUID;
   omsg.MovementInfo.m_lastNetMsgID:= MR.OpCode;
   omsg.MovementInfo.m_moveFlags:= MR.Flags;
-  omsg.MovementInfo.m_moveFlags2:= MR.Flags2;
   omsg.MovementInfo.m_moveStartTime:= MR.StartTime;
   omsg.MovementInfo.m_position.x:= MR.x;
   omsg.MovementInfo.m_position.y:= MR.y;
@@ -1118,7 +1110,6 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 0); // values
   pkt.AddGUID(SBuf, P.CharData.Enum.GUID);
 
@@ -1135,9 +1126,9 @@ begin
         UNIT_FIELD_MOUNTDISPLAYID:  upkt.AddLong(  FIELD,   P.CharData.mount_model);
         UNIT_FIELD_BYTES_1:         upkt.AddLong(  FIELD,   P.CharData.stand_state or (P.CharData.stealth_visual_effect shl 8) or (P.CharData.shape_shift_form shl 16) or (P.CharData.shape_shift_stand shl 24));
         UNIT_FIELD_BYTES_2:         upkt.AddLong(  FIELD,   P.CharData.sheathed or (0 shl 8) or (0 shl 16) or (P.CharData.Enum.restInfo shl 24));
-        PLAYER_VISIBLE_ITEM_1_CREATOR..PLAYER_VISIBLE_ITEM_19_PAD:
+        PLAYER_VISIBLE_ITEM_1_ENTRYID..PLAYER_VISIBLE_ITEM_19_ENCHANTMENT:
         begin
-          item_slot:= (FIELD -PLAYER_VISIBLE_ITEM_1_0) div (PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0);
+          item_slot:= (FIELD -PLAYER_VISIBLE_ITEM_1_ENTRYID) div (PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID);
           upkt.AddLong(                            FIELD,   P.CharData.inventory_bag[0][item_slot].Entry);
         end;
       End;
@@ -1172,8 +1163,8 @@ var
 begin
   omsg.CasterGUID:= SR.caster_guid;
   omsg.CasterLinkedGUID:= SR.caster_guid;
+  omsg.SpellCastCount:= SR.spell_cast_count;
   omsg.SpellID:= SR.spell_id;
-  omsg.Unk:= 0;
   omsg.CastFlags:= 2; // flags [2] [F]
   omsg.Duration:= SR.spell_cast_duration;
   omsg.TargetFlags:= SR.target_flags;
@@ -1189,6 +1180,7 @@ var
 begin
   omsg.CasterGUID:= SR.caster_guid;
   omsg.CasterLinkedGUID:= SR.caster_guid;
+  omsg.SpellCastCount:= SR.spell_cast_count;
   omsg.SpellID:= SR.spell_id;
   omsg.CastFlags:= $100;
   omsg.CastStartTime:= SR.spell_cast_start_time;
@@ -1217,7 +1209,6 @@ begin
 
   pkt.InitCmd(SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(SBuf, 1);
-  pkt.AddByte(SBuf, 0);
   pkt.AddByte(SBuf, 0); // values
   pkt.AddGUID(SBuf, U.woGUID);
 

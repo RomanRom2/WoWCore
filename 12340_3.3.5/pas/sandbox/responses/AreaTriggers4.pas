@@ -1099,13 +1099,13 @@ begin
   AreaTriggerDBC[id].trigger_continent_id:=0;
   AreaTriggerDBC[id].trigger_posx:=-622.142029;
   AreaTriggerDBC[id].trigger_posy:=-4582.140137;
-  AreaTriggerDBC[id].trigger_posz:=22.576099;
+  AreaTriggerDBC[id].trigger_posz:=21.000000;
   AreaTriggerDBC[id].trigger_radius:=0.000000;
   AreaTriggerDBC[id].trigger_box_length:=27.389999;
   AreaTriggerDBC[id].trigger_box_width:=27.170000;
   AreaTriggerDBC[id].trigger_box_height:=21.639999;
   AreaTriggerDBC[id].trigger_box_yaw:=3.194000;
-  AreaTriggerDBC[id].action:=2;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
   AreaTriggerDBC[id].target_posx:=0.000000;
@@ -1405,7 +1405,7 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=2;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
   AreaTriggerDBC[id].target_posx:=0.000000;
@@ -1785,7 +1785,7 @@ begin
   AreaTriggerDBC[id].trigger_box_width:=0.000000;
   AreaTriggerDBC[id].trigger_box_height:=0.000000;
   AreaTriggerDBC[id].trigger_box_yaw:=0.000000;
-  AreaTriggerDBC[id].action:=2;
+  AreaTriggerDBC[id].action:=0;
   AreaTriggerDBC[id].target_map:=0;
   AreaTriggerDBC[id].target_zone:=0;
   AreaTriggerDBC[id].target_posx:=0.000000;

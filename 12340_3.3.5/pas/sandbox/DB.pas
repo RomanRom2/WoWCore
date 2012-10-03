@@ -62,8 +62,6 @@ begin
 end;
 procedure DB_MakeNewChar(var e: T_CMSG_CHAR_CREATE; var c: TCharData);
 begin
-  MakeRaceClassDefaultParams(e.raceID, e.classID, e.sexID, c);
-
   c.Enum.name:=              e.name;
   c.Enum.raceID:=            e.raceID;
   c.Enum.classID:=           e.classID;
@@ -74,6 +72,8 @@ begin
   c.Enum.hairColorID:=       e.hairColorID;
   c.Enum.facialHairStyleID:= e.facialHairStyleID;
   c.Enum.outfitID:=          e.outfitID;
+
+  MakeRaceClassDefaultParams(e.raceID, e.classID, e.sexID, c);
 end;
 procedure DB_AddChar(acc_name: string; var c: TCharData);
 begin

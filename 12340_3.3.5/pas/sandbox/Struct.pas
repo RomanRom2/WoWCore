@@ -10,6 +10,7 @@ type
   TSpellRecord = record
     caster_guid: uInt64;
     spell_id: longint;
+    spell_cast_count: byte;
     spell_cast_duration: longint;
     spell_cast_start_time: longint;
     target_flags: longint;
@@ -21,7 +22,6 @@ type
     GUID: uInt64;
     OpCode: word;
     Flags: longint;
-    Flags2: byte;
     StartTime: longint;
     x: single;
     y: single;
@@ -80,6 +80,7 @@ type
   end;
 
   TPlayerSkillInfo = record
+    flag: word;
     id: word;
     max_level: word;
     current_level: word;
@@ -112,17 +113,19 @@ type
 
     // unit fields
     // -------------------------------------------------------------------------
-    health, max_health: longint;
-    power_type: longint;
-    power, max_power: array[0..6] of longint;
-    faction_template: longint;
-
     // bytes0:
 
+    power_type: longint;
+    health, max_health: longint;
+    power, max_power: array[0..6] of longint;
+    faction_template: longint;
     flags: longint;
-    mainhand_attack_time, offhand_attack_time, ranged_attack_time: longint;
+    flags2: longint;
+
+    mainhand_attack_time, offhand_attack_time: longint;
+    ranged_attack_time: longint;
     bounding_radius, combat_reach: single;
-    enum_model_backup, enum_model, native_model, mount_model: word;
+    enum_model_backup, enum_model, native_model, mount_model: longint;
     min_damage, max_damage: single;
     min_offhand_damage, max_offhand_damage: single;
 
@@ -132,34 +135,30 @@ type
     shape_shift_form       : byte;
     shape_shift_stand      : byte;
 
-    dynamic_flags: longint;
-    npc_flags: longint;
+    mod_cast_speed: single;
     stat: array[0..4] of longint;
-    // resistances
+    resist: array[0..6] of longint;
     base_health, base_mana: longint;
 
     // bytes2:
     sheathed: longint;
 
     attack_power, attack_power_mod: longint;
-    ranged_attack_power, ranged_attack_power_mod: longint;
+    ranged_attack_power: longint; // attack_power_mod
     min_ranged_damage, max_ranged_damage: single;
-    power_cost_modifier, power_cost_multiplier: single;
+    hover_height: single;
 
     // player fields
     // -------------------------------------------------------------------------
     player_flags: longint;
 
     // player_bytes:
-
     // player_bytes_2:
-
     // player_bytes_3:
 
     xp, next_level_xp: longint;
     skills: array[0..PLAYER_SKILLS_COUNT-1] of TPlayerSkillInfo;
     points1, professions_left: longint;
-    block, dodge, parry, crit, ranged_crit: single;
     rest_state_xp: longint;
     coinage: longint;
 
@@ -190,7 +189,7 @@ type
     procedure ItemsInit;
     procedure ItemsAdd(bag,slot, entry,count, item_flags: longword);
     procedure SkillsInit;
-    procedure SkillsAdd(skill, max,curr,  stat_max,stat_curr: word);
+    procedure SkillsAdd(flag,skill, max,curr,  stat_max,stat_curr: word);
     procedure SpellsInit;
     procedure SpellsAdd(spell, slot: longint);
     procedure ActionButtonsInit;
@@ -310,7 +309,7 @@ begin
     skills[f].stat_current_level:= 0;
   end;
 end;
-procedure TCharData.SkillsAdd(skill, max,curr,  stat_max,stat_curr: word);
+procedure TCharData.SkillsAdd(flag,skill, max,curr,  stat_max,stat_curr: word);
 var
   f: longint;
   found: boolean;
@@ -329,6 +328,7 @@ begin
 
   if (not found)and(skills[f].id = 0) then
   begin
+    skills[f].flag:= flag;
     skills[f].id:= skill;
     skills[f].max_level:= max;
     skills[f].current_level:= curr;

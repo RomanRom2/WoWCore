@@ -51,7 +51,6 @@ function msgParse(var buf: TBuffer; var m: T_CMSG_ZONEUPDATE): longint; overload
 implementation
 
 uses
-  SysUtils,
   Defines,
   UpdateFields,
   TMSGBufGets;
@@ -67,7 +66,13 @@ begin
     m.Build:=                GetBufLong(buf, ofs);
     m.ServerID:=             GetBufLong(buf, ofs);
     m.Login:=                GetBufStr(buf, ofs);
+    m.Unk2:=                 GetBufLong(buf, ofs);
     m.ClientSeed:=           GetBufLong(buf, ofs);
+    m.Unk5:=                 GetBufLong(buf, ofs);
+    m.Unk6:=                 GetBufLong(buf, ofs);
+    m.Unk7:=                 GetBufLong(buf, ofs);
+    m.Unk3:=                 GetBufLong(buf, ofs);
+    m.Unk4:=                 GetBufLong(buf, ofs);
     GetBufArray(buf, ofs, @m.Digest, 20);
     m.ZipLen:=               GetBufLong(buf, ofs);
     GetBufArray(buf, ofs, @m.ZipData, abs(GetBufPktLen(buf) - ofs));
@@ -84,24 +89,16 @@ begin
   result:= msg_PARSE_OK;
   try
     ofs:= msg_CLIENT_HEADER_LEN;
-
-    SetLength(m.Info, 100);
-    for i:= 0 to Length(m.Info)-1 do
+    m.Count:=               GetBufLong(buf, ofs);
+    SetLength(m.Info, m.Count);
+    for i:= 0 to m.Count-1 do
     begin
       m.Info[i].Name:=      GetBufStr(buf, ofs);
-
-      if trim(m.Info[i].Name) = '' then
-      begin
-        dec(ofs);
-        m.Count:= i;
-        SetLength(m.Info, m.Count);
-        break;
-      end;
-
       m.Info[i].Enabled:=   GetBufByte(buf, ofs);
       m.Info[i].CRC:=       GetBufLong(buf, ofs);
       m.Info[i].Unk:=       GetBufLong(buf, ofs);
     end;
+    m.CRC:=                 GetBufLong(buf, ofs);
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -270,7 +267,10 @@ begin
   result:= msg_PARSE_OK;
   try
     ofs:= msg_CLIENT_HEADER_LEN;
-    m.AccountDataType:= GetBufLong(buf, ofs);
+    m.AccountData_Type:= GetBufLong(buf, ofs);
+    m.AccountData_UnixDateTime:= GetBufLong(buf, ofs);
+    m.zipLen:= GetBufLong(buf, ofs);
+    GetBufArray(buf, ofs, @m.zipData, abs(GetBufPktLen(buf) - ofs));
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -282,7 +282,8 @@ begin
   result:= msg_PARSE_OK;
   try
     ofs:= msg_CLIENT_HEADER_LEN;
-    m.AccountDataType:= GetBufLong(buf, ofs);
+    m.AccountData_Type:= GetBufLong(buf, ofs);
+    m.AccountData_UnixDateTime:= GetBufLong(buf, ofs);
     m.zipLen:= GetBufLong(buf, ofs);
     GetBufArray(buf, ofs, @m.zipData, abs(GetBufPktLen(buf) - ofs));
 
@@ -319,8 +320,9 @@ end;
 
 procedure GetMovementInfo(var buf: TBuffer; var __ofs: longint; var m: T_MSG_MOVE_STATE);
 begin
+  GetBufGUID(buf, __ofs);
   m.MovementInfo.m_moveFlags:= GetBufLong(buf, __ofs);
-  m.MovementInfo.m_moveFlags2:= GetBufByte(buf, __ofs);
+  m.MovementInfo.m_moveFlags2:= GetBufWord(buf, __ofs);
   m.MovementInfo.m_moveStartTime:= GetBufLong(buf, __ofs);
   m.MovementInfo.m_position.x:= GetBufSingle(buf, __ofs);
   m.MovementInfo.m_position.y:= GetBufSingle(buf, __ofs);
@@ -333,6 +335,7 @@ begin
     m.MovementInfo.Transport.Position.y:= GetBufSingle(buf, __ofs);
     m.MovementInfo.Transport.Position.z:= GetBufSingle(buf, __ofs);
     m.MovementInfo.Transport.Facing:= GetBufSingle(buf, __ofs);
+    m.MovementInfo.Transport.Timestamp:= GetBufLong(buf, __ofs);
   end;
   if ( (m.MovementInfo.m_moveFlags and MOVEFLAG_SWIMMING) > 0) or ( (m.MovementInfo.m_moveFlags and MOVEFLAG_FLYING) > 0) then
   begin
@@ -385,8 +388,8 @@ begin
   try
     ofs:= msg_CLIENT_HEADER_LEN;
 
-    m.SrcSlot:= GetBufByte(buf, ofs);
     m.DstSlot:= GetBufByte(buf, ofs);
+    m.SrcSlot:= GetBufByte(buf, ofs);
 
     if GetBufPktLen(buf) <> ofs then result:= msg_PARSE_WARNING;
   except
@@ -467,6 +470,7 @@ begin
   try
     ofs:= msg_CLIENT_HEADER_LEN;
 
+    m.SpellCastCount:= GetBufByte(buf, ofs);
     m.SpellID:= GetBufLong(buf, ofs);
     m.Unk:= GetBufByte(buf, ofs);
     m.TargetFlags:= GetBufLong(buf, ofs);

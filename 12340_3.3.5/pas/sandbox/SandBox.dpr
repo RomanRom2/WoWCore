@@ -28,6 +28,8 @@ uses
 
   Convert in 'libs\Convert.pas',
   SRP6_LockBox in 'libs\SRP6_LockBox.pas',
+  RC4 in 'libs\RC4.pas',
+  HMAC in 'libs\HMAC.pas',
 
   Logs in 'Logs.pas',
   Sockets in 'Sockets.pas',

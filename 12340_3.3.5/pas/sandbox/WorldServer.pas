@@ -52,7 +52,7 @@ var
   OBJ: TWorldRecord;
   imsg: T_CMSG_PLAYER_LOGIN;
   omsg1: T_SMSG_CHARACTER_LOGIN_FAILED;
-  omsg2: T_SMSG_ACCOUNT_DATA_TIMES;
+//  omsg2: T_SMSG_ACCOUNT_DATA_TIMES;
   omsg3: T_SMSG_TUTORIAL_FLAGS;
   omsg4: T_SMSG_INITIAL_SPELLS;
   omsg5: T_SMSG_ACTION_BUTTONS;
@@ -90,9 +90,25 @@ begin
   end;
 
   { SMSG_ACCOUNT_DATA_TIMES - mandatory to send !!! }
-  for i:= 0 to 31 do
-    omsg2.tmp[i]:= 0;
-  sender.SockSend(msgBuild(sender.SBuf, omsg2));
+  // hardcoded, sorry... definitely like A9
+  pkt.InitCmd(sender.SBuf, SMSG_ACCOUNT_DATA_TIMES);
+  pkt.AddLong(sender.SBuf, DateTimeToUnix(Now)); // current time
+  pkt.AddByte(sender.SBuf, 1); // bitmask blocks count
+  pkt.AddLong(sender.SBuf, ACCOUNT_DATA_MASK_CONFIG + ACCOUNT_DATA_MASK_BINDINGS + ACCOUNT_DATA_MASK_MACROS); // bitmask
+  pkt.AddLong(sender.SBuf, 0); // time of data 0 - CONFIG
+  pkt.AddLong(sender.SBuf, 0); // time of data 2 - BINDINGS
+  pkt.AddLong(sender.SBuf, 0); // time of data 4 - MACROS
+  sender.SockSend(pkt.pktLen);
+
+  pkt.InitCmd(sender.SBuf, SMSG_ACCOUNT_DATA_TIMES);
+  pkt.AddLong(sender.SBuf, DateTimeToUnix(Now));
+  pkt.AddByte(sender.SBuf, 1);
+  pkt.AddLong(sender.SBuf, ACCOUNT_DATA_MASK_CONFIG_2 + ACCOUNT_DATA_MASK_UNK4 + ACCOUNT_DATA_MASK_UNK6 + ACCOUNT_DATA_MASK_COLORS); // 1, 3, 5, 7
+  pkt.AddLong(sender.SBuf, 0); // 1 - CONFIG_2
+  pkt.AddLong(sender.SBuf, 0); // 3 - unk3
+  pkt.AddLong(sender.SBuf, 0); // 5 - unk5
+  pkt.AddLong(sender.SBuf, 0); // 7 - COLORS
+  sender.SockSend(pkt.pktLen);
 
   { SMSG_TUTORIAL_FLAGS - mandatory to send !!! }
   for i:= 0 to PLAYER_TUTORIALS_COUNT-1 do
@@ -109,13 +125,14 @@ begin
   for i:= 0 to omsg4.SpellCount-1 do
     begin
       omsg4.Spell[i].ID:= sender.CharData.Spells[i].spell_id;
-      omsg4.Spell[i].Flags:= $EEEE;
+      omsg4.Spell[i].Flags:= 0;
     end;
   omsg4.CooldownCount:= 0;
   SetLength(omsg4.Cooldown, 0);
   sender.SockSend(msgBuild(sender.SBuf, omsg4));
 
   { SMSG_ACTION_BUTTONS }
+  omsg5.Unk:= 0;
   for i:= 0 to PLAYER_ACTION_BUTTONS_COUNT-1 do
   begin
     omsg5.Button[i].SpellID:= sender.CharData.Action_Buttons[i].spell_id;
@@ -128,6 +145,7 @@ begin
   nDayOfWeek:= DayOfWeek(Date);
   omsg6.DateTimeVal:= minute or (hour shl 6) or (nDayOfWeek shl 11) or (longword(day) shl 14) or (longword(month) shl 20) or (longword(year) shl 24);
   omsg6.DateTimeMod:= 1.0 / 60.0;
+  omsg6.Unk:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg6));
 
   { welcome message }
@@ -182,7 +200,12 @@ begin
     ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
     ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
     ListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+
   end;
+
+  { restore flight mode}
+  if sender.CharData.flight_mode then
+    ListWorldUsers.Send_UpdateFromPlayer_SetCanFly(sender.CharData.Enum.GUID);
 end;
 
 procedure cmd_CMSG_PLAYER_LOGIN(var sender: TWorldUser);
@@ -205,7 +228,6 @@ begin
   MR.GUID:= sender.CharData.Enum.GUID;
   MR.OpCode:= imsg.MovementInfo.m_lastNetMsgID;
   MR.Flags:= imsg.MovementInfo.m_moveFlags;
-  MR.Flags2:= imsg.MovementInfo.m_moveFlags2;
   MR.StartTime:= imsg.MovementInfo.m_moveStartTime;
   MR.x:= imsg.MovementInfo.m_position.x;
   MR.y:= imsg.MovementInfo.m_position.y;
@@ -239,39 +261,41 @@ begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
 
-  case imsg.AccountDataType of
-    0: MainLog('REQUEST_ACCOUNT_DATA type=0: CONFIG');
-    1: MainLog('REQUEST_ACCOUNT_DATA type=1: CONFIG_2');
-    2: MainLog('REQUEST_ACCOUNT_DATA type=2: BINDINGS');
-    3: MainLog('REQUEST_ACCOUNT_DATA type=3: unk');
-    4: MainLog('REQUEST_ACCOUNT_DATA type=4: MACROS');
-    5: MainLog('REQUEST_ACCOUNT_DATA type=5: unk');
-    6: MainLog('REQUEST_ACCOUNT_DATA type=6: unk');
-    7: MainLog('REQUEST_ACCOUNT_DATA type=7: COLORS');
+  case imsg.AccountData_Type of
+    ACCOUNT_DATA_TYPE_CONFIG:   MainLog('CMSG_REQUEST_ACCOUNT_DATA type=0: CONFIG');
+    ACCOUNT_DATA_TYPE_CONFIG_2: MainLog('CMSG_REQUEST_ACCOUNT_DATA type=1: CONFIG_2');
+    ACCOUNT_DATA_TYPE_BINDINGS: MainLog('CMSG_REQUEST_ACCOUNT_DATA type=2: BINDINGS');
+    ACCOUNT_DATA_TYPE_UNK4:     MainLog('CMSG_REQUEST_ACCOUNT_DATA type=3: unk');
+    ACCOUNT_DATA_TYPE_MACROS:   MainLog('CMSG_REQUEST_ACCOUNT_DATA type=4: MACROS');
+    ACCOUNT_DATA_TYPE_UNK6:     MainLog('CMSG_REQUEST_ACCOUNT_DATA type=5: unk');
+    ACCOUNT_DATA_TYPE_UNK7:     MainLog('CMSG_REQUEST_ACCOUNT_DATA type=6: unk');
+    ACCOUNT_DATA_TYPE_COLORS:   MainLog('CMSG_REQUEST_ACCOUNT_DATA type=7: COLORS');
   end;
+
+  // SMSG_UPDATE_ACCOUNT_DATA
 end;
 procedure cmd_CMSG_UPDATE_ACCOUNT_DATA(var sender: TWorldUser);
 var
   imsg: T_CMSG_UPDATE_ACCOUNT_DATA;
-  omsg: T_SMSG_UPDATE_ACCOUNT_DATA;
+  omsg: T_SMSG_UPDATE_ACCOUNT_DATA_COMPLETE;
   i: longint;
 begin
   i:= msgParse(sender.RBuf, imsg);
   if i <> msg_PARSE_OK then MainLog(NetMsgStr(GetBufOpCode(sender.RBuf))+': ParseResult = ' + ParseResultStr[i]);
 
-  case imsg.AccountDataType of
-    0: MainLog('UPDATE_ACCOUNT_DATA type=0: CONFIG,   length='+strr(imsg.zipLen));
-    1: MainLog('UPDATE_ACCOUNT_DATA type=1: CONFIG_2, length='+strr(imsg.zipLen));
-    2: MainLog('UPDATE_ACCOUNT_DATA type=2: BINDINGS, length='+strr(imsg.zipLen));
-    3: MainLog('UPDATE_ACCOUNT_DATA type=3: unk,      length='+strr(imsg.zipLen));
-    4: MainLog('UPDATE_ACCOUNT_DATA type=4: MACROS,   length='+strr(imsg.zipLen));
-    5: MainLog('UPDATE_ACCOUNT_DATA type=5: unk,      length='+strr(imsg.zipLen));
-    6: MainLog('UPDATE_ACCOUNT_DATA type=6: unk,      length='+strr(imsg.zipLen));
-    7: MainLog('UPDATE_ACCOUNT_DATA type=7: COLORS,   length='+strr(imsg.zipLen));
+  case imsg.AccountData_Type of
+    ACCOUNT_DATA_TYPE_CONFIG:   MainLog('CMSG_UPDATE_ACCOUNT_DATA type=0: CONFIG,   length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_CONFIG_2: MainLog('CMSG_UPDATE_ACCOUNT_DATA type=1: CONFIG_2, length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_BINDINGS: MainLog('CMSG_UPDATE_ACCOUNT_DATA type=2: BINDINGS, length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_UNK4:     MainLog('CMSG_UPDATE_ACCOUNT_DATA type=3: unk,      length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_MACROS:   MainLog('CMSG_UPDATE_ACCOUNT_DATA type=4: MACROS,   length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_UNK6:     MainLog('CMSG_UPDATE_ACCOUNT_DATA type=5: unk,      length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_UNK7:     MainLog('CMSG_UPDATE_ACCOUNT_DATA type=6: unk,      length='+strr(imsg.zipLen));
+    ACCOUNT_DATA_TYPE_COLORS:   MainLog('CMSG_UPDATE_ACCOUNT_DATA type=7: COLORS,   length='+strr(imsg.zipLen));
   end;
 
-  omsg.AccountDataType:= imsg.AccountDataType;
-  omsg.AccountDataValue:= 0;
+  omsg.AccountData_Type:= imsg.AccountData_Type;
+  omsg.AccountData_Unk:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_NAME_QUERY(var sender: TWorldUser);
@@ -297,6 +321,7 @@ var
   omsg: T_SMSG_QUERY_TIME_RESPONSE;
 begin
   omsg.DateTimeValue:= DateTimeToUnix(Now);
+  omsg.Unk:= 0;
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_SET_SELECTION(var sender: TWorldUser);
@@ -353,7 +378,6 @@ begin
   pkt.InitCmd(sender.SBuf, SMSG_UPDATE_OBJECT);
   pkt.AddLong(sender.SBuf, 1);
   pkt.AddByte(sender.SBuf, 0);
-  pkt.AddByte(sender.SBuf, 0);
   pkt.AddGUID(sender.SBuf, sender.CharData.Enum.GUID);
   upkt.Init(PLAYER_END);
 
@@ -361,18 +385,18 @@ begin
   if imsg.SrcSlot < imsg.DstSlot then
     begin
       if imsg.SrcSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][imsg.SrcSlot].Entry );
+        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][imsg.SrcSlot].Entry );
       if imsg.DstSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][imsg.DstSlot].Entry );
+        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][imsg.DstSlot].Entry );
       upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + imsg.SrcSlot*2,      sender.CharData.inventory_bag[0][imsg.SrcSlot].GUID);
       upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + imsg.DstSlot*2,      sender.CharData.inventory_bag[0][imsg.DstSlot].GUID);
     end
   else
     begin
       if imsg.DstSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][imsg.DstSlot].Entry );
+        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][imsg.DstSlot].Entry );
       if imsg.SrcSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][imsg.SrcSlot].Entry );
+        upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][imsg.SrcSlot].Entry );
       upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + imsg.DstSlot*2,      sender.CharData.inventory_bag[0][imsg.DstSlot].GUID);
       upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + imsg.SrcSlot*2,      sender.CharData.inventory_bag[0][imsg.SrcSlot].GUID);
     end;
@@ -389,9 +413,9 @@ begin
 
   VR:= CValuesRecord.Create;
   if imsg.SrcSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.SrcSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   if imsg.DstSlot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + imsg.DstSlot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   ListWorldUsers.Send_UpdateFromPlayer_Values(OBJ, VR);
   VR.Free;
 end;
@@ -459,25 +483,24 @@ begin
     pkt.InitCmd(sender.SBuf, SMSG_UPDATE_OBJECT);
     pkt.AddLong(sender.SBuf, 1);
     pkt.AddByte(sender.SBuf, 0);
-    pkt.AddByte(sender.SBuf, 0);
     pkt.AddGUID(sender.SBuf, sender.CharData.Enum.GUID);
     upkt.Init(PLAYER_END);
 
     if src_slot<dst_slot then
       begin
         if src_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + src_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][src_slot].Entry );
+          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + src_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][src_slot].Entry );
         if dst_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + dst_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][dst_slot].Entry );
+          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + dst_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][dst_slot].Entry );
         upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + src_slot*2,      sender.CharData.inventory_bag[0][src_slot].GUID);
         upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + dst_slot*2,      sender.CharData.inventory_bag[0][dst_slot].GUID);
       end
     else
       begin
         if dst_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + dst_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][dst_slot].Entry );
+          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + dst_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][dst_slot].Entry );
         if src_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_0 + src_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][src_slot].Entry );
+          upkt.AddLong(  PLAYER_VISIBLE_ITEM_1_ENTRYID + src_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][src_slot].Entry );
         upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + dst_slot*2,      sender.CharData.inventory_bag[0][dst_slot].GUID);
         upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + src_slot*2,      sender.CharData.inventory_bag[0][src_slot].GUID);
       end;
@@ -495,9 +518,9 @@ begin
 
   VR:= CValuesRecord.Create;
   if src_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + src_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + src_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   if dst_slot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-    VR.Add(PLAYER_VISIBLE_ITEM_1_0 + dst_slot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0));
+    VR.Add(PLAYER_VISIBLE_ITEM_1_ENTRYID + dst_slot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID));
   ListWorldUsers.Send_UpdateFromPlayer_Values(OBJ, VR);
   VR.Free;
 end;
@@ -521,7 +544,7 @@ begin
   MainLog('CMSG_QUESTGIVER_STATUS_QUERY: GUID='+int64tohex(imsg.GUID));
 
   omsg.GUID:= imsg.GUID;
-  omsg.Status:= 6; // yellow "!"
+  omsg.Status:= 8; // yellow "!"
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 end;
 procedure cmd_CMSG_QUESTGIVER_HELLO(var sender: TWorldUser);
@@ -624,6 +647,7 @@ begin
 
   SR.spell_cast_duration:= 1000;
   SR.spell_id:= imsg.SpellID;
+  SR.spell_cast_count:= imsg.SpellCastCount;
   SR.spell_cast_start_time:= GetTickCount;
   SR.target_flags:= imsg.TargetFlags;
   SR.target_guid:= imsg.TargetGUID;

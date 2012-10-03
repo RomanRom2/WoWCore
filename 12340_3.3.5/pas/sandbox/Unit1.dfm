@@ -34,10 +34,6 @@ object MainForm: TMainForm
       Margins.Right = 4
       Margins.Bottom = 4
       Caption = 'LOG'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Log: TMemo
         Left = 0
         Top = 0

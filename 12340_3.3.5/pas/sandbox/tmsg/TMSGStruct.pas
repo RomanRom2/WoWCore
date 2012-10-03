@@ -4,8 +4,8 @@ interface
 
 const
   ENUM_CHARS_COUNT                     = 10;
-  ENUM_PLAYER_BAGS_COUNT               = 4;
-  ENUM_PLAYER_ITEMS_COUNT              = 20;
+  ENUM_PLAYER_BAGS_COUNT               = 4;  // 3.3.3
+  ENUM_PLAYER_ITEMS_COUNT              = 19; // 3.3.3: 20->19
 
   PLAYER_TUTORIALS_COUNT               = 64;
   PLAYER_SKILLS_COUNT                  = 128;
@@ -19,6 +19,7 @@ const
   CREATURE_MODELS                      = 4;
   GAMEOBJECT_NAMES                     = 7;
   GAMEOBJECT_PARAMS                    = 24;
+  GAMEOBJECT_ITEMS                     = 6;
 
   GOSSIP_MENU_COUNT                    = 12;
 
@@ -54,6 +55,25 @@ const
 //  MOVEFLAG_SAFE_FALLING                = $20000000; // unapproved
 //  MOVEFLAG_HOVER                       = $40000000; // unapproved
 
+  ACCOUNT_DATA_TYPE_CONFIG             = 0;
+  ACCOUNT_DATA_TYPE_CONFIG_2           = 1;
+  ACCOUNT_DATA_TYPE_BINDINGS           = 2;
+  ACCOUNT_DATA_TYPE_UNK4               = 3;
+  ACCOUNT_DATA_TYPE_MACROS             = 4;
+  ACCOUNT_DATA_TYPE_UNK6               = 5;
+  ACCOUNT_DATA_TYPE_UNK7               = 6;
+  ACCOUNT_DATA_TYPE_COLORS             = 7;
+  ACCOUNT_DATA_TYPE_MAX                = 32;
+
+  ACCOUNT_DATA_MASK_CONFIG             = 1 shl ACCOUNT_DATA_TYPE_CONFIG;   // $00000001;
+  ACCOUNT_DATA_MASK_CONFIG_2           = 1 shl ACCOUNT_DATA_TYPE_CONFIG_2; // $00000002;
+  ACCOUNT_DATA_MASK_BINDINGS           = 1 shl ACCOUNT_DATA_TYPE_BINDINGS; // $00000004;
+  ACCOUNT_DATA_MASK_UNK4               = 1 shl ACCOUNT_DATA_TYPE_UNK4;     // $00000008;
+  ACCOUNT_DATA_MASK_MACROS             = 1 shl ACCOUNT_DATA_TYPE_MACROS;   // $00000010;
+  ACCOUNT_DATA_MASK_UNK6               = 1 shl ACCOUNT_DATA_TYPE_UNK6;     // $00000020;
+  ACCOUNT_DATA_MASK_UNK7               = 1 shl ACCOUNT_DATA_TYPE_UNK7;     // $00000040;
+  ACCOUNT_DATA_MASK_COLORS             = 1 shl ACCOUNT_DATA_TYPE_COLORS;   // $00000080;
+
 // common types
 ////////////////////////////////////////////////////////////////////////////////
 type
@@ -74,14 +94,29 @@ type
 // AUTH
 // -----------------------------------------------------------------------------
   T_SMSG_AUTH_CHALLENGE = record
-    ServerSeed: longint;
+     unk: longint; // 3.2.2 [1..31]
+     ServerSeed: longint;
+     Random1: longint; // 3.2.2
+     Random2: longint; // 3.2.2
+     Random3: longint; // 3.2.2
+     Random4: longint; // 3.2.2
+     Random5: longint; // 3.3.3
+     Random6: longint; // 3.3.3
+     Random7: longint; // 3.3.3
+     Random8: longint; // 3.3.3
   end;
 
   T_CMSG_AUTH_SESSION = record
     Build: longint;
     ServerID: longint;
     Login: string;
+    Unk2: longint;
     ClientSeed: longint;
+    Unk5: longint; // 3.3.5
+    Unk6: longint; // 3.3.5
+    Unk7: longint; // 3.3.5
+    Unk3: longint; // 3.2.2
+    Unk4: longint; // 3.2.2
     Digest: array[0..19] of byte; // 20 bytes length for SHA1
     zipLen: longint;
     zipData: array[0..2047] of byte; // array[0..65535] of byte;
@@ -89,9 +124,9 @@ type
 
   T_SMSG_AUTH_RESPONSE = record
     ResponseCode: byte;
-    Count: longint;
-    Unk1: byte;
-    Unk2: longint;
+    Unk1: longint; // BillingTimeRemaining
+    Unk2: byte;    // BillingPlanFlags
+    Unk3: longint; // BillingTimeRested
     GameType: byte;
   end;
 
@@ -133,6 +168,7 @@ type
     position: C3Vector;
     guildID: longint;
     flags: longint;
+    flags2: longint; // 3.0.1 (8471_0.4.3)
     restInfo: byte;
     petDisplayInfoID: longint;
     petExperienceLevel: longint;
@@ -190,12 +226,13 @@ type
     Charges: longint;
     Cooldown: longint;
     Category: longint;
-    CategoryCoolDown: longint;
+    CategoryCooldown: longint;
   end;
   TItemSocket = record
     ID: longint;
     Unk: longint;
-  end;  T_SMSG_ITEM_QUERY_SINGLE_RESPONSE = record
+  end;
+  T_SMSG_ITEM_QUERY_SINGLE_RESPONSE = record
     Entry: longint;
 
     ClassID: longint;
@@ -205,6 +242,7 @@ type
     DisplayInfoID: longint;
     OverallQualityID: longint;
     Flags: longint;
+    Faction: longint; // 3.2.0
     BuyPrice: longint;
     SellPrice: longint;
     InventoryTypeID: longint;
@@ -222,7 +260,10 @@ type
     Stackable: longint;
     MaxStackCount: longint;
     ContainerSlots: longint;
+    BonusCount: longint; // 3.0.1 - max 10
     Bonus: array[0..9] of TItemBonus;
+    StatScalingDistribution: longint; // 3.0.1
+    StatScalingValue: longint; // 3.0.1
     DamageStat: array[0..4] of TItemDamageStat;
     Resistance: array[0..6] of longint;
     Delay: longint;
@@ -246,15 +287,17 @@ type
     Area: longint;
     Map: longint;
     BagFamily: longint; // 1.11.0
-    ToolID: longint; // BC
-    Socket: array[0..2] of TItemSocket; // BC
-    SocketBonus: longint; // BC
-    GemProperties: longint; // BC
+    ToolID: longint; // BC 2.0.3
+    Socket: array[0..2] of TItemSocket; // BC 2.0.3
+    SocketBonus: longint; // BC 2.0.3
+    GemProperties: longint; // BC 2.0.3
 //    ExtendedCost: longint; // BC 2.0.3, removed in 2.4.0 PTR
 //    ReqArenaRank: longint; // BC 2.0.3, removed in 2.4.0 PTR
     RequiredDisenchantSkill: longint; // BC
     ArmorDamageModifier: single; // BC 2.1.x
     Duration: longint; // BC 2.1.x
+    LimitCategory: longint; // 3.0.1
+    HolidayID: longint; // 3.1.0
   end;
 
   T_CMSG_CREATURE_QUERY = record
@@ -271,12 +314,19 @@ type
     TypeID: longint;
     Family: longint;
     Rank: longint;
-    Unk1: longint;
+    Unk1: longint; // removed in 3.0.1-3.0.9, back in 3.1.0
     SpellDataID: longint;
     DisplayID: array[0..CREATURE_MODELS-1] of longint; // BC 2.2.0
     Unk3: single; // BC 2.0.3
     Unk4: single; // BC 2.0.3
     Civilian: byte; // BC 2.3.0: word->bytes
+    Unk5_1: longint; // 3.1.0
+    Unk5_2: longint; // 3.1.0
+    Unk5_3: longint; // 3.1.0
+    Unk5_4: longint; // 3.1.0
+    Unk6: longint; // 3.1.0
+    Unk7: longint; // 3.2.0
+    Unk8: longint; // 3.2.0
 
     GossipID: longint;
     Greetings: string;
@@ -296,6 +346,7 @@ type
     Name: array[0..GAMEOBJECT_NAMES-1] of string; // 1.12.0: +1, BC: +2
     Param: array[0..GAMEOBJECT_PARAMS-1] of longint; // 1.12.0: +8
     ParamFloat: single;
+    Item: array[0..GAMEOBJECT_ITEMS-1] of longint; // 3.1.0
   end;
 
   T_CMSG_NPC_TEXT_QUERY = record
@@ -332,8 +383,8 @@ type
   T_SMSG_CHANNEL_NOTIFY = record
     TypeID: byte;
     Name: string;
+    VoiceID: byte; // 3.0.1
     CategoryID: longint;
-    Unk: longint;
   end;
 
   T_CMSG_MESSAGECHAT = record
@@ -370,7 +421,37 @@ type
   end;
 
   T_SMSG_ACCOUNT_DATA_TIMES = record
-    tmp: array[0..31] of longint;
+    AccountData_CurrentUnixDateTime: longint;
+    AccountData_BitMaskCount: byte;
+    AccountData_BitMask: longint;
+    AccountData_UnixDateTime: array[0..ACCOUNT_DATA_TYPE_MAX-1] of longint;
+  end;
+
+  T_CMSG_REQUEST_ACCOUNT_DATA = record
+    AccountData_Type: longint;
+    AccountData_UnixDateTime: longint;
+    zipLen: longint;
+    zipData: array[0..1024*16] of byte;
+  end;
+
+  T_CMSG_UPDATE_ACCOUNT_DATA = record
+    AccountData_Type: longint;
+    AccountData_UnixDateTime: longint;
+    zipLen: longint;
+    zipData: array[0..1024*16] of byte;
+  end;
+
+  T_SMSG_UPDATE_ACCOUNT_DATA = record
+    GUID: uInt64; // 3.x
+    AccountData_Type: longint;
+    AccountData_UnixDateTime: longint;
+    zipLen: longint;
+    zipData: array[0..1024*16] of byte;
+  end;
+
+  T_SMSG_UPDATE_ACCOUNT_DATA_COMPLETE = record
+    AccountData_Type: longint;
+    AccountData_Unk: longint; // UnixDateTime?
   end;
 
   T_SMSG_TUTORIAL_FLAGS = record
@@ -378,7 +459,7 @@ type
   end;
 
   TInitialSpellsRecord = record
-    ID: word;
+    ID: longint; // 3.2.0: word->long
     Flags: word;
   end;
   TInitialCooldownsRecord = record
@@ -396,12 +477,14 @@ type
     Flags: longword;
   end;
   T_SMSG_ACTION_BUTTONS = record
+    Unk: byte; // 3.2.0
     Button: array[0..PLAYER_ACTION_BUTTONS_COUNT-1] of TActionButtonRecord;
   end;
 
   T_SMSG_LOGIN_SETTIMESPEED = record
     DateTimeVal: longint;
     DateTimeMod: single;
+    Unk: longint; // 3.2.2
   end;
 
   T_SMSG_FORCE_RUN_SPEED_CHANGE = record
@@ -448,7 +531,7 @@ type
     GUID: uInt64;
     MoveCount: longint;
     MoveFlags: longint;
-    MoveFlags2: byte; // BC 2.3.0
+    MoveFlags2: word; // BC 2.3.0; 3.0.1: byte->word
     MoveStartTime: longint;
     Position: C3Vector;
     Facing: single;
@@ -464,6 +547,7 @@ type
   end;
 
   T_CMSG_CAST_SPELL = record
+    SpellCastCount: byte; // 3.0.1
     SpellID: longint;
     Unk: byte; // 2.3.0
     TargetFlags: longint; // 2.4.0: word->long
@@ -475,10 +559,10 @@ type
     CasterGUID: uInt64;
     CasterLinkedGUID: uInt64;
     SpellID: longint;
-    Unk: byte; // 2.3.0
-    CastFlags: word;
+    SpellCastCount: byte; // 3.0.1
+    CastFlags: longint; // 3.0.1: word->long
     Duration: longint;
-    TargetFlags: word;
+    TargetFlags: longint; // 3.0.1: word->long
     TargetGUID: uInt64;
     TargetPosition: C3Vector;
   end;
@@ -486,12 +570,13 @@ type
   T_SMSG_SPELL_GO = record
     CasterGUID: uInt64;
     CasterLinkedGUID: uInt64;
+    SpellCastCount: byte; // 3.0.1
     SpellID: longint;
-    CastFlags: word;
+    CastFlags: longint; // 3.0.1: word->long
     CastStartTime: longint; // BC 2.4.0
     AffectedTarget: array of uInt64;
     ResistedTarget: array of uInt64;
-    TargetFlags: word;
+    TargetFlags: longint; // 3.0.1: word->long
     TargetGUID: uInt64;
     TargetPosition: C3Vector;
   end;
@@ -504,6 +589,7 @@ type
     GUID: uInt64;
     Position: C3Vector;
     Facing: single;
+    Timestamp: longint; // 3.0.1
   end;
   TSplineFaceData = record
     spot: C3Vector;
@@ -536,7 +622,7 @@ type
     m_facing: single;
     m_pitch: single;
     m_moveFlags: longword;
-    m_moveFlags2: byte;
+    m_moveFlags2: word; // 3.0.1: byte->word
     m_prev_moveFlags: longword;
     m_moveStartTime: longword;
     m_cosAnchorPitch: single;
@@ -560,27 +646,13 @@ type
     MovementInfo: TMovementInfo;
   end;
 
-  T_CMSG_REQUEST_ACCOUNT_DATA = record
-    AccountDataType: longint;
-  end;
-
-  T_CMSG_UPDATE_ACCOUNT_DATA = record
-    AccountDataType: longint;
-    zipLen: longint;
-    zipData: array[0..1024*60] of byte;
-  end;
-
-  T_SMSG_UPDATE_ACCOUNT_DATA = record
-    AccountDataType: longint;
-    AccountDataValue: longint;
-  end;
-
   T_CMSG_NAME_QUERY = record
     GUID: uInt64;
   end;
 
   T_SMSG_NAME_QUERY_RESPONSE = record
-    GUID: uInt64;
+    GUID: uInt64; // 3.2.2: uInt64->GUID
+    Unk: byte; // 3.2.2
     Name: string;
     GuildName: string;
     raceID: byte;
@@ -592,6 +664,7 @@ type
 
   T_SMSG_QUERY_TIME_RESPONSE = record
     DateTimeValue: longint;
+    Unk: longint; // 3.x
   end;
 
   T_CMSG_SET_SELECTION = record
@@ -603,8 +676,8 @@ type
   end;
 
   T_CMSG_SWAP_INV_ITEM = record
-    SrcSlot: byte;
     DstSlot: byte;
+    SrcSlot: byte;
   end;
 
   T_CMSG_AUTOEQUIP_ITEM = record
@@ -748,6 +821,15 @@ type
   T_CLIENT_ADDON_INFO = record
     Count: longint;
     Info: array of TClientAddonInfo;
+    CRC: longint;
+  end;
+
+  T_CMSG_UI_TIME_REQUEST = record
+
+  end;
+
+  T_SMSG_UI_TIME = record
+    DateTimeValue: longint;
   end;
 
 implementation

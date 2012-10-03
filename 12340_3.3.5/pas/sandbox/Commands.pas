@@ -310,12 +310,11 @@ begin
           pkt.InitCmd(sender.SBuf, SMSG_UPDATE_OBJECT);
           pkt.AddLong(sender.SBuf, 1);
           pkt.AddByte(sender.SBuf, 0);
-          pkt.AddByte(sender.SBuf, 0);
           pkt.AddGUID(sender.SBuf, sender.CharData.Enum.GUID);
 
             upkt.Init(PLAYER_END);
             if islot in [0..PLAYER_VISIBLE_ITEMS_COUNT-1] then
-              upkt.AddLong( PLAYER_VISIBLE_ITEM_1_0 + islot*(PLAYER_VISIBLE_ITEM_2_0 - PLAYER_VISIBLE_ITEM_1_0), sender.CharData.inventory_bag[0][islot].Entry );
+              upkt.AddLong( PLAYER_VISIBLE_ITEM_1_ENTRYID + islot*(PLAYER_VISIBLE_ITEM_2_ENTRYID - PLAYER_VISIBLE_ITEM_1_ENTRYID), sender.CharData.inventory_bag[0][islot].Entry );
             upkt.AddInt64( PLAYER_FIELD_INV_SLOT_HEAD + islot*2, sender.CharData.inventory_bag[0][islot].GUID );
             upkt.MakeUpdateBlock(@upkt_buf);
 

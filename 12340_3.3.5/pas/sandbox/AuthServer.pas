@@ -214,10 +214,8 @@ begin
 
   // header
   LoginUser.SBuf[0]:= AUTH_LOGON_CHALLENGE;
-  LoginUser.SBuf[1]:= AUTH_OK;
-
-  // unk
-  LoginUser.SBuf[2]:= 0;
+  LoginUser.SBuf[1]:= 0;
+  LoginUser.SBuf[2]:= AUTH_OK;
 
   // [3..34] B
   Move(LoginUser.Data.SRP6_B[0], LoginUser.SBuf[3], 32);
@@ -401,7 +399,7 @@ begin
     pktAddByte(LoginUser.SBuf, 0); // role
     pktAddByte(LoginUser.SBuf, 0); // lock
     pktAddByte(LoginUser.SBuf, 0); // status
-    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 2.4.3'+#0);
+    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 3.3.5a'+#0);
     pktAddStr(LoginUser.SBuf, REALM_ADDR+':7000'+#0);
     pktAddFloat(LoginUser.SBuf, 0); // load
     pktAddByte(LoginUser.SBuf, 0); // chars
