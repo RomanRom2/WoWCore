@@ -426,7 +426,7 @@ begin
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.MoveCount);
   pkt.AddLong      (Buf, m.MoveFlags);
-  pkt.AddByte      (Buf, m.FacingFlags);
+  pkt.AddByte      (Buf, m.MoveFlags2);
   pkt.AddLong      (Buf, m.MoveStartTime);
   pkt.AddFloat     (Buf, m.Position.X);
   pkt.AddFloat     (Buf, m.Position.Y);

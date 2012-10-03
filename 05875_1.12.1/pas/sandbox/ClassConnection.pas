@@ -607,17 +607,17 @@ begin
     upkt.AddFloat(     OBJECT_FIELD_SCALE_X,                  CharData.scale_x);
 
     upkt.AddLong(      UNIT_FIELD_HEALTH,                     CharData.health);
-    upkt.zAddLong(      UNIT_FIELD_POWER1,                     CharData.power[POWER_MANA]);
-    upkt.zAddLong(      UNIT_FIELD_POWER2,                     CharData.power[POWER_RAGE]);
-    upkt.zAddLong(      UNIT_FIELD_POWER3,                     CharData.power[POWER_FOCUS]);
-    upkt.zAddLong(      UNIT_FIELD_POWER4,                     CharData.power[POWER_ENERGY]);
-    upkt.zAddLong(      UNIT_FIELD_POWER5,                     CharData.power[POWER_HAPPINESS]);
+    upkt.AddLong(      UNIT_FIELD_POWER1,                     CharData.power[POWER_MANA]);
+    upkt.AddLong(      UNIT_FIELD_POWER2,                     CharData.power[POWER_RAGE]);
+    upkt.AddLong(      UNIT_FIELD_POWER3,                     CharData.power[POWER_FOCUS]);
+    upkt.AddLong(      UNIT_FIELD_POWER4,                     CharData.power[POWER_ENERGY]);
+    upkt.AddLong(      UNIT_FIELD_POWER5,                     CharData.power[POWER_HAPPINESS]);
     upkt.AddLong(      UNIT_FIELD_MAXHEALTH,                  CharData.max_health);
-    upkt.zAddLong(      UNIT_FIELD_MAXPOWER1,                  CharData.max_power[POWER_MANA]);
-    upkt.zAddLong(      UNIT_FIELD_MAXPOWER2,                  CharData.max_power[POWER_RAGE]);
-    upkt.zAddLong(      UNIT_FIELD_MAXPOWER3,                  CharData.max_power[POWER_FOCUS]);
-    upkt.zAddLong(      UNIT_FIELD_MAXPOWER4,                  CharData.max_power[POWER_ENERGY]);
-    upkt.zAddLong(      UNIT_FIELD_MAXPOWER5,                  CharData.max_power[POWER_HAPPINESS]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER1,                  CharData.max_power[POWER_MANA]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER2,                  CharData.max_power[POWER_RAGE]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER3,                  CharData.max_power[POWER_FOCUS]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER4,                  CharData.max_power[POWER_ENERGY]);
+    upkt.AddLong(      UNIT_FIELD_MAXPOWER5,                  CharData.max_power[POWER_HAPPINESS]);
 
     upkt.AddLong(      UNIT_FIELD_LEVEL,                      CharData.Enum.experienceLevel);
     upkt.AddLong(      UNIT_FIELD_FACTIONTEMPLATE,            CharData.faction_template);
@@ -636,6 +636,11 @@ begin
     upkt.AddLong(      UNIT_FIELD_MOUNTDISPLAYID,             CharData.mount_model);
     upkt.AddFloat(     UNIT_FIELD_MINDAMAGE,                  CharData.min_damage);
     upkt.AddFloat(     UNIT_FIELD_MAXDAMAGE,                  CharData.max_damage);
+    upkt.AddFloat(     UNIT_FIELD_MINOFFHANDDAMAGE,           CharData.min_offhand_damage);
+    upkt.AddFloat(     UNIT_FIELD_MAXOFFHANDDAMAGE,           CharData.max_offhand_damage);
+
+    upkt.AddLong(      UNIT_FIELD_BYTES_1,                    CharData.stand_state or (0 shl 8) or (0 shl 16) or (0 shl 24));
+
     upkt.AddFloat(     UNIT_MOD_CAST_SPEED,                   1.0);
 
     for i:= 0 to STAT_MAX do
@@ -646,6 +651,8 @@ begin
 
     upkt.AddLong(      UNIT_FIELD_BASE_MANA,                  CharData.base_mana);
     upkt.AddLong(      UNIT_FIELD_BASE_HEALTH,                CharData.base_health);
+
+    upkt.AddLong(      UNIT_FIELD_BYTES_2,                    CharData.sheathed or (0 shl 8) or (0 shl 16) or (0 shl 24));
 
     upkt.AddLong(      UNIT_FIELD_ATTACK_POWER,               CharData.attack_power);
     upkt.AddLong(      UNIT_FIELD_ATTACK_POWER_MODS,          CharData.attack_power_mod);
@@ -934,7 +941,11 @@ begin
     upkt.AddLong(    UNIT_FIELD_DISPLAYID,                    P.CharData.enum_model);
     upkt.AddLong(    UNIT_FIELD_NATIVEDISPLAYID,              P.CharData.native_model);
     upkt.AddLong(    UNIT_FIELD_MOUNTDISPLAYID,               P.CharData.mount_model);
+    upkt.AddLong(    UNIT_FIELD_BYTES_1,                      P.CharData.stand_state or (0 shl 8) or (0 shl 16) or (0 shl 24));
     upkt.AddFloat(   UNIT_MOD_CAST_SPEED,                     1.0);
+    upkt.AddLong(    UNIT_FIELD_BASE_MANA,                    P.CharData.base_mana);
+    upkt.AddLong(    UNIT_FIELD_BASE_HEALTH,                  P.CharData.base_health);
+    upkt.AddLong(    UNIT_FIELD_BYTES_2,                      P.CharData.sheathed or (0 shl 8) or (0 shl 16) or (0 shl 24));
     upkt.AddLong(    PLAYER_FLAGS,                            P.CharData.player_flags);
     upkt.AddLong(    PLAYER_BYTES,                            P.CharData.Enum.skinID or (P.CharData.Enum.faceID shl 8) or (P.CharData.Enum.hairStyleID shl 16) or (P.CharData.Enum.hairColorID shl 24));
     upkt.AddLong(    PLAYER_BYTES_2,                          P.CharData.Enum.facialHairStyleID or (0 shl 8) or (0 shl 16) or (P.CharData.Enum.restInfo shl 24));

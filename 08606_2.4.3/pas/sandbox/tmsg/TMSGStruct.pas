@@ -448,7 +448,7 @@ type
     GUID: uInt64;
     MoveCount: longint;
     MoveFlags: longint;
-    FacingFlags: byte; // BC 2.3.0
+    MoveFlags2: byte; // BC 2.3.0
     MoveStartTime: longint;
     Position: C3Vector;
     Facing: single;
