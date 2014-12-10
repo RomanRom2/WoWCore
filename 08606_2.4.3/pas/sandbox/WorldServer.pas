@@ -1,4 +1,4 @@
-﻿unit WorldServer;
+unit WorldServer;
 
 interface
 

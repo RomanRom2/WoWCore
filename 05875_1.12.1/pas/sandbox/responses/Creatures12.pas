@@ -4443,7 +4443,7 @@ begin
   CreatureTPL[id].Name[2]:='';
   CreatureTPL[id].Name[3]:='';
   CreatureTPL[id].GuildName:='';
-  CreatureTPL[id].Flags:=-2147483648;
+  CreatureTPL[id].Flags:=0;
   CreatureTPL[id].TypeID:=3;
   CreatureTPL[id].Family:=0;
   CreatureTPL[id].Rank:=1;

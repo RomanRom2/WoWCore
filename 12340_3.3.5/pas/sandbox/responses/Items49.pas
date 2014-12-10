@@ -53050,7 +53050,7 @@ begin
   ItemTPL[id].Name[3]:='';
   ItemTPL[id].DisplayInfoID:=48742;
   ItemTPL[id].OverallQualityID:=1;
-  ItemTPL[id].Flags:=-2147483648;
+  ItemTPL[id].Flags:=0;
   ItemTPL[id].Faction:=0;
   ItemTPL[id].BuyPrice:=0;
   ItemTPL[id].SellPrice:=0;

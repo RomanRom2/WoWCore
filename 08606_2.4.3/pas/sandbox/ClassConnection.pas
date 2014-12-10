@@ -1,4 +1,4 @@
-﻿unit ClassConnection;
+unit ClassConnection;
 
 interface
 

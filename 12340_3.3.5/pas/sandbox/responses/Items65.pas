@@ -49728,7 +49728,7 @@ begin
   ItemTPL[id].OverallQualityID:=3;
   ItemTPL[id].Flags:=0;
   ItemTPL[id].Faction:=0;
-  ItemTPL[id].BuyPrice:=-2147483648;
+  ItemTPL[id].BuyPrice:=0;
   ItemTPL[id].SellPrice:=1;
   ItemTPL[id].InventoryTypeID:=17;
   ItemTPL[id].AllowableClassID:=-1;
