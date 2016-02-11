@@ -111,6 +111,10 @@ begin
     MainLog('CMSG_AUTH_SESSION: AUTH_VERSION_MISMATCH');
   end;
 
+  // expansion type
+  // 2.0.1 is still classic type, the official release is 2.0.3
+  omsg.ExpansionType:= GAME_TYPE_CLASSIC; // GAME_TYPE_BK;
+
   // Answer
   sender.SockSend(msgBuild(sender.SBuf, omsg));
 

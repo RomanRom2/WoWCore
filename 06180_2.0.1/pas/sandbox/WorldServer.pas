@@ -52,7 +52,7 @@ var
   OBJ: TWorldRecord;
   imsg: T_CMSG_PLAYER_LOGIN;
   omsg1: T_SMSG_CHARACTER_LOGIN_FAILED;
-  omsg2: T_SMSG_ACCOUNT_DATA_MD5;
+  omsg2: T_SMSG_ACCOUNT_DATA_TIMES;
   omsg3: T_SMSG_TUTORIAL_FLAGS;
   omsg4: T_SMSG_INITIAL_SPELLS;
   omsg5: T_SMSG_ACTION_BUTTONS;
@@ -550,7 +550,7 @@ procedure cmd_CMSG_STANDSTATECHANGE(var sender: TWorldUser);
 var
   i: longint;
   imsg: T_CMSG_STANDSTATECHANGE;
-  omsg: T_SMSG_STANDSTATE_CHANGE_ACK;
+  omsg: T_SMSG_STANDSTATE_UPDATE;
   OBJ: TWorldRecord;
   VR: CValuesRecord;
 begin

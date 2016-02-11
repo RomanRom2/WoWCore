@@ -33,7 +33,9 @@ implementation
 uses
   Items1, Items2, Items3, Items4, Items5, Items6, Items7, Items8, Items9, Items10, 
   Items11, Items12, Items13, Items14, Items15, Items16, Items17, Items18, Items19, Items20, 
-  Items21, Items22, Items23, Items24, 
+  Items21, Items22, Items23, Items24, Items25, Items26, Items27, Items28, Items29, Items30, 
+  Items31, Items32, Items33, Items34, Items35, Items36, Items37, Items38, Items39, Items40, 
+  Items41, Items42, Items43, Items44, Items45,
 
   Creatures1, Creatures2, Creatures3, Creatures4, Creatures5, Creatures6, Creatures7, Creatures8, Creatures9, Creatures10, 
   Creatures11, Creatures12, Creatures13, Creatures14, Creatures15, Creatures16, Creatures17, Creatures18, Creatures19, 
@@ -60,7 +62,8 @@ uses
 
 procedure LoadAllResponses;
 begin
-  SetLength(ItemTPL, 24282);
+//  SetLength(ItemTPL, 24282);
+  SetLength(ItemTPL, 37930);
   LoadItems1;
   LoadItems2;
   LoadItems3;
@@ -85,6 +88,27 @@ begin
   LoadItems22;
   LoadItems23;
   LoadItems24;
+  LoadItems25;
+  LoadItems26;
+  LoadItems27;
+  LoadItems28;
+  LoadItems29;
+  LoadItems30;
+  LoadItems31;
+  LoadItems32;
+  LoadItems33;
+  LoadItems34;
+  LoadItems35;
+  LoadItems36;
+  LoadItems37;
+  LoadItems38;
+  LoadItems39;
+  LoadItems40;
+  LoadItems41;
+  LoadItems42;
+  LoadItems43;
+  LoadItems44;
+  LoadItems45;
   MainLog('DB: Items loaded');
 
   SetLength(CreatureTPL, 142488);

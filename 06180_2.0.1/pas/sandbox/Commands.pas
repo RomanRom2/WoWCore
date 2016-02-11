@@ -97,6 +97,8 @@ begin
   s:= s + '[.orc]     - Orc Start'#13;
   s:= s + '[.undead]  - Undead Start'#13;
   s:= s + '[.tauren]  - Tauren Start'#13;
+  s:= s + '[.dra]     - Draenei Start'#13;
+  s:= s + '[.belf]    - Blood Elf Start'#13;
   s:= s + '------------'#13;
   s:= s + '[.gols]    - Goldshire'#13;
   s:= s + '[.storm]   - Stormwind'#13;
@@ -118,7 +120,18 @@ function cmd_SetFlightMode(var sender: TWorldUser; p1,p2,p3,p4: string): boolean
 begin
   result:= true;
 
-  sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is not supported in Classic');
+  if sender.CharData.flight_mode then
+  begin
+    ListWorldUsers.Send_UpdateFromPlayer_UnsetCanFly(sender.CharData.Enum.GUID);
+    sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is OFF');
+    sender.CharData.flight_mode:= false;
+  end
+  else
+  begin
+    ListWorldUsers.Send_UpdateFromPlayer_SetCanFly(sender.CharData.Enum.GUID);
+    sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Flight Mode is ON');
+    sender.CharData.flight_mode:= true;
+  end;
 end;
 function cmd_SetSpeed(var sender: TWorldUser; p1,p2,p3,p4: string): boolean;
 begin
@@ -126,9 +139,11 @@ begin
 
   sender.CharData.speed_run:= str2single(p1);
   sender.CharData.speed_swim:= str2single(p1);
+  sender.CharData.speed_flight:= str2single(p1);
 
   ListWorldUsers.Send_UpdateFromPlayer_ForceRunSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_run);
   ListWorldUsers.Send_UpdateFromPlayer_ForceSwimSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_swim);
+  ListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(sender.CharData.Enum.GUID, sender.CharData.speed_flight);
 
   sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', 'Speed sets to '+single2str(str2single(p1), 2));
 end;
@@ -787,6 +802,20 @@ begin
     if command='.orc' then     begin result:=true; sender.Teleport( 1,   14,   -618.518005,  -4251.669922,  38.717999,   0.0); end;
     if command='.undead' then  begin result:=true; sender.Teleport( 0,   85,   1676.349976,  1677.449951,   121.669998,  2.705260); end;
     if command='.tauren' then  begin result:=true; sender.Teleport( 1,   215,  -2917.580078, -257.980011,   52.996799,   0.0); end;
+
+    if command='.dra' then
+    begin
+      p1:= 'Drainei location is still not active in this build';
+      sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', p1);
+//      result:=true; sender.Teleport( 530, 3524, -3961.639893, -13931.200195, 100.614998,  2.083644);
+    end;
+
+    if command='.belf' then
+    begin
+      p1:= 'BloodElf location is still not active in this build';
+      sender.Send_Message(sender.CharData.Enum.GUID, CHAT_MSG_SYSTEM, 0, '', p1);
+//      result:=true; sender.Teleport( 530, 3430, 10349.599609, -6357.290039,  33.402599,   5.316046);
+    end;
 
     if command='.golds' then   begin result:=true; sender.Teleport( 0, 12, -9457.468750, 54.702946, 56.208504, 2.192810); end;  // .go 0 -9457 54 57
     if command='.storm' then   begin result:=true; sender.Teleport( 0, 12, -9125.579102, 396.515106, 91.941780, 0.612589); end;

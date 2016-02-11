@@ -29,6 +29,13 @@ procedure RACE_TROLL_CLASS_PRIEST(var c:TCharData);
 procedure RACE_TROLL_CLASS_SHAMAN(var c:TCharData);
 procedure RACE_TROLL_CLASS_MAGE(var c:TCharData);
 
+procedure RACE_BLOODELF_CLASS_PALADIN(var c:TCharData);
+procedure RACE_BLOODELF_CLASS_HUNTER(var c:TCharData);
+procedure RACE_BLOODELF_CLASS_ROGUE(var c:TCharData);
+procedure RACE_BLOODELF_CLASS_PRIEST(var c:TCharData);
+procedure RACE_BLOODELF_CLASS_MAGE(var c:TCharData);
+procedure RACE_BLOODELF_CLASS_WARLOCK(var c:TCharData);
+
 implementation
 
 procedure RACE_ORC_CLASS_WARRIOR(var c:TCharData);
@@ -2995,6 +3002,834 @@ begin
           c.SetActionButtons(11, 117, $80000000);     // Item: Tough Jerky
           c.SetActionButtons(75, 20554, $00000000);   // Spell: Berserking
 
+end;
+
+procedure RACE_BLOODELF_CLASS_PALADIN(var c:TCharData);
+begin
+          c.max_health                 :=38;
+          c.power_type                 :=POWER_MANA;
+          c.max_power[POWER_MANA]      :=140;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=2900;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=0;
+          c.base_mana                  :=60;
+          c.base_health                :=18;
+
+          c.attack_power               :=21;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=12;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=7.35;
+          c.max_damage                 :=9.35;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=0.0;
+          c.max_ranged_damage          :=0.0;
+
+          c.stat[0]                    :=19;      // strength
+          c.stat[1]                    :=22;      // agility
+          c.stat[2]                    :=20;      // stamina
+          c.stat[3]                    :=24;      // intellect
+          c.stat[4]                    :=20;      // spirit
+
+          c.ammo_id                    :=0;
+
+          c.ItemsAdd($FF,3, 24143,1, $00000000);      //  Initiate's Shirt
+          c.ItemsAdd($FF,6, 24145,1, $00000000);      //  Initiate's Pants
+          c.ItemsAdd($FF,7, 24146,1, $00000000);      //  Initiate's Boots
+          c.ItemsAdd($FF,15, 23346,1, $00000000);     //  Battleworn Claymore
+          c.ItemsAdd($FF,23, 20857,4, $00000000);     //  Honey Bread
+          c.ItemsAdd($FF,24, 159,2, $00000000);       //  Refreshing Spring Water
+          c.ItemsAdd($FF,25, 6948,1, $0001);      //  Hearthstone
+
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(594, 5,5, 0,0);             // Holy
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(55, 5,1, 0,0);              // Two-Handed Swords
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(267, 5,0, 0,0);             // Protection
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(160, 5,0, 0,0);             // Two-Handed Maces
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(43, 5,1, 0,0);              // Swords
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(54, 5,0, 0,0);              // Maces
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(229, 0,0, 0,0);             // Polearms
+          c.SkillsAdd(293, 0,0, 0,0);             // Plate Mail
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(184, 5,0, 0,0);             // Retribution
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(433, 1,1, 0,0);             // Shield
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(413, 1,1, 0,0);             // Mail
+          c.SkillsAdd(414, 1,1, 0,0);             // Leather
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(44, 5,0, 0,0);              // Axes
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+          c.SkillsAdd(172, 5,0, 0,0);             // Two-Handed Axes
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(20154, 0);                  // Seal of Righteousness
+          c.SpellsAdd(635, 0);                    // Holy Light
+          c.SpellsAdd(107, 0);                    // Block
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(202, 0);                    // Two-Handed Swords
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(201, 0);                    // One-Handed Swords
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(27762, 0);                  // Libram
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(9116, 0);                   // Shield
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(8737, 0);                   // Mail
+          c.SpellsAdd(9077, 0);                   // Leather
+          c.SpellsAdd(28730, 0);                  // Arcane Torrent
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 20154, $00000000);    // Spell: Seal of Righteousness
+          c.SetActionButtons(2, 635, $00000000);      // Spell: Holy Light
+          c.SetActionButtons(3, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(4, 28730, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(10, 159, $80000000);     // Item: Refreshing Spring Water
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
+end;
+procedure RACE_BLOODELF_CLASS_HUNTER(var c:TCharData);
+begin
+          c.max_health                 :=45;
+          c.power_type                 :=POWER_MANA;
+          c.max_power[POWER_MANA]      :=145;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=1600;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=2300;
+          c.base_mana                  :=65;
+          c.base_health                :=26;
+
+          c.attack_power               :=24;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=17;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=3.742857;
+          c.max_damage                 :=4.742857;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=7.792857;
+          c.max_ranged_damage          :=12.792857;
+
+          c.stat[0]                    :=17;      // strength
+          c.stat[1]                    :=25;      // agility
+          c.stat[2]                    :=19;      // stamina
+          c.stat[3]                    :=24;      // intellect
+          c.stat[4]                    :=20;      // spirit
+
+          c.ammo_id                    :=2512;
+
+          c.ItemsAdd($FF,3, 20901,1, $00000000);      //  Warder's Shirt
+          c.ItemsAdd($FF,6, 20899,1, $00000000);      //  Warder's Pants
+          c.ItemsAdd($FF,7, 20900,1, $00000000);      //  Warder's Boots
+          c.ItemsAdd($FF,15, 20982,1, $00000000);     //  Sharp Dagger
+          c.ItemsAdd($FF,17, 20980,1, $00000000);     //  Warder's Shortbow
+          c.ItemsAdd($FF,19, 2101,1, $00000000);      //  Light Quiver
+          c.ItemsAdd($FF,23, 159,2, $00000000);       //  Refreshing Spring Water
+          c.ItemsAdd($FF,24, 6948,1, $0001);      //  Hearthstone
+          c.ItemsAdd($FF,25, 20857,4, $00000000);     //  Honey Bread
+          c.ItemsAdd(19,0, 2512,200, $00000000);
+
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(55, 5,0, 0,0);              // Two-Handed Swords
+          c.SkillsAdd(176, 5,0, 0,0);             // Thrown
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(261, 5,0, 0,0);             // Beast Training
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(43, 5,0, 0,0);              // Swords
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(51, 5,5, 0,0);              // Survival
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(136, 5,0, 0,0);             // Staves
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(229, 0,0, 0,0);             // Polearms
+          c.SkillsAdd(46, 5,0, 0,0);              // Guns
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(173, 5,1, 0,0);             // Daggers
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(226, 5,0, 0,0);             // Crossbows
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(473, 1,0, 0,0);             // Fist Weapons
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(413, 0,0, 0,0);             // Mail
+          c.SkillsAdd(414, 1,1, 0,0);             // Leather
+          c.SkillsAdd(45, 5,1, 0,0);              // Bows
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(44, 5,0, 0,0);              // Axes
+          c.SkillsAdd(50, 5,0, 0,0);              // Beast Mastery
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(118, 0,0, 0,0);             // Dual Wield
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(163, 5,5, 0,0);             // Marksmanship
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+          c.SkillsAdd(172, 5,0, 0,0);             // Two-Handed Axes
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(24949, 0);                  // Defensive State 2 (DND)
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(13358, 0);                  // Defensive State (DND)
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(2973, 0);                   // Raptor Strike
+          c.SpellsAdd(1180, 0);                   // Daggers
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(34082, 0);                  // Advantaged State (DND)
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(9077, 0);                   // Leather
+          c.SpellsAdd(264, 0);                    // Bows
+          c.SpellsAdd(28730, 0);                  // Arcane Torrent
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+          c.SpellsAdd(75, 0);                     // Auto Shot
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 2973, $00000000);     // Spell: Raptor Strike
+          c.SetActionButtons(2, 75, $00000000);       // Spell: Auto Shot
+          c.SetActionButtons(3, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(4, 28730, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(10, 159, $80000000);     // Item: Refreshing Spring Water
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
+end;
+procedure RACE_BLOODELF_CLASS_ROGUE(var c:TCharData);
+begin
+          c.max_health                 :=44;
+          c.power_type                 :=POWER_ENERGY;
+          c.max_power[POWER_MANA]      :=0;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=1600;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=1800;
+          c.base_mana                  :=0;
+          c.base_health                :=25;
+
+          c.attack_power               :=25;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=16;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=3.857;
+          c.max_damage                 :=4.857;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=6.057;
+          c.max_ranged_damage          :=10.057;
+
+          c.stat[0]                    :=18;      // strength
+          c.stat[1]                    :=25;      // agility
+          c.stat[2]                    :=19;      // stamina
+          c.stat[3]                    :=24;      // intellect
+          c.stat[4]                    :=19;      // spirit
+
+          c.ItemsAdd($FF,3, 20897,1, $00000000);      //  Lookout's Tunic
+          c.ItemsAdd($FF,6, 20896,1, $00000000);      //  Lookout's Pants
+          c.ItemsAdd($FF,7, 20898,1, $00000000);      //  Lookout's Shoes
+          c.ItemsAdd($FF,15, 20982,1, $00000000);     //  Sharp Dagger
+          c.ItemsAdd($FF,17, 25861,1, $00000000);     //  Crude Throwing Axe
+          c.ItemsAdd($FF,23, 20857,4, $00000000);     //  Honey Bread
+          c.ItemsAdd($FF,24, 6948,1, $0001);      //  Hearthstone
+
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(633, 5,0, 0,0);             // Lockpicking
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(176, 5,1, 0,0);             // Thrown
+          c.SkillsAdd(38, 5,5, 0,0);              // Combat
+          c.SkillsAdd(39, 5,0, 0,0);              // Subtlety
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(40, 5,0, 0,0);              // Poisons
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(43, 5,0, 0,0);              // Swords
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(54, 5,0, 0,0);              // Maces
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(46, 5,0, 0,0);              // Guns
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(173, 5,1, 0,0);             // Daggers
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(226, 5,0, 0,0);             // Crossbows
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(473, 1,0, 0,0);             // Fist Weapons
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(253, 5,5, 0,0);             // Assassination
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(414, 1,1, 0,0);             // Leather
+          c.SkillsAdd(45, 5,0, 0,0);              // Bows
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(118, 0,0, 0,0);             // Dual Wield
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(16092, 0);                  // Defensive State (DND)
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(2567, 0);                   // Thrown
+          c.SpellsAdd(2764, 0);                   // Throw
+          c.SpellsAdd(21184, 0);                  // Rogue Passive (DND)
+          c.SpellsAdd(1752, 0);                   // Sinister Strike
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(1180, 0);                   // Daggers
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(2098, 0);                   // Eviscerate
+          c.SpellsAdd(9077, 0);                   // Leather
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+          c.SpellsAdd(25046, 0);                  // Arcane Torrent
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 1752, $00000000);     // Spell: Sinister Strike
+          c.SetActionButtons(2, 2098, $00000000);     // Spell: Eviscerate
+          c.SetActionButtons(3, 2764, $00000000);     // Spell: Throw
+          c.SetActionButtons(4, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(5, 25046, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
+end;
+procedure RACE_BLOODELF_CLASS_PRIEST(var c:TCharData);
+begin
+          c.max_health                 :=50;
+          c.power_type                 :=POWER_MANA;
+          c.max_power[POWER_MANA]      :=220;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=1900;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=0;
+          c.base_mana                  :=110;
+          c.base_health                :=32;
+
+          c.attack_power               :=7;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=12;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=1.95;
+          c.max_damage                 :=3.95;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=0.0;
+          c.max_ranged_damage          :=0.0;
+
+          c.stat[0]                    :=17;      // strength
+          c.stat[1]                    :=22;      // agility
+          c.stat[2]                    :=18;      // stamina
+          c.stat[3]                    :=26;      // intellect
+          c.stat[4]                    :=22;      // spirit
+
+          c.ammo_id                    :=0;
+
+          c.ItemsAdd($FF,3, 53,1, $00000000);         //  Neophyte's Shirt
+          c.ItemsAdd($FF,4, 20891,1, $00000000);      //  Neophyte's Robe
+          c.ItemsAdd($FF,6, 52,1, $00000000);         //  Neophyte's Pants
+          c.ItemsAdd($FF,7, 51,1, $00000000);         //  Neophyte's Boots
+          c.ItemsAdd($FF,15, 20981,1, $00000000);     //  Neophyte's Mace
+          c.ItemsAdd($FF,23, 20857,4, $00000000);     //  Honey Bread
+          c.ItemsAdd($FF,24, 159,2, $00000000);       //  Refreshing Spring Water
+          c.ItemsAdd($FF,25, 6948,1, $0001);      //  Hearthstone
+
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(136, 5,0, 0,0);             // Staves
+          c.SkillsAdd(54, 5,1, 0,0);              // Maces
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(173, 5,0, 0,0);             // Daggers
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(228, 5,1, 0,0);             // Wands
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(613, 5,0, 0,0);             // Discipline
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(78, 5,0, 0,0);              // Shadow Magic
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(56, 5,5, 0,0);              // Holy
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(198, 0);                    // One-Handed Maces
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(5009, 0);                   // Wands
+          c.SpellsAdd(5019, 0);                   // Shoot
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(28730, 0);                  // Arcane Torrent
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+          c.SpellsAdd(2050, 0);                   // Lesser Heal
+          c.SpellsAdd(585, 0);                    // Smite
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 585, $00000000);      // Spell: Smite
+          c.SetActionButtons(2, 2050, $00000000);     // Spell: Lesser Heal
+          c.SetActionButtons(3, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(4, 28730, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(10, 159, $80000000);     // Item: Refreshing Spring Water
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
+end;
+procedure RACE_BLOODELF_CLASS_MAGE(var c:TCharData);
+begin
+          c.max_health                 :=50;
+          c.power_type                 :=POWER_MANA;
+          c.max_power[POWER_MANA]      :=225;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=2900;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=0;
+          c.base_mana                  :=100;
+          c.base_health                :=32;
+
+          c.attack_power               :=7;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=12;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=4.45;
+          c.max_damage                 :=6.45;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=0.0;
+          c.max_ranged_damage          :=0.0;
+
+          c.stat[0]                    :=17;      // strength
+          c.stat[1]                    :=22;      // agility
+          c.stat[2]                    :=18;      // stamina
+          c.stat[3]                    :=27;      // intellect
+          c.stat[4]                    :=21;      // spirit
+
+          c.ammo_id                    :=0;
+
+          c.ItemsAdd($FF,3, 6096,1, $00000000);       // Apprentice's Shirt
+          c.ItemsAdd($FF,4, 20893,1, $00000000);      // Apprentice's Robe
+          c.ItemsAdd($FF,6, 20894,1, $00000000);      // Apprentice's Pants
+          c.ItemsAdd($FF,7, 20895,1, $00000000);      // Apprentice's Boots
+          c.ItemsAdd($FF,15, 35,1, $00000000);        // Bent Staff
+          c.ItemsAdd($FF,23, 20857,4, $00000000);     // Honey Bread
+          c.ItemsAdd($FF,24, 159,2, $00000000);       // Refreshing Spring Water
+          c.ItemsAdd($FF,25, 6948,1, $0001);      // Hearthstone
+
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(6, 5,5, 0,0);               // Frost
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(237, 5,0, 0,0);             // Arcane
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(43, 5,0, 0,0);              // Swords
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(136, 5,1, 0,0);             // Staves
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(8, 5,5, 0,0);               // Fire
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(173, 5,0, 0,0);             // Daggers
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(228, 5,1, 0,0);             // Wands
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(168, 0);                    // Frost Armor
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(227, 0);                    // Staves
+          c.SpellsAdd(133, 0);                    // Fireball
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(5009, 0);                   // Wands
+          c.SpellsAdd(5019, 0);                   // Shoot
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(28730, 0);                  // Arcane Torrent
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 133, $00000000);      // Spell: Fireball
+          c.SetActionButtons(2, 168, $00000000);      // Spell: Frost Armor
+          c.SetActionButtons(3, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(4, 28730, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(10, 159, $80000000);     // Item: Refreshing Spring Water
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
+end;
+procedure RACE_BLOODELF_CLASS_WARLOCK(var c:TCharData);
+begin
+          c.max_health                 :=42;
+          c.power_type                 :=POWER_MANA;
+          c.max_power[POWER_MANA]      :=200;
+          c.max_power[POWER_RAGE]      :=1000;
+          c.max_power[POWER_FOCUS]     :=100;
+          c.max_power[POWER_ENERGY]    :=100;
+          c.max_power[POWER_HAPPINESS] :=0;
+
+          c.mainhand_attack_time       :=1600;
+          c.offhand_attack_time        :=2000;
+          c.ranged_attack_time         :=0;
+          c.base_mana                  :=90;
+          c.base_health                :=23;
+
+          c.attack_power               :=7;
+          c.attack_power_mod           :=0;
+          c.ranged_attack_power        :=12;
+          c.ranged_attack_power_mod    :=0;
+
+          c.min_damage                 :=1.8;
+          c.max_damage                 :=2.8;
+          c.min_offhand_damage         :=0.0;
+          c.max_offhand_damage         :=0.0;
+          c.min_ranged_damage          :=0.0;
+          c.max_ranged_damage          :=0.0;
+
+          c.stat[0]                    :=17;      // strength
+          c.stat[1]                    :=22;      // agility
+          c.stat[2]                    :=19;      // stamina
+          c.stat[3]                    :=26;      // intellect
+          c.stat[4]                    :=21;      // spirit
+
+          c.ammo_id                    :=0;
+
+          c.ItemsAdd($FF,3, 6097,1, $00000000);       // Acolyte's Shirt
+          c.ItemsAdd($FF,4, 20892,1, $00000000);      // Acolyte's Robe
+          c.ItemsAdd($FF,6, 1396,1, $00000000);       // Acolyte's Pants
+          c.ItemsAdd($FF,7, 59,1, $00000000);         // Acolyte's Shoes
+          c.ItemsAdd($FF,15, 20983,1, $00000000);     // Acolyte's Dagger
+          c.ItemsAdd($FF,23, 20857,4, $00000000);     // Honey Bread
+          c.ItemsAdd($FF,24, 159,2, $00000000);       // Refreshing Spring Water
+          c.ItemsAdd($FF,25, 6948,1, $0001);      // Hearthstone
+
+          c.SkillsAdd(355, 5,0, 0,0);             // Affliction
+          c.SkillsAdd(415, 1,1, 0,0);             // Cloth
+          c.SkillsAdd(202, 0,0, 0,0);             // Engineering
+          c.SkillsAdd(356, 0,0, 0,0);             // Fishing
+          c.SkillsAdd(171, 0,0, 0,0);             // Alchemy
+          c.SkillsAdd(182, 0,0, 0,0);             // Herbalism
+          c.SkillsAdd(673, 0,0, 0,0);             // Language: Gutterspeak
+          c.SkillsAdd(95, 5,1, 0,0);              // Defense
+          c.SkillsAdd(333, 0,0, 10,0);            // Enchanting
+          c.SkillsAdd(129, 0,0, 0,0);             // First Aid
+          c.SkillsAdd(185, 0,0, 0,0);             // Cooking
+          c.SkillsAdd(162, 5,1, 0,0);             // Unarmed
+          c.SkillsAdd(165, 0,0, 0,0);             // Leatherworking
+          c.SkillsAdd(43, 5,0, 0,0);              // Swords
+          c.SkillsAdd(186, 0,0, 0,0);             // Mining
+          c.SkillsAdd(98, 0,0, 0,0);              // Language: Common
+          c.SkillsAdd(136, 5,0, 0,0);             // Staves
+          c.SkillsAdd(762, 0,0, 0,0);             // Riding
+          c.SkillsAdd(769, 5,0, 0,0);             // Internal
+          c.SkillsAdd(315, 0,0, 0,0);             // Language: Troll
+          c.SkillsAdd(139, 0,0, 0,0);             // Language: Demon Tongue
+          c.SkillsAdd(354, 5,5, 0,0);             // Demonology
+          c.SkillsAdd(173, 5,1, 0,0);             // Daggers
+          c.SkillsAdd(183, 5,5, 0,0);             // GENERIC (DND)
+          c.SkillsAdd(228, 5,1, 0,0);             // Wands
+          c.SkillsAdd(755, 0,0, 0,0);             // Jewelcrafting
+          c.SkillsAdd(393, 0,0, 0,0);             // Skinning
+          c.SkillsAdd(109, 300,300, 0,0);         // Language: Orcish
+          c.SkillsAdd(137, 300,300, 0,0);         // Language: Thalassian
+          c.SkillsAdd(140, 0,0, 0,0);             // Language: Titan
+          c.SkillsAdd(313, 0,0, 0,0);             // Language: Gnomish
+          c.SkillsAdd(756, 5,5, 0,0);             // Blood Elf Racial
+          c.SkillsAdd(593, 5,5, 0,0);             // Destruction
+          c.SkillsAdd(759, 0,0, 0,0);             // Language: Draenei
+          c.SkillsAdd(197, 0,0, 0,0);             // Tailoring
+          c.SkillsAdd(111, 0,0, 0,0);             // Language: Dwarven
+          c.SkillsAdd(113, 0,0, 0,0);             // Language: Darnassian
+          c.SkillsAdd(115, 0,0, 0,0);             // Language: Taurahe
+          c.SkillsAdd(138, 0,0, 0,0);             // Language: Draconic
+          c.SkillsAdd(141, 0,0, 0,0);             // Language: Old Tongue
+          c.SkillsAdd(142, 1,0, 0,0);             // Survival
+          c.SkillsAdd(164, 0,0, 0,0);             // Blacksmithing
+
+          c.SpellsAdd(9078, 0);                   // Cloth
+          c.SpellsAdd(204, 0);                    // Defense
+          c.SpellsAdd(81, 0);                     // Dodge
+          c.SpellsAdd(522, 0);                    // SPELLDEFENSE (DND)
+          c.SpellsAdd(203, 0);                    // Unarmed
+          c.SpellsAdd(687, 0);                    // Demon Skin
+          c.SpellsAdd(1180, 0);                   // Daggers
+          c.SpellsAdd(21651, 0);                  // Opening
+          c.SpellsAdd(21652, 0);                  // Closing
+          c.SpellsAdd(8386, 0);                   // Attacking
+          c.SpellsAdd(9125, 0);                   // Generic
+          c.SpellsAdd(7266, 0);                   // Duel
+          c.SpellsAdd(7267, 0);                   // Grovel
+          c.SpellsAdd(7355, 0);                   // Stuck
+          c.SpellsAdd(22027, 0);                  // Remove Insignia
+          c.SpellsAdd(22810, 0);                  // Opening - No Text
+          c.SpellsAdd(2479, 0);                   // Honorless Target
+          c.SpellsAdd(2382, 0);                   // Generic
+          c.SpellsAdd(3365, 0);                   // Opening
+          c.SpellsAdd(3050, 0);                   // Detect
+          c.SpellsAdd(6477, 0);                   // Opening
+          c.SpellsAdd(6478, 0);                   // Opening
+          c.SpellsAdd(6603, 0);                   // Attack
+          c.SpellsAdd(6233, 0);                   // Closing
+          c.SpellsAdd(6246, 0);                   // Closing
+          c.SpellsAdd(6247, 0);                   // Opening
+          c.SpellsAdd(5009, 0);                   // Wands
+          c.SpellsAdd(5019, 0);                   // Shoot
+          c.SpellsAdd(669, 0);                    // Language Orcish
+          c.SpellsAdd(813, 0);                    // Language Thalassian
+          c.SpellsAdd(28730, 0);                  // Arcane Torrent
+          c.SpellsAdd(28734, 0);                  // Mana Tap
+          c.SpellsAdd(822, 0);                    // Magic Resistance
+          c.SpellsAdd(28877, 0);                  // Arcane Affinity
+          c.SpellsAdd(686, 0);                    // Shadow Bolt
+
+          c.SetActionButtons(0, 6603, $00000000);     // Spell: Attack
+          c.SetActionButtons(1, 686, $00000000);      // Spell: Shadow Bolt
+          c.SetActionButtons(2, 687, $00000000);      // Spell: Demon Skin
+          c.SetActionButtons(3, 28734, $00000000);    // Spell: Mana Tap
+          c.SetActionButtons(4, 28730, $00000000);    // Spell: Arcane Torrent
+          c.SetActionButtons(10, 159, $80000000);     // Item: Refreshing Spring Water
+          c.SetActionButtons(11, 20857, $80000000);   // Item: Honey Bread
 end;
 
 end.

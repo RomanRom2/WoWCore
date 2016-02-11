@@ -80,6 +80,7 @@ type
 
   T_SMSG_AUTH_RESPONSE = record
     ResponseCode: byte;
+    ExpansionType: byte;
   end;
 
   T_CMSG_PING = record
@@ -179,11 +180,16 @@ type
     Category: longint;
     CategoryCoolDown: longint;
   end;
+  TItemSocket = record
+    ID: longint;
+    Unk: longint;
+  end;
   T_SMSG_ITEM_QUERY_SINGLE_RESPONSE = record
     Entry: longint;
 
     ClassID: longint;
     SubClassID: longint;
+    Unk1: longint; // 2.0.3
     Name: array[0..ITEM_NAMES-1] of string;
     DisplayInfoID: longint;
     OverallQualityID: longint;
@@ -222,12 +228,21 @@ type
     LockMaterial: longint;
     Sheath: longint;
     Extra: longint;
+    Suffix: longint; // 2.0.3
     Block: longint;
     SetID: longint;
     MaxDurability: longint;
     Area: longint;
     Map: longint;
     BagFamily: longint; // 1.11.0
+    ToolID: longint; // BC
+    Socket: array[0..2] of TItemSocket; // BC
+    SocketBonus: longint; // BC
+    GemProperties: longint; // BC
+    ExtendedCost: longint;  // BC
+    RequiredDisenchantSkill: longint; // BC
+    ArmorDamageModifier: single; // BC 2.1.x
+    Duration: longint; // BC 2.1.x
   end;
 
   T_CMSG_CREATURE_QUERY = record
@@ -333,7 +348,7 @@ type
     ResponseCode: byte;
   end;
 
-  T_SMSG_ACCOUNT_DATA_MD5 = record
+  T_SMSG_ACCOUNT_DATA_TIMES = record
     tmp: array[0..31] of longint;
   end;
 
@@ -375,6 +390,12 @@ type
   end;
 
   T_SMSG_FORCE_SWIM_SPEED_CHANGE = record
+    GUID: uInt64;
+    Count: longint;
+    Value: single;
+  end;
+
+  T_SMSG_FORCE_FLIGHT_SPEED_CHANGE = record
     GUID: uInt64;
     Count: longint;
     Value: single;
@@ -594,7 +615,7 @@ type
     StandStateID: longint;
   end;
 
-  T_SMSG_STANDSTATE_CHANGE_ACK = record
+  T_SMSG_STANDSTATE_UPDATE = record
     StandStateID: byte;
   end;
 
@@ -642,6 +663,18 @@ type
     ItemSuffix: longint;
     ItemCount: longint;
   end;
+
+  T_SMSG_MOVE_SET_CAN_FLY = record
+    GUID: uInt64;
+    Count: longint;
+  end;
+
+  T_SMSG_MOVE_UNSET_CAN_FLY = record
+    GUID: uInt64;
+    Count: longint;
+  end;
+
+
 
 implementation
 

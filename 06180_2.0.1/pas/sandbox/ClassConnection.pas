@@ -107,6 +107,9 @@ type
     procedure Send_UpdateFromPlayer_Move(MR: TMovementRecord);
     procedure Send_UpdateFromPlayer_ForceRunSpeed(guid: uInt64; value: single);
     procedure Send_UpdateFromPlayer_ForceSwimSpeed(guid: uInt64; value: single);
+    procedure Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+    procedure Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+    procedure Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
     procedure Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
     procedure Send_UpdateFromPlayer_AttackStart(guid_attacker, guid_target: uInt64);
     procedure Send_UpdateFromPlayer_AttackStop(guid_attacker, guid_target: uInt64);
@@ -148,6 +151,9 @@ type
       procedure Send_UpdateFromPlayer_Move(MR: TMovementRecord);
       procedure Send_UpdateFromPlayer_ForceRunSpeed(guid: uInt64; value: single);
       procedure Send_UpdateFromPlayer_ForceSwimSpeed(guid: uInt64; value: single);
+      procedure Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+      procedure Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+      procedure Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
       procedure Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
       procedure Send_UpdateFromPlayer_AttackStart(guid_attacker, guid_target: uInt64);
       procedure Send_UpdateFromPlayer_AttackStop(guid_attacker, guid_target: uInt64);
@@ -594,12 +600,14 @@ begin
   pkt.AddFloat(SBuf, CharData.speed_run_back);
   pkt.AddFloat(SBuf, CharData.speed_swim);
   pkt.AddFloat(SBuf, CharData.speed_swim_back);
+  pkt.AddFloat(SBuf, CharData.speed_flight); // BC 2.0.1
+  pkt.AddFloat(SBuf, CharData.speed_flight_back); // BC 2.0.1
   pkt.AddFloat(SBuf, 3.141593);
 
   // spline
 
   // create_flag $10
-  pkt.AddLong(SBuf, 1);
+  pkt.AddLong(SBuf, CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(     OBJECT_FIELD_GUID,                     CharData.Enum.GUID);
@@ -840,9 +848,12 @@ begin
   pkt.AddFloat(SBuf, U.woSpeedRunBack);
   pkt.AddFloat(SBuf, U.woSpeedSwim);
   pkt.AddFloat(SBuf, U.woSpeedSwimBack);
+  pkt.AddFloat(SBuf, U.woSpeedFlight);
+  pkt.AddFloat(SBuf, U.woSpeedFlightBack);
   pkt.AddFloat(SBuf, 3.14);
 
-  pkt.AddInt(SBuf, 1);
+  // create_flag $10
+  pkt.AddLong(SBuf, U.woGUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(UNIT_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,            U.woGUID);
@@ -916,9 +927,12 @@ begin
   pkt.AddFloat(SBuf, P.CharData.speed_run_back);
   pkt.AddFloat(SBuf, P.CharData.speed_swim);
   pkt.AddFloat(SBuf, P.CharData.speed_swim_back);
+  pkt.AddFloat(SBuf, P.CharData.speed_flight);
+  pkt.AddFloat(SBuf, P.CharData.speed_flight_back);
   pkt.AddFloat(SBuf, 3.14);
 
-  pkt.AddInt(SBuf, 1);
+  // create_flag $10
+  pkt.AddLong(SBuf, P.CharData.Enum.GUID); // BC 2.0.1.6180 - LOW part of GUID
 
     upkt.Init(PLAYER_END);
     upkt.AddInt64(   OBJECT_FIELD_GUID,                       P.CharData.Enum.GUID);
@@ -1011,6 +1025,31 @@ begin
   omsg.GUID:= guid;
   omsg.Count:= 0;
   omsg.Value:= value;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+var
+  omsg: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
+  omsg.Value:= value;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+var
+  omsg: T_SMSG_MOVE_SET_CAN_FLY;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
+  SockSend(msgBuild(SBuf, omsg));
+end;
+procedure TWorldUser.Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
+var
+  omsg: T_SMSG_MOVE_UNSET_CAN_FLY;
+begin
+  omsg.GUID:= guid;
+  omsg.Count:= 0;
   SockSend(msgBuild(SBuf, omsg));
 end;
 procedure TWorldUser.Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
@@ -1440,6 +1479,30 @@ begin
   for i:= 0 to World.Count-1 do
     if World.ObjectByIndex[i].woType = WO_PLAYER then
       TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_ForceSwimSpeed(guid, value);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_ForceFlightSpeed(guid: uInt64; value: single);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_ForceFlightSpeed(guid, value);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_SetCanFly(guid: uInt64);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_SetCanFly(guid);
+end;
+procedure TListWorldUsers.Send_UpdateFromPlayer_UnsetCanFly(guid: uInt64);
+var
+  i: longint;
+begin
+  for i:= 0 to World.Count-1 do
+    if World.ObjectByIndex[i].woType = WO_PLAYER then
+      TWorldUser(World.ObjectByIndex[i].woAddr).Send_UpdateFromPlayer_UnsetCanFly(guid);
 end;
 procedure TListWorldUsers.Send_UpdateFromPlayer_Values(OBJ: TWorldRecord; VR: CValuesRecord);
 var

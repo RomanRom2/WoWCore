@@ -386,7 +386,7 @@ begin
     pktAddByte(LoginUser.SBuf, 0); // status
     pktAddByte(LoginUser.SBuf, 0);
     pktAddByte(LoginUser.SBuf, 0); // flags
-    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 1.12.1'+#0);
+    pktAddStr(LoginUser.SBuf, 'WoWCore SandBox 2.0.1'+#0);
     pktAddStr(LoginUser.SBuf, REALM_ADDR+':7000'+#0);
     pktAddFloat(LoginUser.SBuf, 0); // load
     pktAddByte(LoginUser.SBuf, 0); // chars

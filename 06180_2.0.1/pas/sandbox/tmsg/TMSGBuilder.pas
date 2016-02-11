@@ -19,13 +19,14 @@ function msgBuild(var Buf: TBuffer; var m: T_SMSG_NPC_TEXT_UPDATE): longint; ove
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHANNEL_NOTIFY): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_LOGOUT_COMPLETE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHARACTER_LOGIN_FAILED): longint; overload;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_MD5): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_TIMES): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_TUTORIAL_FLAGS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_INITIAL_SPELLS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACTION_BUTTONS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_LOGIN_SETTIMESPEED): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_RUN_SPEED_CHANGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_SWIM_SPEED_CHANGE): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ATTACKSTART): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ATTACKSTOP): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_TRANSFER_PENDING): longint; overload;
@@ -42,11 +43,13 @@ function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUERY_TIME_RESPONSE): longint;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_INVENTORY_CHANGE_FAILURE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUESTGIVER_STATUS): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_QUESTGIVER_QUEST_LIST): longint; overload;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_CHANGE_ACK): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_UPDATE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_GOSSIP_COMPLETE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_GOSSIP_MESSAGE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_EXPLORATION_EXPERIENCE): longint; overload;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_ITEM_PUSH_RESULT): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_SET_CAN_FLY): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_UNSET_CAN_FLY): longint; overload;
 
 implementation
 
@@ -78,6 +81,10 @@ begin
 // }
   pkt.InitCmd      (Buf, SMSG_AUTH_RESPONSE);
   pkt.AddByte      (Buf, m.ResponseCode);
+  pkt.AddLong      (Buf, 0);
+  pkt.AddByte      (Buf, 0);
+  pkt.AddLong      (Buf, 0);
+  pkt.AddByte      (Buf, m.ExpansionType);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CHAR_ENUM): longint; overload;
@@ -207,6 +214,16 @@ begin
   pkt.AddLong      (Buf, m.Area);
   pkt.AddLong      (Buf, m.Map);
   pkt.AddLong      (Buf, m.BagFamily);
+  pkt.AddLong      (Buf, m.ToolID);
+  for i:= 0 to 2 do
+  begin
+    pkt.AddLong  (Buf, m.Socket[i].ID);
+    pkt.AddLong  (Buf, m.Socket[i].Unk);
+  end;
+  pkt.AddLong      (Buf, m.SocketBonus);
+  pkt.AddLong      (Buf, m.GemProperties);
+  pkt.AddLong      (Buf, 0); // deleted m.ExtendedCost
+  pkt.AddLong      (Buf, m.RequiredDisenchantSkill);
   result:= pkt.pktLen;
 end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_CREATURE_QUERY_RESPONSE): longint; overload;
@@ -299,11 +316,11 @@ begin
   pkt.AddByte      (Buf, m.ResponseCode);
   result:= pkt.pktLen;
 end;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_MD5): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_ACCOUNT_DATA_TIMES): longint; overload;
 var
   i: longint;
 begin
-  pkt.InitCmd      (Buf, SMSG_ACCOUNT_DATA_MD5);
+  pkt.InitCmd      (Buf, SMSG_ACCOUNT_DATA_TIMES);
   for i:= 0 to 31 do
     pkt.AddLong    (Buf, m.tmp[i]);
   result:= pkt.pktLen;
@@ -362,6 +379,14 @@ end;
 function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_SWIM_SPEED_CHANGE): longint; overload;
 begin
   pkt.InitCmd      (Buf, SMSG_FORCE_SWIM_SPEED_CHANGE);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  pkt.AddFloat     (Buf, m.Value);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_FORCE_FLIGHT_SPEED_CHANGE): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_FORCE_FLIGHT_SPEED_CHANGE);
   pkt.AddGUID      (Buf, m.GUID);
   pkt.AddLong      (Buf, m.Count);
   pkt.AddFloat     (Buf, m.Value);
@@ -626,9 +651,9 @@ begin
   pkt.AddByte      (Buf, m.Unk);
   result:= pkt.pktLen;
 end;
-function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_CHANGE_ACK): longint; overload;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_STANDSTATE_UPDATE): longint; overload;
 begin
-  pkt.InitCmd      (Buf, SMSG_STANDSTATE_CHANGE_ACK);
+  pkt.InitCmd      (Buf, SMSG_STANDSTATE_UPDATE);
   pkt.AddByte      (Buf, m.StandStateID);
   result:= pkt.pktLen;
 end;
@@ -687,5 +712,20 @@ begin
   pkt.AddLong      (Buf, m.ItemCount);
   result:= pkt.pktLen;
 end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_SET_CAN_FLY): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_MOVE_SET_CAN_FLY);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  result:= pkt.pktLen;
+end;
+function msgBuild(var Buf: TBuffer; var m: T_SMSG_MOVE_UNSET_CAN_FLY): longint; overload;
+begin
+  pkt.InitCmd      (Buf, SMSG_MOVE_UNSET_CAN_FLY);
+  pkt.AddGUID      (Buf, m.GUID);
+  pkt.AddLong      (Buf, m.Count);
+  result:= pkt.pktLen;
+end;
+
 
 end.
